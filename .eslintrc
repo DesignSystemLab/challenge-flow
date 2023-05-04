@@ -1,0 +1,22 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020, //ecmascript사용 버전
+    "sourceType": "module", //모듈 시스템 (import-export)
+    "ecmaFeatures": {
+      "jsx": true //jsx 사용
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    //브라우저, 노드, es6 환경
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"], //플러그인 추천 규칙 상속
+  "plugins": ["import", "react-hooks"], //사용 플러그인
+  "rules": {
+    "react/display-name": "off",
+    "react/no-children-prop": "off"
+  }
+}

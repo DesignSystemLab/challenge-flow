@@ -1,0 +1,31 @@
+{
+  "name": "change-flow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "next": "^13.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.8",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "jsxImportSource": "@emotion/react",
+    "@types/node": "^18.16.3",
+    "@types/react": "^18.2.5",
+    "eslint": "^8.39.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}
