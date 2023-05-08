@@ -744,7 +744,7 @@ __metadata:
     eslint-plugin-hooks: ^0.4.3
     eslint-plugin-import: ^2.27.5
     eslint-plugin-react: ^7.32.2
-    next: 12
+    next: 12.3.4
     prettier: ^2.8.8
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -1813,7 +1813,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:12":
+"next@npm:12.3.4":
   version: 12.3.4
   resolution: "next@npm:12.3.4"
   dependencies:
