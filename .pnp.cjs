@@ -32,6 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@emotion/styled", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.1.0"],\
             ["@types/node", "npm:18.16.3"],\
             ["@types/react", "npm:18.2.5"],\
             ["eslint", "npm:8.39.0"],\
@@ -522,6 +523,613 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@jdesignlab/box", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-box-npm-0.1.0-3a41af9bf6-9f64dcc154.zip/node_modules/@jdesignlab/box/",\
+          "packageDependencies": [\
+            ["@jdesignlab/box", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-box-virtual-a3be339f15/0/cache/@jdesignlab-box-npm-0.1.0-3a41af9bf6-9f64dcc154.zip/node_modules/@jdesignlab/box/",\
+          "packageDependencies": [\
+            ["@jdesignlab/box", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/button", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-button-npm-0.1.0-0f8702039c-c0981172b6.zip/node_modules/@jdesignlab/button/",\
+          "packageDependencies": [\
+            ["@jdesignlab/button", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-button-virtual-e43ebbc476/0/cache/@jdesignlab-button-npm-0.1.0-0f8702039c-c0981172b6.zip/node_modules/@jdesignlab/button/",\
+          "packageDependencies": [\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"],\
+            ["tslib", "npm:2.5.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/card", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-card-npm-0.1.0-a0cad70f3d-b3ed91c261.zip/node_modules/@jdesignlab/card/",\
+          "packageDependencies": [\
+            ["@jdesignlab/card", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-card-virtual-fbae22da99/0/cache/@jdesignlab-card-npm-0.1.0-a0cad70f3d-b3ed91c261.zip/node_modules/@jdesignlab/card/",\
+          "packageDependencies": [\
+            ["@jdesignlab/card", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/checkbox", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-checkbox-npm-0.1.0-f0a6a7ed33-c880548721.zip/node_modules/@jdesignlab/checkbox/",\
+          "packageDependencies": [\
+            ["@jdesignlab/checkbox", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-checkbox-virtual-362a4c9c45/0/cache/@jdesignlab-checkbox-npm-0.1.0-f0a6a7ed33-c880548721.zip/node_modules/@jdesignlab/checkbox/",\
+          "packageDependencies": [\
+            ["@jdesignlab/checkbox", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/drawer", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-drawer-npm-0.1.0-2fb181d642-4a2d7e2927.zip/node_modules/@jdesignlab/drawer/",\
+          "packageDependencies": [\
+            ["@jdesignlab/drawer", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-drawer-virtual-bd8ee32312/0/cache/@jdesignlab-drawer-npm-0.1.0-2fb181d642-4a2d7e2927.zip/node_modules/@jdesignlab/drawer/",\
+          "packageDependencies": [\
+            ["@jdesignlab/drawer", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/dropdown", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-dropdown-npm-0.1.0-123f034ed0-bbed13584f.zip/node_modules/@jdesignlab/dropdown/",\
+          "packageDependencies": [\
+            ["@jdesignlab/dropdown", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-dropdown-virtual-debca46870/0/cache/@jdesignlab-dropdown-npm-0.1.0-123f034ed0-bbed13584f.zip/node_modules/@jdesignlab/dropdown/",\
+          "packageDependencies": [\
+            ["@jdesignlab/dropdown", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/flex", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-flex-npm-0.1.0-d0f4cf4467-849990c791.zip/node_modules/@jdesignlab/flex/",\
+          "packageDependencies": [\
+            ["@jdesignlab/flex", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-flex-virtual-efe9726607/0/cache/@jdesignlab-flex-npm-0.1.0-d0f4cf4467-849990c791.zip/node_modules/@jdesignlab/flex/",\
+          "packageDependencies": [\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/input", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-input-npm-0.1.0-4e0496c3d6-5f4108561a.zip/node_modules/@jdesignlab/input/",\
+          "packageDependencies": [\
+            ["@jdesignlab/input", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-input-virtual-47b2ad19af/0/cache/@jdesignlab-input-npm-0.1.0-4e0496c3d6-5f4108561a.zip/node_modules/@jdesignlab/input/",\
+          "packageDependencies": [\
+            ["@jdesignlab/input", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/j-provider", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-j-provider-npm-0.1.0-ac0de00694-d6647f7766.zip/node_modules/@jdesignlab/j-provider/",\
+          "packageDependencies": [\
+            ["@jdesignlab/j-provider", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-j-provider-virtual-e3dee775f6/0/cache/@jdesignlab-j-provider-npm-0.1.0-ac0de00694-d6647f7766.zip/node_modules/@jdesignlab/j-provider/",\
+          "packageDependencies": [\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/modal", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-modal-npm-0.1.0-0b14a09680-758095b3e8.zip/node_modules/@jdesignlab/modal/",\
+          "packageDependencies": [\
+            ["@jdesignlab/modal", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-modal-virtual-6f1e929a0b/0/cache/@jdesignlab-modal-npm-0.1.0-0b14a09680-758095b3e8.zip/node_modules/@jdesignlab/modal/",\
+          "packageDependencies": [\
+            ["@jdesignlab/modal", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/input", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/radio", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-radio-npm-0.1.0-a33e849594-caaa1c4704.zip/node_modules/@jdesignlab/radio/",\
+          "packageDependencies": [\
+            ["@jdesignlab/radio", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-radio-virtual-5b3ac90084/0/cache/@jdesignlab-radio-npm-0.1.0-a33e849594-caaa1c4704.zip/node_modules/@jdesignlab/radio/",\
+          "packageDependencies": [\
+            ["@jdesignlab/radio", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/react", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-react-npm-0.1.0-76181c20d4-89cdf19905.zip/node_modules/@jdesignlab/react/",\
+          "packageDependencies": [\
+            ["@jdesignlab/react", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-virtual-251816c61f/0/cache/@jdesignlab-react-npm-0.1.0-76181c20d4-89cdf19905.zip/node_modules/@jdesignlab/react/",\
+          "packageDependencies": [\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.1.0"],\
+            ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
+            ["@jdesignlab/box", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/card", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/checkbox", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/drawer", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/dropdown", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/input", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/modal", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/radio", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/select", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/stack", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/tabs", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/textarea", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/tooltip", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/typography", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/emotion__react", null],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@emotion/react",\
+            "@types/emotion__react",\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/react-icons", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-react-icons-npm-0.1.0-3ea38d652e-80fdbe3bd8.zip/node_modules/@jdesignlab/react-icons/",\
+          "packageDependencies": [\
+            ["@jdesignlab/react-icons", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/react-utils", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-react-utils-npm-0.1.0-a588281715-24914f9c56.zip/node_modules/@jdesignlab/react-utils/",\
+          "packageDependencies": [\
+            ["@jdesignlab/react-utils", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-utils-virtual-bf39a61e6a/0/cache/@jdesignlab-react-utils-npm-0.1.0-a588281715-24914f9c56.zip/node_modules/@jdesignlab/react-utils/",\
+          "packageDependencies": [\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/select", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-select-npm-0.1.0-7f8c99bd29-afa204b7cd.zip/node_modules/@jdesignlab/select/",\
+          "packageDependencies": [\
+            ["@jdesignlab/select", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-select-virtual-a123a8ddf5/0/cache/@jdesignlab-select-npm-0.1.0-7f8c99bd29-afa204b7cd.zip/node_modules/@jdesignlab/select/",\
+          "packageDependencies": [\
+            ["@jdesignlab/select", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/flex", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/stack", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-stack-npm-0.1.0-bc016c8eb2-c4facf697a.zip/node_modules/@jdesignlab/stack/",\
+          "packageDependencies": [\
+            ["@jdesignlab/stack", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-stack-virtual-fc40d7a473/0/cache/@jdesignlab-stack-npm-0.1.0-bc016c8eb2-c4facf697a.zip/node_modules/@jdesignlab/stack/",\
+          "packageDependencies": [\
+            ["@jdesignlab/stack", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/tabs", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-tabs-npm-0.1.0-be2a7abe71-e0a701de03.zip/node_modules/@jdesignlab/tabs/",\
+          "packageDependencies": [\
+            ["@jdesignlab/tabs", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tabs-virtual-efa9fbe9b3/0/cache/@jdesignlab-tabs-npm-0.1.0-be2a7abe71-e0a701de03.zip/node_modules/@jdesignlab/tabs/",\
+          "packageDependencies": [\
+            ["@jdesignlab/tabs", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/textarea", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-textarea-npm-0.1.0-892d442101-b11b0ccb1f.zip/node_modules/@jdesignlab/textarea/",\
+          "packageDependencies": [\
+            ["@jdesignlab/textarea", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-textarea-virtual-4286942cf9/0/cache/@jdesignlab-textarea-npm-0.1.0-892d442101-b11b0ccb1f.zip/node_modules/@jdesignlab/textarea/",\
+          "packageDependencies": [\
+            ["@jdesignlab/textarea", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/theme", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-theme-npm-0.1.0-dda89f521f-35df634aae.zip/node_modules/@jdesignlab/theme/",\
+          "packageDependencies": [\
+            ["@jdesignlab/theme", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/tooltip", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-tooltip-npm-0.1.0-1f2ba1aa48-fb27d8d4dc.zip/node_modules/@jdesignlab/tooltip/",\
+          "packageDependencies": [\
+            ["@jdesignlab/tooltip", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tooltip-virtual-5dfeec3da5/0/cache/@jdesignlab-tooltip-npm-0.1.0-1f2ba1aa48-fb27d8d4dc.zip/node_modules/@jdesignlab/tooltip/",\
+          "packageDependencies": [\
+            ["@jdesignlab/tooltip", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/button", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-icons", "npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/typography", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-typography-npm-0.1.0-8c31483fe7-c976c89c5a.zip/node_modules/@jdesignlab/typography/",\
+          "packageDependencies": [\
+            ["@jdesignlab/typography", "npm:0.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-typography-virtual-eee72a8014/0/cache/@jdesignlab-typography-npm-0.1.0-8c31483fe7-c976c89c5a.zip/node_modules/@jdesignlab/typography/",\
+          "packageDependencies": [\
+            ["@jdesignlab/typography", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/j-provider", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/react-utils", "virtual:251816c61f14292600dbb6967a2695d5a14795542b5d747d42724764cc3e3bdc4e79c3720108501e676cb0979ccad4727f67acc29303abb05408eda8e53b89a9#npm:0.1.0"],\
+            ["@jdesignlab/theme", "npm:0.1.0"],\
+            ["@jdesignlab/utils", "npm:0.1.0"],\
+            ["@types/react", "npm:18.2.5"],\
+            ["@types/react-dom", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@jdesignlab/utils", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-utils-npm-0.1.0-7285c73a4c-530b277945.zip/node_modules/@jdesignlab/utils/",\
+          "packageDependencies": [\
+            ["@jdesignlab/utils", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@next/env", [\
         ["npm:12.3.4", {\
           "packageLocation": "./.yarn/cache/@next-env-npm-12.3.4-262e30cb7e-daa3fc11ef.zip/node_modules/@next/env/",\
@@ -991,6 +1599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@emotion/styled", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.1.0"],\
             ["@types/node", "npm:18.16.3"],\
             ["@types/react", "npm:18.2.5"],\
             ["eslint", "npm:8.39.0"],\
