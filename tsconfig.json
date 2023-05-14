@@ -19,7 +19,16 @@
     "noImplicitAny": true, // 암묵적 any 금지
     "jsx": "preserve", // jsx 지원
     "sourceMap": true, // 디버깅시 원본 TypeScript 코드를 보여줌
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@banner/*": ["src/banner/*"],
+      "@post/*": ["src/post/*"],
+      "@user/*": ["src/user/*"],
+      "@workspace/*": ["src/workspace/*"],
+      "@shared/*": ["src/shared/*"],
+      "@pages/*": ["src/pages/*"]
+    }
   },
   "include": ["src/"],
   "exclude": ["node_modules"]
