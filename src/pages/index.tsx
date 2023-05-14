@@ -1,18 +1,19 @@
 import React from 'react';
-import { css } from '@emotion/react';
+import { Button, ThemeProvider } from '@jdesignlab/react';
 import styled from '@emotion/styled';
+import { Post } from '@post/components/Post';
 
-const StyledWrap = styled.div`
-  background-color: hotpink;
-  div {
-    font-size: 24px;
-  }
-`;
 const index = () => {
   return (
-    <StyledWrap>
-      <h2 css={{ color: 'red' }}>sad</h2>
-    </StyledWrap>
+    <div>
+      <Button
+        onClick={(e) => {
+          alert('JDS');
+        }}
+      >
+        J-lab DesignSystem
+      </Button>
+    </div>
   );
 };
 
