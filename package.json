@@ -12,16 +12,21 @@
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@jdesignlab/react": "^0.1.0",
+    "date-fns": "^2.30.0",
     "firebase": "^9.22.0",
     "next": "12.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-query": "^3.39.3",
+    "xstate": "^4.37.2"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.8",
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@types/node": "^18.16.3",
     "@types/react": "^18.2.5",
+    "cypress": "^12.12.0",
     "eslint": "^8.39.0",
     "eslint-plugin-hooks": "^0.4.3",
     "eslint-plugin-import": "^2.27.5",
