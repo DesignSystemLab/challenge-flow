@@ -27,7 +27,8 @@
       "@user/*": ["src/user/*"],
       "@workspace/*": ["src/workspace/*"],
       "@shared/*": ["src/shared/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@layout/*": ["src/layout/*"]
     }
   },
   "include": ["src/"],
