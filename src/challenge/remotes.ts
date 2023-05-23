@@ -16,7 +16,8 @@ const REF_NAME = 'challenge';
 const COLLECTION = collection(database, REF_NAME);
 
 export const ChallengeAPI = {
-  getList
+  getList,
+  create
 };
 
 async function getList() {
@@ -27,4 +28,20 @@ async function getList() {
     data.push(doc.data());
   });
   return data as ChallengePostFields[] | [];
+}
+
+async function create(id: string, postValue: ChallengeFormStates) {
+  const param = {
+    ...postValue,
+    id,
+    isDeleted: false,
+    createdAt: getCurrentTime()
+  };
+  await setDoc(doc(database, REF_NAME, id), param);
+}
+
+function getCurrentTime() {
+  const currentTime = new Date();
+  const formattedTime = format(currentTime, 'yyyy-MM-dd HH:mm:ss');
+  return formattedTime;
 }
