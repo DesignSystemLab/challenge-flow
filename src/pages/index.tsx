@@ -1,50 +1,34 @@
-import styled from '@emotion/styled';
-import { Button, ThemeProvider } from '@jdesignlab/react';
-import { mediaQuery } from '@shared/styles/mixins/responsive';
-import { Post } from '@post/components/Post';
-import { css } from '@emotion/react';
+import { useContext } from 'react';
+import { SignupModal } from '@auth/components/SignupModal';
+import { SigninModal } from '@auth/components/SigninModal';
+import { Button } from '@jdesignlab/react';
+import { AuthContext } from '@shared/contexts/AuthContext';
+import { AuthMachineContext } from '@shared/contexts/AuthMachineContext';
+import { useActor } from '@xstate/react';
+import { fetchSignout } from '@auth/remotes/fetchSignout';
 
 const index = () => {
-  const Div = styled.div`
-    background-color: #ededed;
-    color: red;
-    ${mediaQuery.tabletport} {
-      color: gray;
-    }
-    ${mediaQuery.tabletland} {
-      color: yellow;
-    }
-    ${mediaQuery.desktop} {
-      color: lightgreen;
-    }
-  `;
-
-  const responsiveCss = css({
-    backgroundColor: '#ededed',
-    color: 'red',
-    [mediaQuery.tabletport]: {
-      color: 'gray'
-    },
-    [mediaQuery.tabletland]: {
-      color: 'yellow'
-    },
-    [mediaQuery.desktop]: {
-      color: 'lightgreen'
-    }
-  });
+  // const authContext = useContext(AuthContext);
+  // const [state] = useActor(authContext.authService);
+  const [state, send] = AuthMachineContext.useActor();
+  console.log(state.context.userInfo);
 
   return (
     <div>
-      <Button
-        onClick={(e) => {
-          alert('JDS');
-        }}
-      >
-        J-lab DesignSystem
-      </Button>
-      <h2>Emotion with Response</h2>
-      <div css={responsiveCss}>Some Text with css</div>
-      <Div>someText with Styled</Div>
+      {state.value === 'loggedIn' && (
+        <>
+          <h2>{state.context.userInfo && `${state.context.userInfo.displayName}님 환영합니다.`}</h2>
+          <Button
+            onClick={() => {
+              fetchSignout(send);
+            }}
+          >
+            로그아웃
+          </Button>
+        </>
+      )}
+      <SigninModal />
+      <SignupModal />
     </div>
   );
 };
