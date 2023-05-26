@@ -1,6 +1,6 @@
 ---
-name: 기능명
-about: 기능설명
+name: Feature Report
+about: 기능 추가 리포트
 title: ''
 labels: ''
 assignees: ''
