@@ -1,5 +1,6 @@
 import type { User } from 'firebase/auth';
 
+export type AuthProvider = 'GOOGLE' | 'GITHUB';
 export interface FormState {
   email: string;
   password: string;
@@ -7,16 +8,18 @@ export interface FormState {
   message: string;
 }
 
-export interface ProfileState {
-  name: string;
-  skills?: string[];
-  valid: boolean;
-  message: string;
-}
-
 export interface EamilPasswordField {
   email: string;
   password: string;
+}
+
+export interface UserProfile {
+  name: string | null;
+  email: string | null;
+  photo: string | null;
+  note: string | null;
+  skills: string[];
+  challenges: string[];
 }
 
 export type UserType = User | null;
