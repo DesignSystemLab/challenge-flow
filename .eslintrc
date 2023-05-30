@@ -17,6 +17,7 @@
   "plugins": ["import", "react-hooks"], //사용 플러그인
   "rules": {
     "react/display-name": "off",
-    "react/no-children-prop": "off"
+    "react/no-children-prop": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
