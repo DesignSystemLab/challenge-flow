@@ -1,65 +1,69 @@
+import type { ChallengePostFields } from '@challenge/types';
+import { useEffect } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { Button, Radio, Select, TextInput, Textarea } from '@jdesignlab/react';
 import { DevSkillCombobox } from '@shared/components/DevSkillCombobox';
-import { useState } from 'react';
-import { ChallengeAPI } from '@challenge/remotes';
-import { CreateChallengeFormProps, ChallengeFormStates } from '@challenge/types';
+import { useFormChangeHandler } from '@challenge/hooks/useFormChangeHandler';
+import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
 
-export const CreateChallengeForm = ({ id }: CreateChallengeFormProps) => {
-  if (!id) return <div>다시 시도</div>;
+export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFields }) => {
+  const { control, register, handleSubmit } = useForm();
+  const { postValue, setPostValue, valueChangeHandler, selectValueChangeHandler } = useFormChangeHandler();
+  const { useWriteMutation, useModifyMutation } = useChallengeApi();
+  const writeMutation = useWriteMutation();
+  const modifyMutation = useModifyMutation();
 
-  const [postValue, setPostValue] = useState<ChallengeFormStates>({
-    title: '',
-    isDaily: true,
-    skill: null,
-    content: '',
-    memberCapacity: 0
-  });
-
-  // TODO: radio value boolean type 받도록 변경
-  // TODO: Textarea onChange type 변경?
-  // TODO: Textarea -> Markdown모듈로 변경
-  const valueChangeHandler = (event: any) => {
-    let { name, value } = event.target;
-
-    if (value === 'true') value = true;
-    if (value === 'false') value = false;
-
-    postValue[name] = value;
-    setPostValue({ ...postValue });
-  };
-
-  // TODO: select value type number 추가?
-  const selectValueChangeHanlder = (value: string | null) => {
-    postValue['memberCapacity'] = Number(value);
-    setPostValue({ ...postValue });
-  };
+  useEffect(() => {
+    if (fillData) {
+      setPostValue(fillData);
+    }
+  }, [fillData]);
 
   const createChallenge = () => {
-    ChallengeAPI.create(id, postValue);
+    if (!fillData) {
+      writeMutation.mutate({ postValue });
+    } else {
+      modifyMutation.mutate({ postId: postValue.id, postValue });
+    }
   };
 
   return (
-    <form>
-      <TextInput name="title" onChange={valueChangeHandler} />
+    <form onSubmit={handleSubmit(createChallenge)}>
+      {postValue.id}
+      <Controller
+        name="title"
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => (
+          <TextInput {...field} {...register('title')} value={postValue.title} onChange={valueChangeHandler} />
+        )}
+      />
       <Radio name="isDaily" defaultChecked value="true" onChange={valueChangeHandler}>
         일별
       </Radio>
       <Radio name="isDaily" value="false" onChange={valueChangeHandler}>
         주별
       </Radio>
-      <Select onValueChange={selectValueChangeHanlder}>
+      <div>
+        기간: <input type="date" name="s_duration" value={postValue.duration.start} onChange={valueChangeHandler} /> ~
+        <input type="date" name="e_duration" value={postValue.duration.end} onChange={valueChangeHandler} />
+      </div>
+      <div>
+        모집 마감일 : <input type="date" name="dueAt" value={postValue.dueAt} onChange={valueChangeHandler} />
+      </div>
+      <Select onValueChange={selectValueChangeHandler} defaultValue={`${postValue.memberCapacity}`}>
         <Select.Trigger placeholder=""></Select.Trigger>
-        {new Array(20).fill(null).map((item: null, index: number) => {
+        {Array.from({ length: 20 }, (_, index) => index + 1).map((item: number, index: number) => {
           return (
-            <Select.Option value={`${index + 1}`} key={index}>
-              {`${index + 1}`}
+            <Select.Option value={`${item}`} key={item}>
+              {`${item}`}
             </Select.Option>
           );
         })}
       </Select>
       <DevSkillCombobox setState={setPostValue} updateDepthName="skill" />
-      <Textarea name="content" onChange={valueChangeHandler} />
-      <Button variant="outline" color="primary-500" onClick={createChallenge}>
+      <Textarea name="content" onChange={valueChangeHandler} defaultValue={postValue.content} />
+      <Button type="submit" variant="outline" color="primary-500" disabled={writeMutation.isLoading ? true : false}>
         작성
       </Button>
     </form>

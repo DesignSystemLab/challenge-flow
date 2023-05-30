@@ -1,30 +1,22 @@
+import { useRouter } from 'next/router';
+import { Button } from '@jdesignlab/react';
 import { ChallengeCard } from '@challenge/components/ChallengeCard';
 import { challengeCardContainer } from '@challenge/styles';
-import { Button } from '@jdesignlab/react';
-import { useRouter } from 'next/router';
-import { ChallengeAPI } from '@challenge/remotes';
 import { ChallengePostFields } from '@challenge/types';
-import { generateNextId } from '@shared/utils';
-import { CHALLENGE_ID_PREFIX } from '@challenge/constants';
-import { useQuery } from 'react-query';
+import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
 
 const ChallengePage = () => {
   const router = useRouter();
-  const { data, isLoading, isError } = useQuery('challengeList', ChallengeAPI.getList);
+  const { useReadListQuery } = useChallengeApi();
+  const { data, isLoading, isError } = useReadListQuery();
 
   const moveToNewChallenge = () => {
     if (data) {
       router.push({
-        pathname: '/challenge/new',
-        query: {
-          id: `${generateNextId(data, CHALLENGE_ID_PREFIX)}`
-        }
+        pathname: '/challenge/new'
       });
     }
   };
-
-  if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>error!</div>;
 
   return (
     <>
@@ -33,8 +25,14 @@ const ChallengePage = () => {
       </Button>
       게시글 총 {data?.length}개
       <div css={challengeCardContainer}>
-          {data && data.length > 0 && data.map((d: ChallengePostFields) => {
-            return <ChallengeCard />;
+        {data &&
+          data.length > 0 &&
+          data.map((post: ChallengePostFields) => {
+            return (
+              <div key={post.id}>
+                <ChallengeCard postInfo={post} />
+              </div>
+            );
           })}
       </div>
     </>
