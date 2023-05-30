@@ -1,15 +1,13 @@
 import { auth } from '@shared/firebase';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import type { FirebaseError } from 'firebase/app';
+import { errorMessage } from '@shared/errorMessage';
 
-export const fetchSigninWithGoogle = async () => {
+export const fetchAuthWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   try {
     const { user } = await signInWithPopup(auth, provider);
     return user;
   } catch (error) {
-    const firebaseError = error as FirebaseError;
-    const { code, message } = firebaseError;
-    throw new Error(`errorCode: ${code}, errorMessage: ${message}`);
+    throw new Error(errorMessage(error));
   }
 };

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import { auth } from '@shared/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { QUREY_KEYS } from '@shared/constants/reactQueryKeys';
-import { setLocalStorageItem, STORAGE_KEYS } from '@shared/storage';
+import { getLocalStorageItem, setLocalStorageItem, clearLocalStorageItem, STORAGE_KEYS } from '@shared/storage/';
 import type { User } from 'firebase/auth';
 
 export const fetchUserAuth = (): Promise<User | null> => {
@@ -19,12 +19,18 @@ export const fetchUserAuth = (): Promise<User | null> => {
 };
 
 export const useUserAuth = () => {
+  const { userAuth } = STORAGE_KEYS;
   const { data: user } = useQuery<User | null>(QUREY_KEYS.user, fetchUserAuth, {
-    initialData: null,
+    staleTime: 60000,
+    cacheTime: 90000,
+    initialData: auth.currentUser,
     onSuccess: (user) => {
-      setLocalStorageItem(STORAGE_KEYS.userAuth, user);
+      setLocalStorageItem(userAuth, user);
+    },
+    onError: () => {
+      clearLocalStorageItem(userAuth);
     }
   });
 
-  return user;
+  return { user };
 };

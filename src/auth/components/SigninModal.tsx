@@ -1,24 +1,33 @@
 import { Modal, Stack, Button } from '@jdesignlab/react';
-import { GitHubIcon, GoogleIcon } from '@shared/components/Icons';
+import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
 import { EmailPasswordForm } from '../components/EmailPasswordForm';
-import { fetchSigninWithGithub } from '../remotes/fetchSigninWithGithub';
-import { fetchSigninWithGoogle } from '../remotes/fetchSigninWithGoogle';
-import { signMachine } from '../machines/signupMachine';
+import { useSigninWithProvider } from '../hooks/useSigninWithProvider';
+import { signMachine } from '../machines/signMachine';
 import { useMachine } from '@xstate/react';
 
 export const SigninModal = () => {
   const [state, send, service] = useMachine(signMachine);
+  const { value: signState, history } = state;
+  const openState = signState !== 'done' && !!history;
+  const { isLoading: loadingGithub, mutate: signinGithub } = useSigninWithProvider('GITHUB', send);
+  const { isLoading: loadingGoogle, mutate: signinGoogle } = useSigninWithProvider('GOOGLE', send);
 
   return (
-    <Modal hasCloseIcon>
-      <Modal.Trigger close={state.value === 'done' ? true : false}>
+    <Modal
+      open={openState}
+      hasCloseIcon
+      onClose={() => {
+        send('CLEAR');
+      }}
+    >
+      <Modal.Trigger>
         <Button variant="outline" color="primary-500">
           로그인
         </Button>
       </Modal.Trigger>
       <Modal.Header>로그인</Modal.Header>
       <Modal.Body>
-        {state.value === 'selection' && (
+        {signState === 'selection' && (
           <Stack direction="vertical">
             <Button
               color="primary-500"
@@ -34,25 +43,27 @@ export const SigninModal = () => {
               color="primary-500"
               variant="outline"
               onClick={() => {
-                fetchSigninWithGithub();
+                signinGithub();
               }}
-              icon={<GitHubIcon />}
+              disabled={loadingGithub}
+              icon={loadingGithub ? <Loading /> : <GitHubIcon />}
             >
               GitHub계정으로 로그인
             </Button>
             <Button
               color="primary-500"
               variant="outline"
-              icon={<GoogleIcon />}
+              disabled={loadingGoogle}
+              icon={loadingGoogle ? <Loading /> : <GoogleIcon />}
               onClick={() => {
-                fetchSigninWithGoogle();
+                signinGoogle();
               }}
             >
               Google계정으로 로그인
             </Button>
           </Stack>
         )}
-        {state.value === 'email' && <EmailPasswordForm signMachine={service} signup={false} />}
+        {signState === 'email' && <EmailPasswordForm signMachine={service} signup={false} />}
       </Modal.Body>
     </Modal>
   );
