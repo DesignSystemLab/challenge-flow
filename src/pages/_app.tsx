@@ -1,21 +1,17 @@
 import { ThemeProvider } from '@jdesignlab/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { AuthProvider } from '@shared/contexts/AuthContext';
-import { AuthMachineContext } from '@shared/contexts/AuthMachineContext';
+import { queryClient } from '@shared/queryClient';
+import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import type { AppProps } from 'next/app';
+import { useState } from 'react';
 
-const ChallengeFlow = ({ Component, pageProps }: AppProps) => {
-  const queryClient = new QueryClient();
-
+const ChallengeFlow = ({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) => {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <AuthProvider> */}
-      <AuthMachineContext.Provider>
-        <ThemeProvider>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </AuthMachineContext.Provider>
-      {/* </AuthProvider> */}
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 };
