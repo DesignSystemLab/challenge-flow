@@ -23,7 +23,7 @@
     "baseUrl": ".",
     "paths": {
       "@banner/*": ["src/banner/*"],
-      "@post/*": ["src/post/*"],
+      "@challenge/*": ["src/challenge/*"],
       "@user/*": ["src/user/*"],
       "@workspace/*": ["src/workspace/*"],
       "@shared/*": ["src/shared/*"],
