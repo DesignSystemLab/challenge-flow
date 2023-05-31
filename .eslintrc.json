@@ -18,17 +18,15 @@
     "es6": true
   },
   "rules": {
+    "object-curly-newline": "off", //import 개행 규칙 제거
+    "react/function-component-definition": [2, { "namedComponents": ["arrow-function"] }], //컴포넌트 기명함수-화살표함수
+    "max-len": ["error", { "code": 120 }], //최대 길이 120(prettier통일)
     "react/no-children-prop": "off",
     "react/react-in-jsx-scope": "off", //react import 생략
     "import/prefer-default-export": "off", //
     "react/jsx-props-no-spreading": "off", //구조분해 할당 반드시 사용
-    "@typescript-eslint/comma-dangle": "off" //마지막 comma 생략 허용
+    "@typescript-eslint/comma-dangle": "off", //마지막 comma 생략 허용
+    "react/jsx-curly-newline": ["error", { "multiline": "consistent" }], //줄바꿈 허용
+    "brace-style": "off"
   }
 }
-
-// {
-//   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-//   parser: '@typescript-eslint/parser',
-//   plugins: ['@typescript-eslint'],
-//   root: true
-// };
