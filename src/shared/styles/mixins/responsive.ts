@@ -1,12 +1,16 @@
-type Breakpoint = Record<'tabletport' | 'tabletland' | 'desktop', number>;
+type Breakpoint = Record<'md' | 'lg' | 'xl', number>;
 const breakpoint: Breakpoint = {
-  tabletport: 600,
-  tabletland: 900,
-  desktop: 1200
+  md: 600,
+  lg: 900,
+  xl: 1200
 };
 
-export const mediaQuery: Record<keyof Breakpoint, string> = {
-  tabletport: `@media (min-width: ${breakpoint['tabletport']}px)`,
-  tabletland: `@media (min-width: ${breakpoint['tabletland']}px)`,
-  desktop: `@media (min-width: ${breakpoint['desktop']}px)`
+export const mq: Record<keyof Breakpoint, string> = {
+  md: `@media (min-width: ${breakpoint['md']}px)`,
+  lg: `@media (min-width: ${breakpoint['lg']}px)`,
+  xl: `@media (min-width: ${breakpoint['xl']}px)`
+};
+
+export const reset = {
+  margin: '0'
 };

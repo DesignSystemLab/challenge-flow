@@ -23,12 +23,13 @@
     "baseUrl": ".",
     "paths": {
       "@banner/*": ["src/banner/*"],
-      "@post/*": ["src/post/*"],
+      "@challenge/*": ["src/challenge/*"],
       "@user/*": ["src/user/*"],
       "@workspace/*": ["src/workspace/*"],
       "@shared/*": ["src/shared/*"],
       "@auth/*": ["src/auth/*"],
       "@pages/*": ["src/pages/*"]
+      "@layout/*": ["src/layout/*"]
     }
   },
   "include": ["src/"],
