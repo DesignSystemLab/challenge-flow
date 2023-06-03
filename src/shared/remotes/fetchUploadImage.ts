@@ -1,5 +1,5 @@
-import { storage } from '../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { storage } from '../firebase';
 import { errorMessage } from '../errorMessage';
 
 export const fetchUploadImage = async (uid: string, file: File | null) => {
