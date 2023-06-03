@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const removeImports = require('next-remove-imports')();
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -9,3 +11,7 @@ module.exports = {
     ]
   }
 };
+
+module.exports = removeImports({
+  ...nextConfig
+});
