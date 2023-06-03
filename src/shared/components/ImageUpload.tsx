@@ -32,15 +32,16 @@ interface Props {
 }
 
 export const ImageUpload = (props: Props) => {
+  const imageUid = useId();
   const { onImage, path, alt, src } = props;
-  const uploadPath = path || useId();
+  const uploadPath = path || imageUid;
   const { mutate: uploadImage, isLoading, data: imageUrl = '' } = useImageUpload(uploadPath);
 
   useEffect(() => {
     if (onImage && imageUrl) {
       onImage(imageUrl);
     }
-  }, [imageUrl]);
+  }, [imageUrl, onImage]);
 
   const uploadPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
