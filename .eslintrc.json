@@ -1,8 +1,16 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "airbnb", "airbnb-typescript", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "import", "react-hooks"],
+  "plugins": ["@typescript-eslint", "import", "react-hooks", "react"],
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaVersion": 2020, //ecmascript사용 버전
