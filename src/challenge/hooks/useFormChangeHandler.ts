@@ -1,6 +1,6 @@
-import { getDate, formatDateTime } from './../../shared/utils/date';
+import { useState } from 'react';
 import { ChallengeFormStates } from '@challenge/types';
-import { useEffect, useState } from 'react';
+import { getDate, formatDateTime } from '../../shared/utils/date';
 
 export const useFormChangeHandler = () => {
   const [postValue, setPostValue] = useState<ChallengeFormStates>({
@@ -20,7 +20,8 @@ export const useFormChangeHandler = () => {
   // TODO: Textarea onChange type 변경?
   // TODO: Textarea -> Markdown모듈로 변경
   const valueChangeHandler = (event: any) => {
-    let { name, value } = event.target;
+    let { value } = event.target;
+    const { name } = event.target;
     if (value === 'true') value = true;
     if (value === 'false') value = false;
 
@@ -48,7 +49,7 @@ export const useFormChangeHandler = () => {
 
   // TODO: select value type number 추가?
   const selectValueChangeHandler = (value: string | null) => {
-    postValue['memberCapacity'] = Number(value);
+    postValue.memberCapacity = Number(value);
     setPostValue({ ...postValue });
   };
 

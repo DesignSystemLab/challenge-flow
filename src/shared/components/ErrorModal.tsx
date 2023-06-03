@@ -23,7 +23,7 @@ export const ErrorModal = (props: ErrorProps) => {
         <Text size="lg">Error</Text>
       </Modal.Header>
       <Modal.Body>
-        <Text color={'red-base'}>{error.message}</Text>
+        <Text color="red-base">{error.message}</Text>
       </Modal.Body>
       <Modal.Footer>
         <Button

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { mq } from '@shared/styles/mixins/responsive';
+import styled from '@emotion/styled';
 
 export const Flex = styled.div`
   color: lightgreen;

@@ -1,8 +1,8 @@
+import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
 import { Modal, Stack, Button } from '@jdesignlab/react';
+import { useMachine } from '@xstate/react';
 import { UserProfileForm } from './UserProfileForm';
 import { EmailPasswordForm } from './EmailPasswordForm';
-import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
-import { useMachine } from '@xstate/react';
 import { signMachine } from '../machines/signMachine';
 import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 import { useSignupWithProvider } from '../hooks/useSignupWithProvider';
@@ -38,7 +38,7 @@ export const SignupModal = () => {
               color="primary-500"
               variant="outline"
               // icon={<Mail />}
-              onClick={(e) => {
+              onClick={() => {
                 send('EMAIL');
               }}
             >
@@ -68,7 +68,7 @@ export const SignupModal = () => {
             </Button>
           </Stack>
         )}
-        {signState === 'email' && <EmailPasswordForm signMachine={service} signup={true} />}
+        {signState === 'email' && <EmailPasswordForm signMachine={service} signup />}
         {signState === 'registry' && <UserProfileForm signupMachineRef={service} />}
       </Modal.Body>
     </Modal>

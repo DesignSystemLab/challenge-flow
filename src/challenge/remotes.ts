@@ -1,8 +1,8 @@
-import { collection, doc, orderBy, query } from 'firebase/firestore';
 import { database } from '@shared/firebase';
-import { ChallengeFormStates } from './types';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import { createOne, getList, getOne, moveDoc, addDataInArrayField, upsertDoc } from '@shared/utils/firestore';
+import { collection, doc, orderBy, query } from 'firebase/firestore';
+import { ChallengeFormStates } from './types';
 
 const REF_NAME = 'challenge';
 const DELETED_REF_NAME = 'deleted-challenge';

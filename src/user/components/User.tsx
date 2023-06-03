@@ -1,3 +1,1 @@
-export const User = () => {
-  return <h2>User</h2>;
-};
+export const User = () => <h2>User</h2>;

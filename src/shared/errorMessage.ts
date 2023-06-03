@@ -8,7 +8,7 @@ export const errorMessage = (error: unknown): string => {
   }
 
   if (error instanceof Error) {
-    error.hasOwnProperty('code');
+    Object.prototype.hasOwnProperty.call(error, 'code');
     return error.message;
   }
 

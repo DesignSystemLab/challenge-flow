@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import { headerWrapper, headerContents, headerLogo, headerRight } from '@layout/styles/header-style';
+import { useRouter } from 'next/router';
 import { Button } from '@jdesignlab/react';
 
 export const Header = () => {
@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header css={headerWrapper}>
       <nav css={headerContents}>
-        <div onClick={moveToMain} css={headerLogo}>
+        <div onClick={moveToMain} css={headerLogo} aria-hidden="true">
           Challenge Flow
         </div>
         <div css={headerRight}>

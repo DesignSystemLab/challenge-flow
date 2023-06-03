@@ -1,4 +1,5 @@
 import { ChallengePostFields } from '@challenge/types';
+import { formatDateTime, getDate } from '@shared/utils/date';
 import {
   DocumentData,
   DocumentReference,
@@ -11,7 +12,14 @@ import {
   setDoc,
   updateDoc
 } from 'firebase/firestore';
-import { formatDateTime, getDate } from '@shared/utils/date';
+
+const addIdToData = (doc: QueryDocumentSnapshot<DocumentData>) =>
+  ({
+    ...doc.data(),
+    id: doc.id
+  } as ChallengePostFields);
+
+const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => Array.from(querySnapshot.docs, addIdToData);
 
 export const createOne = async (ref: DocumentReference<DocumentData>, data: any) => {
   await setDoc(ref, data);
@@ -26,9 +34,8 @@ export const getOne = async (ref: DocumentReference<DocumentData>) => {
   const docSnapshot = await getDoc(ref);
   if (docSnapshot.exists()) {
     return addIdToData(docSnapshot);
-  } else {
-    throw new Error('해당 게시물이 존재하지 않습니다.');
   }
+  throw new Error('해당 게시물이 존재하지 않습니다.');
 };
 
 export const addDataInArrayField = async (ref: DocumentReference<DocumentData>, field: string, data: string) => {
@@ -67,11 +74,3 @@ export const upsertDoc = async (ref: DocumentReference<DocumentData>, newData: a
     throw new Error('해당 게시물이 존재하지 않습니다.');
   }
 };
-
-const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => Array.from(querySnapshot.docs, addIdToData);
-
-const addIdToData = (doc: QueryDocumentSnapshot<DocumentData>) =>
-  ({
-    ...doc.data(),
-    id: doc.id
-  } as ChallengePostFields);

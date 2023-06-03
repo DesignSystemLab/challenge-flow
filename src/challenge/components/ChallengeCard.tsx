@@ -21,7 +21,7 @@ export const ChallengeCard = ({ postInfo }: any) => {
       <Text variant="heading" size="md">
         {postInfo.title}
       </Text>
-      <Flex></Flex>
+      <Flex />
       {postInfo.content}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Text variant="paragraph" size="sm">

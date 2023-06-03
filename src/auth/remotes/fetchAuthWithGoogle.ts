@@ -1,6 +1,6 @@
 import { auth } from '@shared/firebase';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { errorMessage } from '@shared/errorMessage';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 export const fetchAuthWithGoogle = async () => {
   const provider = new GoogleAuthProvider();

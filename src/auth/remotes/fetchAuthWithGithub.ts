@@ -1,6 +1,6 @@
 import { auth } from '@shared/firebase';
-import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 import { errorMessage } from '@shared/errorMessage';
+import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 
 export const fetchAuthWithGithub = async () => {
   const provider = new GithubAuthProvider();

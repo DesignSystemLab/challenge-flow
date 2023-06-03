@@ -1,10 +1,10 @@
-import type { ChallengePostFields } from '@challenge/types';
 import { useEffect } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { Button, Radio, Select, TextInput, Textarea } from '@jdesignlab/react';
 import { DevSkillCombobox } from '@shared/components/DevSkillCombobox';
 import { useFormChangeHandler } from '@challenge/hooks/useFormChangeHandler';
 import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
+import { Button, Radio, Select, TextInput, Textarea } from '@jdesignlab/react';
+import { Controller, useForm } from 'react-hook-form';
+import type { ChallengePostFields } from '@challenge/types';
 
 export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFields }) => {
   const { control, register, handleSubmit } = useForm();
@@ -52,18 +52,16 @@ export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFiel
         모집 마감일 : <input type="date" name="dueAt" value={postValue.dueAt} onChange={valueChangeHandler} />
       </div>
       <Select onValueChange={selectValueChangeHandler} defaultValue={`${postValue.memberCapacity}`}>
-        <Select.Trigger placeholder=""></Select.Trigger>
-        {Array.from({ length: 20 }, (_, index) => index + 1).map((item: number, index: number) => {
-          return (
-            <Select.Option value={`${item}`} key={item}>
-              {`${item}`}
-            </Select.Option>
-          );
-        })}
+        <Select.Trigger placeholder="" />
+        {Array.from({ length: 20 }, (_, index) => index + 1).map((item: number) => (
+          <Select.Option value={`${item}`} key={item}>
+            {`${item}`}
+          </Select.Option>
+        ))}
       </Select>
       <DevSkillCombobox setState={setPostValue} updateDepthName="skill" />
       <Textarea name="content" onChange={valueChangeHandler} defaultValue={postValue.content} />
-      <Button type="submit" variant="outline" color="primary-500" disabled={writeMutation.isLoading ? true : false}>
+      <Button type="submit" variant="outline" color="primary-500" disabled={!!writeMutation.isLoading}>
         작성
       </Button>
     </form>

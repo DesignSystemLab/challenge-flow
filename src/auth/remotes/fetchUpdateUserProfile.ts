@@ -1,6 +1,6 @@
 import { database } from '@shared/firebase';
-import { addDoc, setDoc, collection, doc } from 'firebase/firestore';
 import { errorMessage } from '@shared/errorMessage';
+import { addDoc, setDoc, collection, doc } from 'firebase/firestore';
 import type { UserProfile } from '../types';
 
 export const fetchUpdateUserProfile = async (profile: Omit<UserProfile, 'challenges' | 'note'>, uid?: string) => {

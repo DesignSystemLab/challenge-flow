@@ -19,9 +19,8 @@ export const EmailPasswordForm = (props: Props) => {
     formState: { errors }
   } = useForm();
   const { signMachine, signup } = props;
-  const [_, refSend] = useActor(signMachine);
+  const [, refSend] = useActor(signMachine);
   const { mutate: registry, isLoading } = useAccountEmailWithPassword(signup, refSend);
-  console.log('refSend', _.value);
 
   return (
     <form

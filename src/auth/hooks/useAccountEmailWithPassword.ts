@@ -1,9 +1,9 @@
 import { useErrorBoundary } from 'react-error-boundary';
 import { useMutation } from 'react-query';
 import { User } from 'firebase/auth';
+import { useSetUserAuthData } from './useSetUserAuthData';
 import { fetchSignUpWithEmail } from '../remotes/fetchSignupWithEmail';
 import { fetchSignInWithEmail } from '../remotes/fetchSignWithEmail';
-import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 
 export const useAccountEmailWithPassword = (
   signup: boolean,

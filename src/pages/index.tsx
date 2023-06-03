@@ -1,16 +1,13 @@
-import { Button } from '@jdesignlab/react';
-import { dehydrate, QueryClient } from 'react-query';
 import { ErrorModal } from '@shared/components/ErrorModal';
 import { SignupModal } from '@auth/components/SignupModal';
 import { SigninModal } from '@auth/components/SigninModal';
-import { ErrorBoundary } from 'react-error-boundary';
 import { useUserAuth } from '@auth/hooks/useUserAuth';
-import { ImageUpload } from '@shared/components/ImageUpload';
-import { AuthMachineContext } from '@shared/contexts/AuthMachineContext';
+import { ErrorBoundary } from 'react-error-boundary';
+import { Button } from '@jdesignlab/react';
 
 const index = () => {
   // const [state, send] = AuthMachineContext.useActor();
-  const { user } = useUserAuth();
+  const { data: user } = useUserAuth();
 
   return (
     <div>

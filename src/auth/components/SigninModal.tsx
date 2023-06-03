@@ -1,9 +1,9 @@
-import { Modal, Stack, Button } from '@jdesignlab/react';
 import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
-import { EmailPasswordForm } from '../components/EmailPasswordForm';
+import { Modal, Stack, Button } from '@jdesignlab/react';
+import { useMachine } from '@xstate/react';
+import { EmailPasswordForm } from './EmailPasswordForm';
 import { useSigninWithProvider } from '../hooks/useSigninWithProvider';
 import { signMachine } from '../machines/signMachine';
-import { useMachine } from '@xstate/react';
 
 export const SigninModal = () => {
   const [state, send, service] = useMachine(signMachine);
@@ -33,7 +33,7 @@ export const SigninModal = () => {
               color="primary-500"
               variant="outline"
               // icon={<Mail />}
-              onClick={(e) => {
+              onClick={() => {
                 send('EMAIL');
               }}
             >

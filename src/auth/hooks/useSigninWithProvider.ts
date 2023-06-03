@@ -1,8 +1,8 @@
-import { fetchAuthWithGoogle } from '../remotes/fetchAuthWithGoogle';
-import { fetchAuthWithGithub } from '../remotes/fetchAuthWithGithub';
-import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useMutation } from 'react-query';
+import { useSetUserAuthData } from './useSetUserAuthData';
+import { fetchAuthWithGoogle } from '../remotes/fetchAuthWithGoogle';
+import { fetchAuthWithGithub } from '../remotes/fetchAuthWithGithub';
 import type { AuthProvider } from '../types';
 
 export const useSigninWithProvider = (providerType: AuthProvider, send: (props: { type: 'CLEAR' }) => void) => {

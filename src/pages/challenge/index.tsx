@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
-import { Button } from '@jdesignlab/react';
 import { ChallengeCard } from '@challenge/components/ChallengeCard';
 import { challengeCardContainer } from '@challenge/styles';
 import { ChallengePostFields } from '@challenge/types';
 import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
+import { Button } from '@jdesignlab/react';
+import { useRouter } from 'next/router';
 
 const ChallengePage = () => {
   const router = useRouter();
@@ -27,13 +27,11 @@ const ChallengePage = () => {
       <div css={challengeCardContainer}>
         {data &&
           data.length > 0 &&
-          data.map((post: ChallengePostFields) => {
-            return (
-              <div key={post.id}>
-                <ChallengeCard postInfo={post} />
-              </div>
-            );
-          })}
+          data.map((post: ChallengePostFields) => (
+            <div key={post.id}>
+              <ChallengeCard postInfo={post} />
+            </div>
+          ))}
       </div>
     </>
   );

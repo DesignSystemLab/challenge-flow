@@ -1,4 +1,3 @@
-import { useState } from 'react';
 export { STORAGE_KEYS } from './storageKeys';
 
 export const getLocalStorageItem = <T>(key: string): T | null => {
@@ -31,7 +30,7 @@ export const setLocalStorageItem = <T>(key: string, value: T): void => {
   }
 };
 
-export const clearLocalStorageItem = <T>(key: string): void => {
+export const clearLocalStorageItem = (key: string): void => {
   if (typeof window !== 'undefined') {
     try {
       localStorage.removeItem(key);

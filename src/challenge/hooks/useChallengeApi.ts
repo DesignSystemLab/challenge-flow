@@ -1,6 +1,6 @@
 import { ChallengeFormStates } from '@challenge/types';
-import { useMutation, useQuery } from 'react-query';
 import { ChallengeAPI } from '@challenge/remotes';
+import { useMutation, useQuery } from 'react-query';
 
 export const useChallengeApi = () => {
   const useReadListQuery = () => {

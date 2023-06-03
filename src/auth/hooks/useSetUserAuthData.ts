@@ -1,5 +1,5 @@
-import { useQueryClient } from 'react-query';
 import { QUREY_KEYS } from '@shared/constants/reactQueryKeys';
+import { useQueryClient } from 'react-query';
 import { User } from 'firebase/auth';
 
 export const useSetUserAuthData = () => {

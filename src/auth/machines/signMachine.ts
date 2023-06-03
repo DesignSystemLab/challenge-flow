@@ -1,5 +1,5 @@
-import { createMachine } from 'xstate';
 import { STORAGE_KEYS, setLocalStorageItem } from '@shared/storage';
+import { createMachine } from 'xstate';
 import type { User } from 'firebase/auth';
 
 interface UserContext {
@@ -58,7 +58,7 @@ export const signMachine = createMachine<UserContext, UserEvent>(
           }
         }
       },
-      //등록 상태
+      // 등록 상태
       registry: {
         on: {
           CLEAR: {
@@ -69,7 +69,7 @@ export const signMachine = createMachine<UserContext, UserEvent>(
           }
         }
       },
-      //상태 종료
+      // 상태 종료
       done: {
         type: 'final'
       }
@@ -77,11 +77,12 @@ export const signMachine = createMachine<UserContext, UserEvent>(
   },
   {
     actions: {
-      updateUser: (cotext, payload) => {
+      updateUser: (context, payload) => {
+        const copyContext = context;
         if (payload.type === 'REGISTRY') {
           const { user } = payload;
           setLocalStorageItem(STORAGE_KEYS.userAuth, user);
-          cotext.user = user;
+          copyContext.user = user;
         }
       }
     }

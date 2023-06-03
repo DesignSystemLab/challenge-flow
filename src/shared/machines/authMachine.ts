@@ -1,6 +1,6 @@
-import { assign, createMachine } from 'xstate';
 import { fetchUserAuth } from '@auth/remotes/fetchUserAuth';
 import { setLocalStorageItem } from '@shared/storage/setLocalStorageItem';
+import { assign, createMachine } from 'xstate';
 import type { User } from 'firebase/auth';
 
 export const authMachine = createMachine(

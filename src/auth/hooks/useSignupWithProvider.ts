@@ -1,9 +1,9 @@
-import { fetchAuthWithGoogle } from '../remotes/fetchAuthWithGoogle';
-import { fetchAuthWithGithub } from '../remotes/fetchAuthWithGithub';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useMutation } from 'react-query';
-import type { AuthProvider } from '../types';
+import { fetchAuthWithGoogle } from '../remotes/fetchAuthWithGoogle';
+import { fetchAuthWithGithub } from '../remotes/fetchAuthWithGithub';
 import type { User } from 'firebase/auth';
+import type { AuthProvider } from '../types';
 
 export const useSignupWithProvider = (
   providerType: AuthProvider,

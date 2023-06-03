@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Stack, TextInput, Button, Modal } from '@jdesignlab/react';
-import { Flex } from '../styles/Profile';
-import { useActor } from '@xstate/react';
 import { ImageUpload } from '@shared/components/ImageUpload';
-import { useForm, Controller } from 'react-hook-form';
-import { useProfileUpdate } from '../hooks/useProfileUpdate';
 import { Loading } from '@shared/components/Icons';
+import { useForm, Controller } from 'react-hook-form';
+import { useActor } from '@xstate/react';
+import { Stack, TextInput, Button, Modal } from '@jdesignlab/react';
+import { useProfileUpdate } from '../hooks/useProfileUpdate';
 import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 import { parseUserInfo } from '../parseUserInfo';
+import { Flex } from '../styles/Profile';
 import type { InterpreterFrom } from 'xstate';
 import type { SignMachineType } from '../machines/signMachine';
 import type { UserProfile } from '../types';
@@ -17,16 +17,13 @@ interface Props {
 }
 
 export const UserProfileForm = (props: Props) => {
+  const { signupMachineRef } = props;
   const [photo, setPhoto] = useState<string | null>(null);
-  const [refState, refSend] = useActor(props.signupMachineRef);
-  const user = refState.context.user;
+  const [refState, refSend] = useActor(signupMachineRef);
+  const { user } = refState.context;
   const defaultProfile = parseUserInfo(user);
   const { updateUserData } = useSetUserAuthData();
-  const {
-    control,
-    handleSubmit,
-    formState: { errors }
-  } = useForm();
+  const { control, handleSubmit } = useForm();
   const { mutate: updateProfile, isLoading } = useProfileUpdate(refSend, user?.uid);
 
   const getImagePath = (imageUrl: string | null) => {
@@ -68,7 +65,11 @@ export const UserProfileForm = (props: Props) => {
             </TextInput>
           )}
         />
-        <ImageUpload path={user?.uid} alt={user?.displayName} onImage={getImagePath} />
+        <ImageUpload
+          path={user?.uid}
+          alt={`${user?.displayName} profile image` || 'unknown image'}
+          onImage={getImagePath}
+        />
       </Stack>
       <Modal.Footer>
         <Flex>

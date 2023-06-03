@@ -1,16 +1,34 @@
-import { useId } from 'react';
+import { useId, useEffect } from 'react';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { Button } from '@jdesignlab/react';
-import { Loading } from '../components/Icons';
+import { Loading } from './Icons';
 import { useImageUpload } from '../hooks/useImageUpload';
-import { useEffect } from 'react';
+
+const ImageWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & span {
+    font-size: 0;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+  & input[type='file'] {
+    display: none;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+`;
 
 interface Props {
   path?: string;
-  alt?: string | null;
+  alt?: string;
   src?: string;
-  onImage?: (image: string) => void;
+  onImage?: (image: string) => void | null;
 }
 
 export const ImageUpload = (props: Props) => {
@@ -44,21 +62,9 @@ export const ImageUpload = (props: Props) => {
   );
 };
 
-const ImageWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  & span {
-    font-size: 0;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-  }
-  & input[type='file'] {
-    display: none;
-  }
-
-  & label {
-    cursor: pointer;
-  }
-`;
+ImageUpload.defaultProps = {
+  path: null,
+  alt: null,
+  src: null,
+  onImage: null
+};

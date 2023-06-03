@@ -1,14 +1,13 @@
-import { css } from '@emotion/react';
 import { HEADER_WRPPER_HEIGHT } from '@layout/constant';
 import { mq } from '@shared/styles/mixins/responsive';
+import { css } from '@emotion/react';
 
-export const headerWrapper = () => {
-  return css({
+export const headerWrapper = () =>
+  css({
     borderBottom: 'solid #cccccc 1px',
     height: `${HEADER_WRPPER_HEIGHT}px`,
     boxSizing: 'border-box'
   });
-};
 
 export const headerContents = {
   margin: '0 auto',
