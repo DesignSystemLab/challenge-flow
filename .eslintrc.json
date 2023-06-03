@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "airbnb", "airbnb-typescript"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "airbnb", "airbnb-typescript", "prettier"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "import", "react-hooks"],
   "parserOptions": {
@@ -18,7 +18,38 @@
     "es6": true
   },
   "rules": {
+    "import/order": [
+      "error",
+      {
+        /**
+         * 외부 라이브러리 순서 정리
+         * 1. react/react-dom 최상위
+         * 2. 내장 모듈 builtin
+         * 3. 외부 라이브러리 (@jdesignlab/module, /xstate /reactquery)
+         * 4. 절대 경로 모듈 (@shared/ @auth/)
+         * 5. 상대 경로 모듈 (../a.ts) sibling
+         * 6. 부모 경로 모듈 (../types/a.ts) parent
+         * 7. 타입 모듈 (import type)
+         */
+        "groups": ["builtin", "external", "internal", "sibling", "parent", "type"],
+        "pathGroups": [
+          { "pattern": "react", "group": "builtin", "position": "before" },
+          { "pattern": "react-dom", "group": "builtin", "position": "after" }
+        ]
+      }
+    ],
+    "react/require-default-props": "off", //default props 옵션 예외
+    "jsx-a11y/label-has-associated-control": [
+      //htmlfor 프로퍼티 예외
+      2,
+      {
+        "labelAttributes": ["htmlFor"]
+      }
+    ],
+    "@typescript-eslint/naming-convention": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }], //emotion을 위한 'css' prop은 제외
     "object-curly-newline": "off", //import 개행 규칙 제거
+    "react/jsx-one-expression-per-line": "off",
     "react/function-component-definition": [2, { "namedComponents": ["arrow-function"] }], //컴포넌트 기명함수-화살표함수
     "max-len": ["error", { "code": 120 }], //최대 길이 120(prettier통일)
     "react/no-children-prop": "off",
