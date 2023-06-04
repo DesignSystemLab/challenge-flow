@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import { breakpoints } from '../constants/breakpoints';
-import type { Breakpoint } from '../constants/breakpoints';
+import { breakpoints } from '../constants';
+import type { Breakpoint } from '../constants';
 
 export const useWindowSize = () => {
   const isSSR = typeof window === 'undefined';

@@ -1,5 +1,5 @@
 import { auth } from '@shared/firebase';
-import { QUREY_KEYS } from '@shared/constants/reactQueryKeys';
+import { QUREY_KEYS } from '@shared/constants';
 import { setLocalStorageItem, STORAGE_KEYS } from '@shared/storage';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useQuery } from 'react-query';

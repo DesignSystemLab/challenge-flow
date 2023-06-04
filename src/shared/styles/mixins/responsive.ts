@@ -1,4 +1,4 @@
-import { breakpoints } from '../../constants/breakpoints';
+import { breakpoints } from '../../constants';
 
 type Breakpoint = Record<'md' | 'lg' | 'xl', number>;
 export const breakpoint: Breakpoint = {

@@ -1,4 +1,4 @@
-import { QUREY_KEYS } from '@shared/constants/reactQueryKeys';
+import { QUREY_KEYS } from '@shared/constants';
 import { useQueryClient } from 'react-query';
 import { User } from 'firebase/auth';
 
