@@ -9,6 +9,7 @@
     "airbnb-typescript",
     "prettier"
   ],
+  "ignorePatterns": ["next.config.mjs"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "import", "react-hooks", "react"],
   "parserOptions": {
