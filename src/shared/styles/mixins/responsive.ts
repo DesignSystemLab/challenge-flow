@@ -1,8 +1,8 @@
+import { breakpoints } from '../../constants/breakpoints';
+
 type Breakpoint = Record<'md' | 'lg' | 'xl', number>;
-const breakpoint: Breakpoint = {
-  md: 600,
-  lg: 900,
-  xl: 1200
+export const breakpoint: Breakpoint = {
+  ...breakpoints
 };
 
 export const mq: Record<keyof Breakpoint, string> = {
