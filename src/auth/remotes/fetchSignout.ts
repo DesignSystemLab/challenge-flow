@@ -1,14 +1,11 @@
 import { auth } from '@shared/firebase';
+import { errorMessage } from '@shared/errorMessage';
 import { signOut } from 'firebase/auth';
-import type { FirebaseError } from 'firebase/app';
 
-export const fetchSignout = async (send: (state: string) => void) => {
+export const fetchSignout = async () => {
   try {
     await signOut(auth);
-    send('LOGGED_OUT');
   } catch (error) {
-    const firebaseError = error as FirebaseError;
-    const { code, message } = firebaseError;
-    throw new Error(`errorCode: ${code}, errorMessage: ${message}`);
+    throw new Error(errorMessage(error));
   }
 };
