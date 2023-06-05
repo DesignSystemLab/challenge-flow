@@ -1,6 +1,7 @@
+import DynamicWrapper from '@shared/components/DynamicWrapper';
 import { headerWrapper, headerContents, headerLogo, headerRight } from '@layout/styles/header-style';
+import UserProfile from '@auth/components/UserProfile';
 import { useRouter } from 'next/router';
-import { Button } from '@jdesignlab/react';
 
 export const Header = () => {
   const router = useRouter();
@@ -15,10 +16,9 @@ export const Header = () => {
           Challenge Flow
         </div>
         <div css={headerRight}>
-          <Button color="primary-500">회원가입</Button>
-          <Button variant="outline" color="primary-500">
-            로그인
-          </Button>
+          <DynamicWrapper>
+            <UserProfile />
+          </DynamicWrapper>
         </div>
       </nav>
     </header>
