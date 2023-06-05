@@ -55,6 +55,7 @@
         "labelAttributes": ["htmlFor"]
       }
     ],
+    "react/jsx-no-useless-fragment": "off", //fragment 규칙 제거
     "@typescript-eslint/naming-convention": "off",
     "react/no-unknown-property": ["error", { "ignore": ["css"] }], //emotion을 위한 'css' prop은 제외
     "object-curly-newline": "off", //import 개행 규칙 제거
