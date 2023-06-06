@@ -1,8 +1,9 @@
 import { challengeCard } from '@challenge/styles';
+import { ChallengePostFields } from '@challenge/types';
 import { Button, Flex, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 
-export const ChallengeCard = ({ postInfo }: any) => {
+export const ChallengeCard = ({ postInfo }: { postInfo: ChallengePostFields }) => {
   const router = useRouter();
   const moveToPostDetail = () => {
     router.push({ pathname: `/challenge/${postInfo.id}` });
