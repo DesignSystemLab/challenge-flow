@@ -1,38 +1,31 @@
-import { ChallengeCard } from '@challenge/components/ChallengeCard';
-import { challengeCardContainer } from '@challenge/styles';
-import { ChallengePostFields } from '@challenge/types';
-import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
+import { Suspense } from 'react';
+import DynamicWrapper from '@shared/components/DynamicWrapper';
+import { ErrorModal } from '@shared/components/ErrorModal';
+import { ChallengeList } from '@challenge/components/ChallengeList';
 import { Button } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const ChallengePage = () => {
   const router = useRouter();
-  const { useReadListQuery } = useChallengeApi();
-  const { data, isLoading, isError } = useReadListQuery();
 
   const moveToNewChallenge = () => {
-    if (data) {
-      router.push({
-        pathname: '/challenge/new'
-      });
-    }
+    router.push({
+      pathname: '/challenge/new'
+    });
   };
-
   return (
     <>
-      <Button variant="outline" color="primary-500" onClick={moveToNewChallenge}>
+      <Button variant="outline" color="primary-500" as="a" onClick={moveToNewChallenge}>
         챌린저 모집
       </Button>
-      게시글 총 {data?.length}개
-      <div css={challengeCardContainer}>
-        {data &&
-          data.length > 0 &&
-          data.map((post: ChallengePostFields) => (
-            <div key={post.id}>
-              <ChallengeCard postInfo={post} />
-            </div>
-          ))}
-      </div>
+      <DynamicWrapper>
+        <ErrorBoundary FallbackComponent={ErrorModal}>
+          <Suspense fallback={<div>loading</div>}>
+            <ChallengeList />
+          </Suspense>
+        </ErrorBoundary>
+      </DynamicWrapper>
     </>
   );
 };
