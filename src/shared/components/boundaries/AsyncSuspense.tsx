@@ -3,17 +3,18 @@ import type { ReactElement } from 'react';
 import { useClientSide } from '../../hooks/useClientSide';
 
 interface Props {
-  suspense: ReactElement<{ fallback: ReactElement }>;
+  fallback: ReactElement;
   children: ReactNode;
 }
 
 export const AsyncSuspense = (props: Props) => {
-  const { suspense: suspenseFallback, children } = props;
+  const { fallback, children } = props;
   const { isMounted } = useClientSide();
+
   return (
     <>
-      {isMounted && <Suspense {...suspenseFallback.props}>{children}</Suspense>}
-      {!isMounted && <>{suspenseFallback}</>}
+      {isMounted && <Suspense fallback={fallback}>{children}</Suspense>}
+      {!isMounted && <>{fallback}</>}
     </>
   );
 };
