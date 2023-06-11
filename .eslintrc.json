@@ -47,6 +47,7 @@
         ]
       }
     ],
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }], //props 전달에 의한 중첩 컴포넌트 허용
     "react/require-default-props": "off", //default props 옵션 예외
     "jsx-a11y/label-has-associated-control": [
       //htmlfor 프로퍼티 예외
