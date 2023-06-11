@@ -1,43 +1,48 @@
 import type { ReactElement, ReactNode } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorBoundary, ErrorBoundaryPropsWithRender } from 'react-error-boundary';
 import { ErrorBoundaryWithQuery } from './ErrorBoundaryWithQuery';
 import { AsyncSuspense } from './AsyncSuspense';
-import { CommonErrorFallback } from './CommonErrorFallback';
-import type { FallbackProps } from 'react-error-boundary';
 
-interface ExtendFallbackProps extends FallbackProps {
-  reset?: (...args: unknown[]) => void;
-  retry?: (...args: unknown[]) => void;
-}
+type ExceptFallbackErrorBoundaryAttributes = Omit<
+  ErrorBoundaryPropsWithRender,
+  'fallbackRender' | 'fallback' | 'FallbackComponent'
+>;
 
-interface CompositionBoundaryProps {
+interface CompositionBoundaryPerops extends ExceptFallbackErrorBoundaryAttributes {
   children: ReactNode;
-  suspense: ReactElement<{ fallback: ReactElement }>;
+  suspense: ReactElement;
+  error: ErrorBoundaryPropsWithRender['fallbackRender'];
   queryBoundary?: boolean;
-  error: (props: ExtendFallbackProps) => ReactNode;
-  reset?: (...args: unknown[]) => void;
-  retry?: (...args: unknown[]) => void;
+  onRetry?: (...args: unknown[]) => void;
 }
 
-export const CompositionBoundary = (props: CompositionBoundaryProps) => {
-  const { children, reset, retry, suspense, error: errorFallback = CommonErrorFallback, queryBoundary = false } = props;
-  const { fallback: suspenseFallback } = suspense.props;
+export const CompositionBoundary = (props: CompositionBoundaryPerops) => {
+  const {
+    children,
+    suspense: suspenseFallback,
+    error: errorFallback,
+    queryBoundary = false,
+    onRetry,
+    ...restErrorProps
+  } = props;
+
+  const combineReset = () => {
+    if (onRetry) {
+      onRetry();
+    }
+  };
 
   if (queryBoundary) {
     return (
-      <ErrorBoundaryWithQuery fallback={errorFallback}>
-        <AsyncSuspense suspense={suspenseFallback} children={children} />
+      <ErrorBoundaryWithQuery fallback={errorFallback} {...restErrorProps}>
+        <AsyncSuspense fallback={suspenseFallback} children={children} />
       </ErrorBoundaryWithQuery>
     );
   }
 
   return (
-    <ErrorBoundary
-      fallbackRender={({ error, resetErrorBoundary }: FallbackProps) => (
-        <>{errorFallback({ resetErrorBoundary, error, reset, retry })}</>
-      )}
-    >
-      <AsyncSuspense suspense={suspenseFallback} children={children} />
+    <ErrorBoundary fallbackRender={errorFallback} onReset={combineReset} {...restErrorProps}>
+      <AsyncSuspense fallback={suspenseFallback} children={children} />
     </ErrorBoundary>
   );
 };

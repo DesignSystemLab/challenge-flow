@@ -1,27 +1,31 @@
 import type { ReactNode } from 'react';
 import { useQueryErrorResetBoundary } from 'react-query';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary, ErrorBoundaryPropsWithRender } from 'react-error-boundary';
 
-interface ExtendFallbackProps extends FallbackProps {
-  reset: (...args: unknown[]) => void;
-  retry?: (...args: unknown[]) => void;
-}
+type ExceptFallbackErrorBoundaryAttributes = Omit<
+  ErrorBoundaryPropsWithRender,
+  'fallbackRender' | 'fallback' | 'FallbackComponent'
+>;
 
-interface Props {
+interface Props extends ExceptFallbackErrorBoundaryAttributes {
   children: ReactNode;
-  fallback: (props: ExtendFallbackProps) => ReactNode;
-  retry?: (...args: unknown[]) => void;
+  fallback: ErrorBoundaryPropsWithRender['fallbackRender'];
+  onRetry?: (...args: unknown[]) => void;
 }
 
 export const ErrorBoundaryWithQuery = (props: Props) => {
-  const { children, fallback, retry } = props;
-  const { reset } = useQueryErrorResetBoundary();
+  const { children, fallback, onRetry, ...restErrorProps } = props;
+  const { reset: reactQueryReset } = useQueryErrorResetBoundary();
+
+  const combineReset = () => {
+    reactQueryReset();
+    if (onRetry) {
+      onRetry();
+    }
+  };
+
   return (
-    <ErrorBoundary
-      fallbackRender={({ error, resetErrorBoundary }: FallbackProps) => (
-        <>{fallback({ resetErrorBoundary, error, reset, retry })}</>
-      )}
-    >
+    <ErrorBoundary fallbackRender={fallback} onReset={combineReset} {...restErrorProps}>
       {children}
     </ErrorBoundary>
   );
