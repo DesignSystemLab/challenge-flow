@@ -1,5 +1,5 @@
 import { Text, TextInput, Button, Modal } from '@jdesignlab/react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
 import { Flex } from '../styles/Profile';
 import { useAccountEmailWithPassword } from '../hooks/useAccountEmailWithPassword';
@@ -14,7 +14,7 @@ interface Props {
 
 export const EmailPasswordForm = (props: Props) => {
   const {
-    control,
+    register,
     handleSubmit,
     formState: { errors }
   } = useForm();
@@ -28,39 +28,34 @@ export const EmailPasswordForm = (props: Props) => {
         registry(userInfo as EamilPasswordField);
       })}
     >
-      <Controller
-        name="email"
-        control={control}
-        rules={{
+      <TextInput
+        {...register('email', {
           required: '이메일을 입력해주세요.',
           pattern: {
             value: /[a-z0-9]+@[a-z]+.[a-z]{2,3}/,
             message: '이메일 형식에 맞지 않습니다.'
           }
-        }}
-        render={({ field }) => (
-          <TextInput {...field} size="md" clearable>
-            <TextInput.Label>Email</TextInput.Label>
-          </TextInput>
-        )}
-      />
+        })}
+        size="md"
+        clearable
+      >
+        <TextInput.Label>Email</TextInput.Label>
+      </TextInput>
       {errors.email && <Text color="red-base">{errors.email.message as string}</Text>}
-      <Controller
-        name="password"
-        control={control}
-        rules={{
+      <TextInput
+        {...register('password', {
           required: '비밀번호를 입력해주세요.',
           minLength: {
             message: '비밀번호는 최소 8자 이상으로 입력해주세요.',
             value: 8
           }
-        }}
-        render={({ field }) => (
-          <TextInput {...field} size="md" clearable type="password">
-            <TextInput.Label>Password</TextInput.Label>
-          </TextInput>
-        )}
-      />
+        })}
+        size="md"
+        type="password"
+        clearable
+      >
+        <TextInput.Label>Password</TextInput.Label>
+      </TextInput>
       {errors.password && <Text color="red-base">{errors.password.message as string}</Text>}
       <Modal.Footer>
         <Flex>
