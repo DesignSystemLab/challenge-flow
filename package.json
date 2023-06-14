@@ -5,9 +5,9 @@
   "packageManager": "yarn@3.5.1",
   "scripts": {
     "lint": "eslint \"**/*.{ts,tsx,js}\"",
-    "start": "next start -p $PORT",
-    "dev": "next dev",
-    "build": "next build",
+    "start": "yarn next start -p $PORT",
+    "dev": "yarn next dev",
+    "build": "yarn next build",
     "heroku-postbuild": "yarn run build"
   },
   "engines": {
