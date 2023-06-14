@@ -1,17 +1,25 @@
-import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
+import { ParsedUrlQuery } from 'querystring';
 import { CreateChallengeForm } from '@challenge/components/CreateChallengeForm';
-import { useRouter } from 'next/router';
+import { ChallengeAPI } from '@challenge/remotes';
+import { ChallengePostFields } from '@challenge/types';
+import { GetServerSideProps } from 'next';
 
-const ModifyPost = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const { useReadDetailQuery } = useChallengeApi();
-  const { data } = useReadDetailQuery(id as string);
+interface QueryInterface extends ParsedUrlQuery {
+  id?: string;
+}
 
-  return (
-    <div>
-      <CreateChallengeForm fillData={data} />
-    </div>
-  );
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.params as QueryInterface;
+  if (id) {
+    const postInfo = await ChallengeAPI.getPostDetail(id);
+    return { props: { postInfo } };
+  }
+  return { props: {} };
 };
+
+const ModifyPost = ({ postInfo }: { postInfo: ChallengePostFields }) => (
+  <div>
+    <CreateChallengeForm fillData={postInfo} />
+  </div>
+);
 export default ModifyPost;
