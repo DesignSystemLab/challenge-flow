@@ -1,8 +1,10 @@
 import { ChallengeAPI } from '@challenge/remotes';
 import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
 import { ChallengePostFields } from '@challenge/types';
+import { Reactions } from 'src/reaction/components/Reactions';
+import { ChallengeInfo } from '@challenge/components/ChallengeInfo';
 import { useRouter } from 'next/router';
-import { Button, Text } from '@jdesignlab/react';
+import { Button } from '@jdesignlab/react';
 
 export async function getServerSideProps(props: any) {
   const { id } = props.params;
@@ -32,23 +34,20 @@ const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
 
   return (
     <div>
-      {postInfo.id}
-      <Text variant="heading" size="xl">
-        {postInfo.title}
-      </Text>
-      <Text variant="paragraph" size="md">
-        {postInfo.content}
-      </Text>
-      <hr />
-      <Button variant="outline" disabled={!!applyMutation.isLoading} onClick={onClickApply}>
-        {applyMutation.isLoading ? '신청 중' : '참여신청'}
-      </Button>
-      <Button variant="outline" onClick={modifyPost}>
-        수정
-      </Button>
-      <Button variant="outline" onClick={deletePost} disabled={!!deleteMutation.isLoading}>
-        {deleteMutation.isLoading ? '삭제 중' : '삭제'}
-      </Button>
+      <div>
+        <ChallengeInfo postInfo={postInfo} />
+        <hr />
+        <Button variant="outline" disabled={!!applyMutation.isLoading} onClick={onClickApply}>
+          {applyMutation.isLoading ? '신청 중' : '참여신청'}
+        </Button>
+        <Button variant="outline" onClick={modifyPost}>
+          수정
+        </Button>
+        <Button variant="outline" onClick={deletePost} disabled={!!deleteMutation.isLoading}>
+          {deleteMutation.isLoading ? '삭제 중' : '삭제'}
+        </Button>
+      </div>
+      <Reactions originId={postInfo.id} />
     </div>
   );
 };
