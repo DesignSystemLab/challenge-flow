@@ -9,6 +9,10 @@
     "dev": "next dev",
     "build": "next build"
   },
+  "engines": {
+    "node": "19.4.0",
+    "npm": "9.2.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
