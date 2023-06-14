@@ -14,9 +14,7 @@ export const useChallengeApi = () => {
   };
 
   const useWriteMutation = () => {
-    const writeMutation = useMutation(({ postValue }: { postValue: ChallengeFormStates }) =>
-      ChallengeAPI.create(postValue)
-    );
+    const writeMutation = useMutation(({ data }: { data: ChallengeFormStates }) => ChallengeAPI.create(data));
     return writeMutation;
   };
 
@@ -32,8 +30,8 @@ export const useChallengeApi = () => {
   };
 
   const useModifyMutation = () => {
-    const modifyMutation = useMutation(({ postId, postValue }: { postId: string; postValue: ChallengeFormStates }) =>
-      ChallengeAPI.modifyPost(postId, postValue)
+    const modifyMutation = useMutation(({ postId, data }: { postId: string; data: ChallengeFormStates }) =>
+      ChallengeAPI.modifyPost(postId, data)
     );
     return modifyMutation;
   };
