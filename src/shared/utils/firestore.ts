@@ -1,4 +1,3 @@
-import { ChallengePostFields } from '@challenge/types';
 import { database } from '@shared/firebase';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import {
@@ -19,7 +18,7 @@ const addIdToData = (datatDoc: QueryDocumentSnapshot<DocumentData>) =>
   ({
     ...datatDoc.data(),
     id: datatDoc.id
-  } as ChallengePostFields);
+  } as any);
 
 const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => Array.from(querySnapshot.docs, addIdToData);
 
