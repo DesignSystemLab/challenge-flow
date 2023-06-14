@@ -1,5 +1,4 @@
-import { ReactNode, Suspense } from 'react';
-import type { ReactElement } from 'react';
+import { ReactNode, Suspense, ReactElement } from 'react';
 import { useClientSide } from '../../hooks/useClientSide';
 
 interface Props {
