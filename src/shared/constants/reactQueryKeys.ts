@@ -1,5 +1,6 @@
-type QueryKeys = 'user';
+type QueryKeys = 'user' | 'worksapace';
 
 export const QUREY_KEYS: Record<QueryKeys, QueryKeys> = {
-  user: 'user'
+  user: 'user',
+  worksapace: 'worksapace'
 };
