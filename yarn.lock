@@ -1141,180 +1141,180 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/box@npm:0.5.3":
-  version: 0.5.3
-  resolution: "@jdesignlab/box@npm:0.5.3"
+"@jdesignlab/box@npm:0.5.5":
+  version: 0.5.5
+  resolution: "@jdesignlab/box@npm:0.5.5"
   dependencies:
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 1a52af364bebae64aec0e26bbd2ad3d8f097d4164dfe0c6e6c50347778b810035e5daf23c0aedf14b900f88c0cd31400203c9555fd5bd19ad6c689007776a23c
+  checksum: 1bc5a76402ca5e1429370aab7ba89d10d26533c6afda7ff9bd24e580ca5b533c15120b6d128888b656205394c25446facc411716027a409a7a0ab7c0e5bb5d73
   languageName: node
   linkType: hard
 
-"@jdesignlab/button@npm:0.6.3":
-  version: 0.6.3
-  resolution: "@jdesignlab/button@npm:0.6.3"
-  dependencies:
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/react-icons": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/utils": 0.5.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: a2e660997a49d9fae5c25f37394524bc6a2f53f38f306c6eb6884f4e85846cfa9d39c65daae6f9404aae393a5e7b4ccd5346287026d82e2b9ea999777764f8c2
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/card@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/card@npm:0.5.2"
-  dependencies:
-    "@jdesignlab/flex": 0.5.2
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/utils": 0.5.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: ed6087ef3ac33044f35516879c98b4f5eb8c941acd0bf5338d640e608b86274f20cfc276da501bbf3ce4627fa1a14728f65e23127fd8069c00096a09bf185af1
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/checkbox@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/checkbox@npm:0.5.2"
-  dependencies:
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/utils": 0.5.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: d29d77aa315f91dc00478f7272493e5e76da554ac50ebdc93963490a4053d793736aead44c06708449154acffa6e920555ed5c012a4225f66521a6ee5493f097
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/drawer@npm:0.5.3":
-  version: 0.5.3
-  resolution: "@jdesignlab/drawer@npm:0.5.3"
-  dependencies:
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/flex": 0.5.2
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/react-icons": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/utils": 0.5.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: 54f70c80daaaac92c54dddde4efc099199bfac56af6a44b44be1a31cdca465421ca54941a1d502e5129c1b1f53e7ffacd74df2077e48f4b3e6762cd5515d3c73
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/dropdown@npm:0.5.3":
-  version: 0.5.3
-  resolution: "@jdesignlab/dropdown@npm:0.5.3"
-  dependencies:
-    "@jdesignlab/flex": 0.5.2
-    "@jdesignlab/react-icons": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: a7552279086f7986e98394c0ebf3731db5e62ae6e6503f5dd4fe8316747c427e1b9bec785a78fe7d6a6dc9408d8b7c1236999c3a4727d228555f2f104a46b138
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/flex@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/flex@npm:0.5.2"
-  dependencies:
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: ec274b354f65403e76d3accc0ba6e5df44907c6d21c48a679075c68aa17074120c6f600289b924f3b25f9848e6e87230ec7a7294d2da67728710b9def549c1e8
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/input@npm:0.7.1":
+"@jdesignlab/button@npm:0.7.1":
   version: 0.7.1
-  resolution: "@jdesignlab/input@npm:0.7.1"
+  resolution: "@jdesignlab/button@npm:0.7.1"
   dependencies:
-    "@jdesignlab/j-provider": 0.6.0
+    "@jdesignlab/j-provider": 0.6.1
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: ab3ca69eeb00283ad93f18d3540fde38a4d43837eb4a30d6df591bc828168e9452d1e3c7237a23558a4100c424927c5db391eae9ab01e915ad5666a102c40f8a
+  checksum: 138e5280f1c9a006c4f89f6a04272a76f3430575553d89ae6da1fc14343aab62b7c57af2c34cc8388f271f946b4e40ea37e56605219546f89f630dad722d7462
   languageName: node
   linkType: hard
 
-"@jdesignlab/j-provider@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/j-provider@npm:0.6.0"
+"@jdesignlab/card@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/card@npm:0.5.3"
   dependencies:
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-  checksum: 2d318a45d254f369443c2d812894bb8e9b702c9829b0426068adb2e4c043a5cae187436b526d85d75a7016e9a96c2ff37becb0bf6d14540fe6e20eaa2728c3b9
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/modal@npm:0.7.4":
-  version: 0.7.4
-  resolution: "@jdesignlab/modal@npm:0.7.4"
-  dependencies:
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/flex": 0.5.2
-    "@jdesignlab/input": 0.7.1
-    "@jdesignlab/react-icons": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-  peerDependencies:
-    "@emotion/react": ~11
-    react: ~18
-    react-dom: ~18
-  checksum: 88a015bbb76b8ed89eae971123faede1e6de8bf01d3880ab7a42383b2ce8e6bc84902644e333c5d4e558ba07874ba71671ef4a0c45a79d9118da16ec14166a1e
-  languageName: node
-  linkType: hard
-
-"@jdesignlab/radio@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/radio@npm:0.5.2"
-  dependencies:
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/flex": 0.5.3
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 1cd725b30c9fedfb8cc433345660d294bedb5d49640371450e98d0a2737b9e6293fb7ecae5d2afb6e4bbd5cf5df32c19d364169faa56ac69fe13ad9ba720e399
+  checksum: 08fbcfbe98a8a1f74562b8e7c2670cdff9c494db9c7860bcaf3ae8e35a980a53d897f487f1c6a2b4a1dfe960bb50e86cee6542ae408016ed63064b2b4c4f0625
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/checkbox@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/checkbox@npm:0.5.3"
+  dependencies:
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/utils": 0.5.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: 345b86443380af5f9876ddace2379be95efcaa5eb183671b9763fe4ea6f65cd898ad556af2ade76616407f0b6906a2976de0ef1aa959a8393e60225829dbfe90
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/drawer@npm:0.5.5":
+  version: 0.5.5
+  resolution: "@jdesignlab/drawer@npm:0.5.5"
+  dependencies:
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/flex": 0.5.3
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/react-icons": 0.6.0
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/utils": 0.5.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: a73d52ddfcd9a023ab0cb0d6967d12406546fd79e750f86b53aeb81f355ff67597c99de2f9e558ba3c060cf9c587390bd3d2c63b953889c35d92ebf0c25504c7
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/dropdown@npm:0.5.4":
+  version: 0.5.4
+  resolution: "@jdesignlab/dropdown@npm:0.5.4"
+  dependencies:
+    "@jdesignlab/flex": 0.5.3
+    "@jdesignlab/react-icons": 0.6.0
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: 1a2391592a9c001c0ebeaf3e4a9df0edd0216954e6c1359272f2730450d0fe7c4e1ee4a4eabecb680cd178e7f74f0bf54d962a3784c44d8a5a72548d42ec78ee
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/flex@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/flex@npm:0.5.3"
+  dependencies:
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/theme": 0.7.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: 8b512d17565d0c82859effadda53008bef7af79b0dc7cf9338e4942e526cf18b8ae9cf6cfdd4a3f2e50e6428f33fb0fc85069bdc1d731ff3a4bdbc6b0deef91a
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/input@npm:0.7.2":
+  version: 0.7.2
+  resolution: "@jdesignlab/input@npm:0.7.2"
+  dependencies:
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/react-icons": 0.6.0
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/utils": 0.5.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: 7d1bb8a87f88bd03bb581f024b5746a6894132a0125b6d4165a8603ee0c8386cb53ad08e39a3d7e1d3d2f3eb7862be629f6d9b2894dc546f2c4dd51cae96675b
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/j-provider@npm:0.6.1":
+  version: 0.6.1
+  resolution: "@jdesignlab/j-provider@npm:0.6.1"
+  dependencies:
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+  checksum: 2a41bf6a5f4701ddc268d4dec0bb12b5d31a54d0b32c6c886c413e439810a07bbe44d0ba92a27ea8acf1db2fd142a0a8ba7e357f4ad1719833e1e1238090d61d
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/modal@npm:0.7.6":
+  version: 0.7.6
+  resolution: "@jdesignlab/modal@npm:0.7.6"
+  dependencies:
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/flex": 0.5.3
+    "@jdesignlab/input": 0.7.2
+    "@jdesignlab/react-icons": 0.6.0
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: b508aaa7ef378058f6152f9d49b49066eacdd14853f6f58cf1e197de1605ea847ccb6e7eae7b6524ab39badf7b2709a1457d24e3350a78376e7a17d34e5e6697
+  languageName: node
+  linkType: hard
+
+"@jdesignlab/radio@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/radio@npm:0.5.3"
+  dependencies:
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/react-utils": 0.6.0
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/utils": 0.5.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: b763806b312d39f78382a338b99bbc8f227195f54002142a5f917582edb3f99b8e9b0933f9f7ccfedb2508f90b9712120232b019dd7c20d2bf4ddaf7950de811
   languageName: node
   linkType: hard
 
@@ -1351,68 +1351,68 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/react@npm:^0.6.4":
-  version: 0.6.4
-  resolution: "@jdesignlab/react@npm:0.6.4"
+"@jdesignlab/react@npm:^0.6.6":
+  version: 0.6.6
+  resolution: "@jdesignlab/react@npm:0.6.6"
   dependencies:
-    "@jdesignlab/box": 0.5.3
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/card": 0.5.2
-    "@jdesignlab/checkbox": 0.5.2
-    "@jdesignlab/drawer": 0.5.3
-    "@jdesignlab/dropdown": 0.5.3
-    "@jdesignlab/flex": 0.5.2
-    "@jdesignlab/input": 0.7.1
-    "@jdesignlab/j-provider": 0.6.0
-    "@jdesignlab/modal": 0.7.4
-    "@jdesignlab/radio": 0.5.2
+    "@jdesignlab/box": 0.5.5
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/card": 0.5.3
+    "@jdesignlab/checkbox": 0.5.3
+    "@jdesignlab/drawer": 0.5.5
+    "@jdesignlab/dropdown": 0.5.4
+    "@jdesignlab/flex": 0.5.3
+    "@jdesignlab/input": 0.7.2
+    "@jdesignlab/j-provider": 0.6.1
+    "@jdesignlab/modal": 0.7.6
+    "@jdesignlab/radio": 0.5.3
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/select": 0.6.1
-    "@jdesignlab/stack": 0.5.2
+    "@jdesignlab/select": 0.6.3
+    "@jdesignlab/stack": 0.5.3
     "@jdesignlab/tabs": 0.5.0
-    "@jdesignlab/textarea": 0.7.0
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/tooltip": 0.5.3
-    "@jdesignlab/typography": 0.5.2
+    "@jdesignlab/textarea": 0.7.1
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/tooltip": 0.5.5
+    "@jdesignlab/typography": 0.5.3
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: e23733181b72b2ec766910dd2108047713bda41728f9ae453d796ba3e201dbf0af17e9e3ee6c08d14db77b9f9a577702dcad0fbdba0e7eb6451a5c5dc1a84aaa
+  checksum: 7d524da1cb9dd2a7ac2dac99d3591e2de31ceb079556f7b6ce0f622c7bc914f1be0b26e48f0596c2f6208b4127791a71e0b86bff7d232edc02ba86f3f747c3a2
   languageName: node
   linkType: hard
 
-"@jdesignlab/select@npm:0.6.1":
-  version: 0.6.1
-  resolution: "@jdesignlab/select@npm:0.6.1"
+"@jdesignlab/select@npm:0.6.3":
+  version: 0.6.3
+  resolution: "@jdesignlab/select@npm:0.6.3"
   dependencies:
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/flex": 0.5.2
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/flex": 0.5.3
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 576f05ab88c16efab71ba8cbc9eb2a06917fbbebea92f982d1098c112008bc5c1ad62ad13b0fae6fdca3f24091d0ad52c395f034bc0da46ef6e1c2c7746ca816
+  checksum: bf5dc0111b3113ac7e40b879745c735b4299a6a20a9d5d2edc1153bc9073d1d0227c1d4db9408c5ee004f80026de2532d58e8df4576f7c18cd3c9c44e171e1d5
   languageName: node
   linkType: hard
 
-"@jdesignlab/stack@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/stack@npm:0.5.2"
+"@jdesignlab/stack@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/stack@npm:0.5.3"
   dependencies:
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 6c579a3e30e2a225a391b578d0c303a56ada72ad8d789f85c040d55286907ca21d04d28ba22560b5e244cd81a80afdc7017cf755ec75d65bda552f68fe5ed637
+  checksum: 9704a8d75dd8fe6611dfcfbd8c44fb2de44757542ded85a293f9961a9dfdb99da237cd54be50baf0908868f95d67841ae8fe45f55c771679aa45931835387757
   languageName: node
   linkType: hard
 
@@ -1431,19 +1431,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/textarea@npm:0.7.0":
-  version: 0.7.0
-  resolution: "@jdesignlab/textarea@npm:0.7.0"
+"@jdesignlab/textarea@npm:0.7.1":
+  version: 0.7.1
+  resolution: "@jdesignlab/textarea@npm:0.7.1"
   dependencies:
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
-    "@jdesignlab/typography": 0.5.2
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/typography": 0.5.3
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 39c06d0b594b953658c8af8e76d0015f2cc1a78ff11bbb826a359ce76491895725e12fddb4f31b140a3b2d22839883352681aa08c7bbe746352446fc3cfb6979
+  checksum: 577ba879f89e9cf763c961bca4d18dbc54f272e900d5ab1168cbb1f7855f89ee35094d2ac82cdd6d3df4ebcd47a6a344bd32c09634d6e3a5fbbf576bc883ac91
   languageName: node
   linkType: hard
 
@@ -1454,44 +1454,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/theme@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/theme@npm:0.6.0"
-  checksum: 6df87006822627670f197cfe5c310e61312ad48fb2e55db4f0a34f6c6db1d0027478d31c9b8fbf036bdb0922e471b788785cb899e4e522ca5e116a494eb41456
+"@jdesignlab/theme@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@jdesignlab/theme@npm:0.7.0"
+  checksum: 4a8a87953d1fce3d6a87cc03ac94ca14fa046b29b3e86ea0e9705a157ce420679f22921585484cd65d724f3eb15af5f54c4e5baadfb74f830e6e7f52ebd2078d
   languageName: node
   linkType: hard
 
-"@jdesignlab/tooltip@npm:0.5.3":
-  version: 0.5.3
-  resolution: "@jdesignlab/tooltip@npm:0.5.3"
+"@jdesignlab/tooltip@npm:0.5.5":
+  version: 0.5.5
+  resolution: "@jdesignlab/tooltip@npm:0.5.5"
   dependencies:
-    "@jdesignlab/button": 0.6.3
-    "@jdesignlab/j-provider": 0.6.0
+    "@jdesignlab/button": 0.7.1
+    "@jdesignlab/j-provider": 0.6.1
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 3c1aad4f10782331868232e177d659e3e1ed5933cd1adf793c05f637b77ad77436391b8e4d4e439bc8bab95a190f502035f0a0b6bc53bcafb8f41ee5973060f3
+  checksum: d0aa7d9945960ec62447489570becc08e33194b642fc440a26b402fdf5fe781e8ff09dcfceff314b9b1a7a2038903fe77afb585139610ba756ec82ae530a7d55
   languageName: node
   linkType: hard
 
-"@jdesignlab/typography@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@jdesignlab/typography@npm:0.5.2"
+"@jdesignlab/typography@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@jdesignlab/typography@npm:0.5.3"
   dependencies:
-    "@jdesignlab/j-provider": 0.6.0
+    "@jdesignlab/j-provider": 0.6.1
     "@jdesignlab/react-utils": 0.6.0
-    "@jdesignlab/theme": 0.6.0
+    "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 74507c2af2cacbfba71ccd72b3080e7222602c0977b7cf6d23eb09520ac6ee586fd62a5b502900045fc4246a9fa653572da7e31d2e9bee5ac4870000a49bc1f8
+  checksum: 579534f3f52af3477d3db1d6c6e0dffdd9947e32aee9f95368352a27ad0a8d013e6097c7be1b63b4e429e7e63297bec84a2dc8e651fa6169fc9ea2f8f7a6b31a
   languageName: node
   linkType: hard
 
@@ -1555,6 +1555,15 @@ __metadata:
   version: 12.3.4
   resolution: "@next/env@npm:12.3.4"
   checksum: daa3fc11efd1344c503eab41311a0e503ba7fd08607eeb3dc571036a6211eb37959cc4ed48b71dcc411cc214e7623ffd02411080aad3e09dc6a1192d5b256e60
+  languageName: node
+  linkType: hard
+
+"@next/eslint-plugin-next@npm:^13.4.5":
+  version: 13.4.5
+  resolution: "@next/eslint-plugin-next@npm:13.4.5"
+  dependencies:
+    glob: 7.1.7
+  checksum: cf41158026c6dac8673346f9580875f0a8c77ad2d98b3f62ff66e28fa065aac8558f24276d8f2af93102375dfc2784b3731f9aa4357a817e970db154e0f16b2b
   languageName: node
   linkType: hard
 
@@ -2586,8 +2595,9 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8
-    "@jdesignlab/react": ^0.6.4
+    "@jdesignlab/react": ^0.6.6
     "@jdesignlab/react-icons": ^0.6.0
+    "@next/eslint-plugin-next": ^13.4.5
     "@toast-ui/editor": ^3.2.2
     "@toast-ui/editor-plugin-code-syntax-highlight": ^3.1.0
     "@toast-ui/react-editor": ^3.2.3
@@ -3894,6 +3904,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:7.1.7":
+  version: 7.1.7
+  resolution: "glob@npm:7.1.7"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^3.0.4
+    once: ^1.3.0
+    path-is-absolute: ^1.0.0
+  checksum: b61f48973bbdcf5159997b0874a2165db572b368b931135832599875919c237fc05c12984e38fe828e69aa8a921eb0e8a4997266211c517c9cfaae8a93988bb8
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.1.3":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -4830,7 +4854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
+"minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
   dependencies:
