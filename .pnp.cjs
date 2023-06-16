@@ -53,6 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@xstate/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:3.2.2"],\
             ["babel-loader", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:9.1.2"],\
             ["babel-plugin-transform-remove-imports", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:1.7.0"],\
+            ["bluebird", "npm:3.7.2"],\
             ["cypress", "npm:12.12.0"],\
             ["date-fns", "npm:2.30.0"],\
             ["eslint", "npm:8.39.0"],\
@@ -6401,6 +6402,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@xstate/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:3.2.2"],\
             ["babel-loader", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:9.1.2"],\
             ["babel-plugin-transform-remove-imports", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:1.7.0"],\
+            ["bluebird", "npm:3.7.2"],\
             ["cypress", "npm:12.12.0"],\
             ["date-fns", "npm:2.30.0"],\
             ["eslint", "npm:8.39.0"],\
