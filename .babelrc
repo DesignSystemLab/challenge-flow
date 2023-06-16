@@ -8,8 +8,7 @@
           "importSource": "@emotion/react"
         }
       }
-    ],
-    ["@babel/preset-env", { "targets": { "node": "current" } }]
+    ]
   ],
   "plugins": [["@emotion/babel-plugin"]]
 }
