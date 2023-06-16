@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "extends": ["plugin:cypress/recommended", "cypress"],
+      "files": ["cypress/**/*.ts"],
+      "rules": {
+        "semi": "off",
+        "@typescript-eslint/semi": "error"
+      }
+    }
+  ]
+}
