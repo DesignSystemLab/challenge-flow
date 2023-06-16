@@ -32,6 +32,7 @@
       "@layout/*": ["src/layout/*"]
     }
   },
+  "types": ["@types/jest", "@testing-library/jest-dom"],
   "include": ["src/"],
   "exclude": ["node_modules"]
 }
