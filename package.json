@@ -19,7 +19,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
-    "@jdesignlab/react": "^0.6.6",
+    "@jdesignlab/react": "^0.6.8",
     "@jdesignlab/react-icons": "^0.6.0",
     "@toast-ui/editor": "^3.2.2",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.1.0",
