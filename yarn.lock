@@ -1739,18 +1739,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/card@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/card@npm:0.6.0"
+"@jdesignlab/card@npm:0.6.1":
+  version: 0.6.1
+  resolution: "@jdesignlab/card@npm:0.6.1"
   dependencies:
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/theme": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 7a5bde31f48d12bb7c3832b0973eab9dcd21afef7a6d4fff904cea6e75b593e996040da78c64bd29727699a0ee2f5271a083ae1b871259376652e05ca101d262
+  checksum: f716321abbc1179d77d18c0e7b47b9beb9b30d7fd2cd8e7f08948082d27b24a00cc9ad2e0abdbc1b4a0d8af451bc868973c01bb65fd638227d527811aaa622f3
   languageName: node
   linkType: hard
 
@@ -1770,12 +1770,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/drawer@npm:0.5.7":
-  version: 0.5.7
-  resolution: "@jdesignlab/drawer@npm:0.5.7"
+"@jdesignlab/drawer@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@jdesignlab/drawer@npm:0.5.8"
   dependencies:
     "@jdesignlab/button": 0.8.0
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/j-provider": 0.6.2
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
@@ -1785,15 +1785,15 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 79fe79dea1bbd8ca71b05708be538478f453cad709d652f64da30fa6359fa81b5f30924aea052999d911c7a5c91f15122d4d321c0fca6bfad6f2993ee2f26eb9
+  checksum: 267efee2e3b0d7a4a0ff8df2c510541b757315871ff9b858417005a1b1fb840bcc3f1168c55758a53bc6eefb2f1969571ada4b3e9df4ac33e6f11dcdc40f05ab
   languageName: node
   linkType: hard
 
-"@jdesignlab/dropdown@npm:0.6.1":
-  version: 0.6.1
-  resolution: "@jdesignlab/dropdown@npm:0.6.1"
+"@jdesignlab/dropdown@npm:0.6.2":
+  version: 0.6.2
+  resolution: "@jdesignlab/dropdown@npm:0.6.2"
   dependencies:
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
     "@jdesignlab/theme": 0.7.0
@@ -1801,13 +1801,13 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 5c259e90e54d99cf7e1c107e82fe213a7c391935ee2fa676ec243cbfae8220e2790d2eff83def8adc2ef988a3c2095169eb2954fd9be00a8ae1cccfd0554e0e3
+  checksum: caf4c79260424bd74ef4d49200e4d83c02faa485e19b3ad23d71492465b181e20f8a855547c6174e397fd25c1cf1d16c4823d8183b71535e028c673e83c4fb02
   languageName: node
   linkType: hard
 
-"@jdesignlab/flex@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/flex@npm:0.6.0"
+"@jdesignlab/flex@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@jdesignlab/flex@npm:0.7.0"
   dependencies:
     "@jdesignlab/j-provider": 0.6.2
     "@jdesignlab/theme": 0.7.0
@@ -1815,7 +1815,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 2c13a1cc9ec51ef40add58f2b7fe701019c8b2783326596a8a26b34d8b5d54f1702d45833d9c8c6b31d17421edcd9f2a8bf88f0a96a279593d12426e0b1b79f5
+  checksum: 43323f55aa7e5c6580fdea6087b77840ed0941767ea4061ed07ba4a7f33fcd267ee2e08d0fa2dab7c4a96dfe41b6ba9eb654f154f2a09485a9c0afbfd2ec42a3
   languageName: node
   linkType: hard
 
@@ -1849,12 +1849,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/modal@npm:0.7.8":
-  version: 0.7.8
-  resolution: "@jdesignlab/modal@npm:0.7.8"
+"@jdesignlab/modal@npm:0.7.9":
+  version: 0.7.9
+  resolution: "@jdesignlab/modal@npm:0.7.9"
   dependencies:
     "@jdesignlab/button": 0.8.0
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/input": 0.7.3
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
@@ -1863,7 +1863,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 770d7f783c231af58ce9aeb1cf6ac07469277cb42fa593d7539adf824e43dd9185ac7f48a17ddb86a6b2f46e4e10480cc4b6a2dedcd7ef37ac878ff732ba68ba
+  checksum: 1fa7bacbfe6005b374094deffdb56fed85fffff6e2f2bb8354d74852c34f4eedc2029e35ca849ac072963c6a8c766d73e5c775d340b7b2678731fc70ae8db47e
   languageName: node
   linkType: hard
 
@@ -1916,23 +1916,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/react@npm:^0.6.8":
-  version: 0.6.8
-  resolution: "@jdesignlab/react@npm:0.6.8"
+"@jdesignlab/react@npm:^0.6.9":
+  version: 0.6.9
+  resolution: "@jdesignlab/react@npm:0.6.9"
   dependencies:
     "@jdesignlab/box": 0.5.6
     "@jdesignlab/button": 0.8.0
-    "@jdesignlab/card": 0.6.0
+    "@jdesignlab/card": 0.6.1
     "@jdesignlab/checkbox": 0.6.0
-    "@jdesignlab/drawer": 0.5.7
-    "@jdesignlab/dropdown": 0.6.1
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/drawer": 0.5.8
+    "@jdesignlab/dropdown": 0.6.2
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/input": 0.7.3
     "@jdesignlab/j-provider": 0.6.2
-    "@jdesignlab/modal": 0.7.8
+    "@jdesignlab/modal": 0.7.9
     "@jdesignlab/radio": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
-    "@jdesignlab/select": 0.7.1
+    "@jdesignlab/select": 0.7.2
     "@jdesignlab/stack": 0.5.4
     "@jdesignlab/tabs": 0.5.0
     "@jdesignlab/textarea": 0.7.2
@@ -1944,16 +1944,16 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 61b18d7f83051c5ad3b1387fce30cbd7845f87fdf010e986cfaa9ff7c63976c89a288516dc89d9dbba567660bf74e1121a627369db20bea3a00be13c5e9e8656
+  checksum: 3127e51b4e9a185137b5472e434e0377215529c520a2be5548787acf68818b6b6835c9f180d891ac7d0b9933442efd6ade742f5cbf6e1062735581b7e00516a7
   languageName: node
   linkType: hard
 
-"@jdesignlab/select@npm:0.7.1":
-  version: 0.7.1
-  resolution: "@jdesignlab/select@npm:0.7.1"
+"@jdesignlab/select@npm:0.7.2":
+  version: 0.7.2
+  resolution: "@jdesignlab/select@npm:0.7.2"
   dependencies:
     "@jdesignlab/button": 0.8.0
-    "@jdesignlab/flex": 0.6.0
+    "@jdesignlab/flex": 0.7.0
     "@jdesignlab/react-icons": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
     "@jdesignlab/theme": 0.7.0
@@ -1962,7 +1962,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: d3c40d95da392e0fe6d7a43c5bdd342ba8b3be96b404dd63a883f0ee0ea041ed8ac99e9b662195d3cf9a569cd8a1fbc3fbe3176015992a2909ad4e0db04b0b52
+  checksum: 7d1e9d2ec380baff216b40192ef74c1082e56529bebdd79445324b7225b3d5337f96bdba3b5df637d8f1fd05a33aaaa9d0693ad144d842d804bc56428b98dabc
   languageName: node
   linkType: hard
 
@@ -4200,7 +4200,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8
-    "@jdesignlab/react": ^0.6.8
+    "@jdesignlab/react": ^0.6.9
     "@jdesignlab/react-icons": ^0.6.0
     "@next/eslint-plugin-next": ^13.4.5
     "@testing-library/jest-dom": ^5.16.5
