@@ -1,13 +1,43 @@
 import axios from 'axios';
+import { ApplicationError } from './constants/appplicationError';
 
-const request = axios.create({
+const axiosInstance = axios.create({
   baseURL: '/api',
   timeout: 3000
 });
 
-request.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   (config) => config,
   (error) => error
 );
 
-export default request;
+axiosInstance.interceptors.response.use(
+  (config) => config,
+  (error) => {
+    const { status, data } = error.response;
+
+    if (data && status) {
+      return Promise.reject(data.message ?? ApplicationError.UNKNOWN);
+    }
+
+    if (status) {
+      switch (status) {
+        case 400:
+          return Promise.reject(ApplicationError.BADREQUEST);
+        case 401:
+          return Promise.reject(ApplicationError.UNAUTHORIZED);
+        case 403:
+          return Promise.reject(ApplicationError.FROBIDDEN);
+        case 404:
+          return Promise.reject(ApplicationError.NOTFOUND);
+        case 503:
+          return Promise.reject(ApplicationError.FIREBASE);
+        default:
+          return Promise.reject(ApplicationError.SERVER);
+      }
+    }
+    return Promise.reject(error ?? ApplicationError.UNKNOWN);
+  }
+);
+
+export default axiosInstance;
