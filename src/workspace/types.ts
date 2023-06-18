@@ -2,11 +2,11 @@ import type { DocumentReference } from 'firebase/firestore';
 import type { UserProfile } from '@auth/types';
 import type { ChallengeFormStates } from '@challenge/types';
 
+/** firebase Ref Type */
 type PostCommentRef = {
   post: DocumentReference;
   comments: DocumentReference;
 };
-
 export interface Turns {
   turns?: PostCommentRef[];
   turn1?: PostCommentRef[];
@@ -17,16 +17,19 @@ export interface Turns {
   [turn: string]: PostCommentRef[] | undefined;
 }
 
-export interface Workspace {
+export interface WorkspaceDocRef {
   challenge: DocumentReference;
   notice: string;
+  turns?: Turns;
 }
 
-export interface WorkspaceChallenge extends ChallengeFormStates {
+export interface ChallengeDocRef extends ChallengeFormStates {
   members: DocumentReference[];
 }
 
-export interface WorkpspaceStates {
+/** data model */
+
+export interface Workspace {
   members: UserProfile[];
-  challengeInfo: WorkspaceChallenge;
+  challengeInfo: ChallengeDocRef;
 }
