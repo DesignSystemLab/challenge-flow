@@ -1,10 +1,11 @@
 import { FirebaseError } from 'firebase/app';
+import { CustomFirebaseError } from './constants';
 
 export const errorMessage = (error: unknown): string => {
   if (error instanceof FirebaseError) {
     const firebaseError = error as FirebaseError;
-    const { code, message } = firebaseError;
-    return `errorCode: ${code}\nerrorMessage: ${message}`;
+    const { code } = firebaseError;
+    return `errorCode: ${code} \n errorMessage: ${CustomFirebaseError[code]}`;
   }
 
   if (error instanceof Error) {
