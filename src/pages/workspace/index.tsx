@@ -6,7 +6,7 @@ import { Posts } from '@workspace/components/Posts';
 import { workspaceLayout } from '@workspace/styles/layout';
 import { workspaceMainWrapper } from '@workspace/styles/workspaceStyle';
 import { ProfileSkeleton } from '@shared/components/suspense/ProfileSkeleton';
-import { CompositionBoundaryReactQuery } from '@shared/boundaries/';
+import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { CommonErrorFallback } from '@shared/components/CommonErrorFallback';
 
 const WorkspacePage = () => (
