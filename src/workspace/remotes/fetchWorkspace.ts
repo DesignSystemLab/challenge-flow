@@ -1,23 +1,15 @@
-import { database } from '@shared/firebase';
+import instance from '@shared/axiosInstance';
+import { Workspace } from '@workspace/types';
 import { errorMessage } from '@shared/errorMessage';
-import { getDoc, doc } from 'firebase/firestore';
-import type { Workspace, WorkspaceChallenge, WorkpspaceStates } from '../types';
-import type { UserProfile } from '@auth/types';
+import type { Response } from '@shared/responseEntity';
 
-export const fetchWorkspace = async (): Promise<WorkpspaceStates> => {
+export const fetchWorkspaceInfo = async (): Promise<Workspace> => {
   try {
-    const ref = doc(database, 'workspace', 'JI7P1eXtAReQdlHcO9s4');
-    const workspaceDoc = (await getDoc(ref)).data() as Workspace;
-    const challengeRef = await getDoc(workspaceDoc.challenge);
-    const challenge = challengeRef.data() as unknown as WorkspaceChallenge;
-    const members = (await Promise.all(
-      challenge.members.map(async (member) => (await getDoc(member)).data())
-    )) as UserProfile[];
-
-    return {
-      members,
-      challengeInfo: challenge
-    };
+    const { data } = await instance<Response<Workspace>>({ method: 'get', url: '/workspace/info' });
+    if (data.success) {
+      return data.responseData;
+    }
+    throw new Error(data.message);
   } catch (error) {
     throw new Error(errorMessage(error));
   }

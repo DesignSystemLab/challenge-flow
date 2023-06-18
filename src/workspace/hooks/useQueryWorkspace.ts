@@ -1,10 +1,10 @@
 import { QUREY_KEYS } from '@shared/constants/reactQueryKeys';
+import { fetchWorkspaceInfo } from '@workspace/remotes/fetchWorkspace';
 import { useQuery } from 'react-query';
-import { fetchWorkspace } from '../remotes/fetchWorkspace';
 
 export const useQueryWorkspace = () => {
   const { worksapace } = QUREY_KEYS;
-  const { data } = useQuery(worksapace, fetchWorkspace, {
+  const { data } = useQuery(worksapace, fetchWorkspaceInfo, {
     staleTime: 10000,
     cacheTime: 20000
   });
