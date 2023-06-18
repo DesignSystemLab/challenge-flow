@@ -1,7 +1,6 @@
-import { useRef } from 'react';
+import { useRef, RefObject } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import 'prismjs/themes/prism.css';
-import type { RefObject } from 'react';
 import Prism from 'prismjs';
 import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
 import { Editor, Viewer } from '@toast-ui/react-editor';

@@ -7,8 +7,8 @@ export const getLocalStorageItem = <T>(key: string): T | null => {
       try {
         return JSON.parse(item) as T;
       } catch (error) {
-        console.error(`${key} 조회에 실패하였습니다. Error: ${error}`);
-        return null;
+        const errorMessage = `${key} 조회에 실패하였습니다. Error: ${error}`;
+        (() => new Error(errorMessage))();
       }
     }
     return null;
@@ -24,8 +24,7 @@ export const setLocalStorageItem = <T>(key: string, value: T): void => {
       localStorage.setItem(key, serializedValue);
     } catch (error) {
       const errorMessage = `${key} 저장에 실패하였습니다. Error: ${error}`;
-      console.error(errorMessage);
-      new Error(errorMessage);
+      (() => new Error(errorMessage))();
     }
   }
 };
@@ -36,8 +35,7 @@ export const clearLocalStorageItem = (key: string): void => {
       localStorage.removeItem(key);
     } catch (error) {
       const errorMessage = `${key} 저장에 실패하였습니다. Error: ${error}`;
-      console.error(errorMessage);
-      new Error(errorMessage);
+      (() => new Error(errorMessage))();
     }
   }
 };

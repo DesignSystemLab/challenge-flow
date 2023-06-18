@@ -41,9 +41,8 @@ async function deleteOne(postId: string) {
 
 async function modifyPost(postId: string, postValue: ChallengeFormStates) {
   const docRef = doc(database, REF_NAME, postId);
-  const { id, ...rest } = postValue;
   const param = {
-    ...rest,
+    ...postValue,
     updatedAt: formatDateTime(getDate())
   };
   return upsertDoc(docRef, param);

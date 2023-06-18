@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { SKELETON_COLOR } from '@layout/constant';
 import { css, keyframes } from '@emotion/react';
 
@@ -9,7 +8,6 @@ interface Props {
   rounded?: boolean;
   animation?: boolean;
   bgColor?: string;
-  count?: number;
 }
 
 const keyframe = keyframes`
@@ -40,7 +38,7 @@ const createSkeletonUi = (skeletonProps: Props) => {
 };
 
 export const Skeleton = (props: Props) => {
-  const { animation, bgColor = SKELETON_COLOR, circle, height, rounded, width, count = 1 } = props;
+  const { animation, bgColor = SKELETON_COLOR, circle, height, rounded, width } = props;
   const skeletonStyle = createSkeletonUi({
     height,
     width,
@@ -50,11 +48,9 @@ export const Skeleton = (props: Props) => {
     rounded
   });
 
-  const content = useMemo(() => [...Array({ length: count })].map(() => '-').join(''), [count]);
-
   return (
     <div css={skeletonStyle}>
-      <span css={{ opacity: 0 }}>{content}</span>
+      <span css={{ opacity: 0 }}>skelton</span>
     </div>
   );
 };

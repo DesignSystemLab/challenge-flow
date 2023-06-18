@@ -1,4 +1,4 @@
-import { ChallengePostFields } from '@challenge/types';
+import { database } from '@shared/firebase';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import {
   DocumentData,
@@ -7,19 +7,22 @@ import {
   QueryDocumentSnapshot,
   QuerySnapshot,
   deleteDoc,
+  doc,
   getDoc,
   getDocs,
   setDoc,
   updateDoc
 } from 'firebase/firestore';
 
-const addIdToData = (doc: QueryDocumentSnapshot<DocumentData>) =>
+const addIdToData = (datatDoc: QueryDocumentSnapshot<DocumentData>) =>
   ({
-    ...doc.data(),
-    id: doc.id
-  } as ChallengePostFields);
+    ...datatDoc.data(),
+    id: datatDoc.id
+  } as any);
 
 const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => Array.from(querySnapshot.docs, addIdToData);
+
+export const getDocRef = (collection: string, id: string) => doc(database, `${collection}/${id}`);
 
 export const createOne = async (ref: DocumentReference<DocumentData>, data: any) => {
   await setDoc(ref, data);

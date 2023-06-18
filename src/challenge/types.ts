@@ -1,21 +1,20 @@
-interface Duration {
-  start: string;
-  end: string;
-}
 export interface ChallengeFormStates {
   title: string;
   isDaily: boolean;
-  skill: number | null;
+  // skill: number | null;
   content: string;
-  memberCapacity: number;
-  duration: Duration;
+  // memberCapacity: number;
   dueAt: string;
-  // [key: string]: string | string[] | boolean | number | null | { start: string | null; end: string | null };
-  [key: string]: any;
+  e_duration: string;
+  s_duration: string;
+  isPublic: boolean;
 }
 
-export interface ChallengePostFields extends ChallengeFormStates {
+export interface ChallengeFormStatesWithId extends ChallengeFormStates {
   id: string;
+}
+
+export interface ChallengePostFields extends ChallengeFormStatesWithId {
   createdAt: string;
   members: string[] | [];
 }

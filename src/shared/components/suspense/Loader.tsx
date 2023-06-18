@@ -1,4 +1,5 @@
 import { Loading } from '@shared/components/Icons';
+import { Flex } from '@jdesignlab/react';
 import { css } from '@emotion/react';
 
 interface Props {
@@ -14,17 +15,12 @@ export const Loader = (props: Props) => {
     css({
       width,
       height,
-      backgroundColor: bgColor || 'transparent',
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center'
+      backgroundColor: bgColor || 'transparent'
     });
 
   return (
-    <div css={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div css={loaderStyle}>
-        <Loading />
-      </div>
-    </div>
+    <Flex direction="row" justify="center" items="center" css={loaderStyle}>
+      <Loading />
+    </Flex>
   );
 };
