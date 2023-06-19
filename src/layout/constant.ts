@@ -6,5 +6,5 @@ export const FOOTER_WRAPPER_HEIGHT = 120;
 export const FOOTER_WRAPPER_PADDING = 8;
 
 export const SKELETON_COLOR = '#ecf0f1';
-export const SCROLLBAR_COLOR = '#f5f6fa';
+export const SCROLLBAR_COLOR = '#cfd8dc';
 export const BORDER_COLOR = '#ccc';
