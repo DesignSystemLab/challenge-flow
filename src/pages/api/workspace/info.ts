@@ -16,7 +16,7 @@ const workspaceInfoHandler = async (req: NextApiRequest, res: NextApiResponse) =
       challenge.members.map(async (member) => (await getDoc(member)).data())
     )) as UserProfile[];
 
-    return res.status(200).json(
+    res.status(200).json(
       responseEntity<Workspace>({
         responseData: {
           challengeInfo: challenge,
