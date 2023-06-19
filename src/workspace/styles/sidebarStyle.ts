@@ -77,6 +77,10 @@ export const scheduleListStyle = css({
 });
 
 export const selectorStyle = css({
+  '& button': {
+    display: 'block',
+    height: 'auto'
+  },
   [mq.md]: {},
   [mq.lg]: {
     padding: '4px',
