@@ -2,7 +2,6 @@ import { mq } from '@shared/styles/mixins/responsive';
 import { css } from '@emotion/react';
 
 export const titleWrapper = css({
-  backgroundColor: '#fff',
   position: 'static',
   [mq.md]: {},
   [mq.lg]: {
@@ -13,8 +12,7 @@ export const titleWrapper = css({
     paddingTop: '8px',
     backgroundColor: '#4695E5',
     height: '36px',
-    border: '1px solid #fff',
-    borderRadius: '8px'
+    border: '1px solid #fff'
   },
   [mq.xl]: {}
 });

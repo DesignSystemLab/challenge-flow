@@ -3,66 +3,61 @@ import { SCROLLBAR_COLOR } from '@layout/constant';
 import { css } from '@emotion/react';
 
 export const sidebarStyle = css({
-  backgroundColor: '#fff',
   [mq.md]: {},
   [mq.lg]: {
-    backgroundColor: '##FAF8FF',
+    boxShadow: 'rgba(9, 30, 66, 0.25) 0px 0px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 0px',
+    backgroundColor: '#FAF8FF',
     maxWidth: '256px',
+    height: '100%',
     flexGrow: 1
   },
   [mq.xl]: {}
 });
 
-export const sidebarSection = css({
+export const sidebarSectionStyle = css({
   position: 'static',
   [mq.md]: {},
   [mq.lg]: {
     position: 'relative',
-    maxHeight: '50%',
-    overflow: 'auto',
-    '&:last-child': {
-      marginTop: '8px'
-    },
-    // scroll
+    height: 'calc((100% - 72px) / 2)',
+    overflowY: 'auto',
+    margin: 0,
     '&::-webkit-scrollbar': {
-      width: '8px'
+      width: '8px',
+      background: '#ffffff'
     },
     '&::-webkit-scrollbar-thumb': {
       borderRadius: '5px',
       background: `${SCROLLBAR_COLOR}`
     }
-  },
-  [mq.xl]: {}
+  }
 });
 
-export const listStyle = css({
-  padding: '0 8px'
+export const memberListStyle = css({
+  height: '100%',
+  padding: '0',
+  margin: 0,
+  overflowY: 'auto'
 });
 
-export const userCard = css({
-  marginTop: '4px',
-  boxShadow: 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px',
+export const memeberCardStyle = css({
+  backgroundColor: '#fff',
+  boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
   display: 'flex',
-  padding: '4px',
+  padding: '4px 8px',
   [mq.md]: {},
   [mq.lg]: {},
   [mq.xl]: {}
 });
 
-export const selectorList = css({
-  [mq.md]: {},
-  [mq.lg]: {
-    marginTop: '8px'
-  },
-  [mq.xl]: {}
-});
-
-export const userInfo = css({
+export const profileStyle = css({
   [mq.md]: {},
   [mq.lg]: {
     width: '160px',
-    maxHeight: '36px',
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'start',
     marginLeft: '8px',
     '& p': {
       whiteSpace: 'nowrap',
@@ -71,6 +66,23 @@ export const userInfo = css({
       wordBreak: 'break-all',
       WebkitLineClamp: 2
     }
+  },
+  [mq.xl]: {}
+});
+
+export const scheduleListStyle = css({
+  backgroundColor: 'red',
+  padding: '0',
+  margin: '0'
+});
+
+export const selectorStyle = css({
+  [mq.md]: {},
+  [mq.lg]: {
+    padding: '4px',
+    cursor: 'pointer',
+    backgroundColor: '#fff',
+    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
   },
   [mq.xl]: {}
 });
