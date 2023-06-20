@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint \"**/*.{ts,tsx,js}\"",
     "test": "jest",
+    "msw-init": "yarn dlx msw init public/",
     "start": "yarn next start -p $PORT",
     "dev": "yarn next dev",
     "build": "yarn next build",
