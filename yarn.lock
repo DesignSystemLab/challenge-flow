@@ -1867,6 +1867,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jdesignlab/popover@npm:0.5.8":
+  version: 0.5.8
+  resolution: "@jdesignlab/popover@npm:0.5.8"
+  dependencies:
+    "@jdesignlab/button": 0.8.0
+    "@jdesignlab/flex": 0.7.0
+    "@jdesignlab/react-icons": 0.6.0
+    "@jdesignlab/react-utils": 0.7.0
+    "@jdesignlab/theme": 0.7.0
+    "@jdesignlab/utils": 0.5.0
+  peerDependencies:
+    "@emotion/react": ~11
+    react: ~18
+    react-dom: ~18
+  checksum: 726de5f1ad3ee5a588a5465f97f58402e768522d4accfc137318e8933b1236d39bf02a7b7e2b161a8fd8359d988dae52ccc8a9d5798b9f704c1ac8b233b6f94e
+  languageName: node
+  linkType: hard
+
 "@jdesignlab/radio@npm:0.6.0":
   version: 0.6.0
   resolution: "@jdesignlab/radio@npm:0.6.0"
@@ -1916,9 +1934,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/react@npm:^0.6.9":
-  version: 0.6.9
-  resolution: "@jdesignlab/react@npm:0.6.9"
+"@jdesignlab/react@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@jdesignlab/react@npm:0.8.0"
   dependencies:
     "@jdesignlab/box": 0.5.6
     "@jdesignlab/button": 0.8.0
@@ -1930,6 +1948,7 @@ __metadata:
     "@jdesignlab/input": 0.7.3
     "@jdesignlab/j-provider": 0.6.2
     "@jdesignlab/modal": 0.7.9
+    "@jdesignlab/popover": 0.5.8
     "@jdesignlab/radio": 0.6.0
     "@jdesignlab/react-utils": 0.7.0
     "@jdesignlab/select": 0.7.2
@@ -1944,7 +1963,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 3127e51b4e9a185137b5472e434e0377215529c520a2be5548787acf68818b6b6835c9f180d891ac7d0b9933442efd6ade742f5cbf6e1062735581b7e00516a7
+  checksum: 5f152883d7857a7a334ed584ea79605cd6970ed2d722e250167fbac5225fd97b198c5161509be7e25e99c9b749dd392a683785f6db122fe5fc8a9025460b1b48
   languageName: node
   linkType: hard
 
@@ -4318,7 +4337,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8
-    "@jdesignlab/react": ^0.6.9
+    "@jdesignlab/react": ^0.8.0
     "@jdesignlab/react-icons": ^0.6.0
     "@next/eslint-plugin-next": ^13.4.5
     "@testing-library/dom": ^9.3.1
