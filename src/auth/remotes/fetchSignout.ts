@@ -1,10 +1,9 @@
-import { auth } from '@shared/firebase';
+import instance from '@shared/axiosInstance';
 import { errorMessage } from '@shared/errorMessage';
-import { signOut } from 'firebase/auth';
 
 export const fetchSignout = async () => {
   try {
-    await signOut(auth);
+    await instance({ method: 'post', url: '/auth/logout' });
   } catch (error) {
     throw new Error(errorMessage(error));
   }

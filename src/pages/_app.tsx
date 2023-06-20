@@ -12,6 +12,9 @@ import type { AppProps } from 'next/app';
 
 const ChallengeFlow = ({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) => {
   const [globalQueryClient] = useState(() => queryClient);
+  if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+    import('../mocks');
+  }
   return (
     <QueryClientProvider client={globalQueryClient}>
       <Hydrate state={pageProps.dehydratedState}>
