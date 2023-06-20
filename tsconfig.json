@@ -24,6 +24,7 @@
     "paths": {
       "@banner/*": ["src/banner/*"],
       "@challenge/*": ["src/challenge/*"],
+      "@reaction/*": ["src/reaction/*"],
       "@user/*": ["src/user/*"],
       "@workspace/*": ["src/workspace/*"],
       "@shared/*": ["src/shared/*"],
