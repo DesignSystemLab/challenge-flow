@@ -42,3 +42,4 @@ package-lock.json
 
 /note.md
 jestEnv.ts
+mockServiceWorker.js
