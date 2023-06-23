@@ -24,6 +24,14 @@ const ImageWrap = styled.div`
   }
 `;
 
+const AltImage = styled.div`
+  width: 128px;
+  height: 128px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+`;
+
 interface Props {
   path?: string;
   alt?: string;
@@ -53,7 +61,11 @@ export const ImageUpload = (props: Props) => {
   return (
     <ImageWrap>
       <span css={{ backgroundColor: '#ededed' }}>
-        <Image src={src || imageUrl} alt={alt || 'profile'} width={128} height={128} />
+        {src || imageUrl ? (
+          <Image src={src || imageUrl} alt={alt || 'profile'} width={128} height={128} />
+        ) : (
+          <AltImage />
+        )}
       </span>
       <Button variant="ghost" color="lightBlue-base" disabled={isLoading} icon={isLoading ? <Loading /> : undefined}>
         <label htmlFor="image-upload">이미지 업로드</label>
