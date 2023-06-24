@@ -13,5 +13,9 @@ export const errorMessage = (error: unknown): string => {
     return error.message;
   }
 
+  if (typeof error === 'string') {
+    return error;
+  }
+
   return '알 수 없는 오류입니다.';
 };
