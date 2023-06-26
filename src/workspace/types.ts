@@ -37,3 +37,9 @@ export interface Workspace {
   members: UserProfile[];
   challengeInfo: ChallengeDocRef;
 }
+
+export interface PostForm {
+  author: string;
+  content: string;
+  title: string;
+}
