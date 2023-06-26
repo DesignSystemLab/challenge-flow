@@ -6,12 +6,14 @@ import { TextInput, Button } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useCreatePost } from '../hooks/useCreatePost';
+import type { PeriodFormat } from '../types';
 
 export const WritePost = () => {
   const { data } = useUserAuth();
   const { register, handleSubmit } = useForm();
   const [content, setContent] = useState<string>('');
   const router = useRouter();
+  const { workspaceId, period } = router.query;
   const prevPaage = `/workspace/${router.query.workspaceId}`;
   const { mutate, isLoading } = useCreatePost(() => {
     router.replace(prevPaage);
@@ -20,11 +22,13 @@ export const WritePost = () => {
   return (
     <form
       onSubmit={handleSubmit((postInfo) => {
-        if (data?.email) {
+        if (data?.email && typeof workspaceId === 'string' && period) {
           mutate({
             author: data.email,
             title: postInfo.post,
-            content
+            content,
+            workspaceId,
+            turn: period as PeriodFormat
           });
         }
       })}

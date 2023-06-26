@@ -3,24 +3,18 @@ import type { UserProfile } from '@auth/types';
 import type { ChallengeFormStates } from '@challenge/types';
 
 /** firebase Ref Type */
-type PostCommentRef = {
+
+export type PeriodFormat = `turn${number}`;
+
+export type PostCommentRef = {
   post: DocumentReference;
-  comments: DocumentReference;
+  comments: DocumentReference[];
 };
-export interface Turns {
-  turns?: PostCommentRef[];
-  turn1?: PostCommentRef[];
-  turn2?: PostCommentRef[];
-  turn3?: PostCommentRef[];
-  turn4?: PostCommentRef[];
-  turn5?: PostCommentRef[];
-  [turn: string]: PostCommentRef[] | undefined;
-}
 
 export interface WorkspaceDocRef {
+  [key: PeriodFormat]: PostCommentRef[];
   challenge: DocumentReference;
   notice: string;
-  turns?: Turns;
 }
 
 export interface ChallengeDocRef extends ChallengeFormStates {
@@ -42,4 +36,6 @@ export interface PostForm {
   author: string;
   content: string;
   title: string;
+  workspaceId: string;
+  turn: PeriodFormat;
 }

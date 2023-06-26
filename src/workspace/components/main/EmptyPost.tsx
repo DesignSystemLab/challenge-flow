@@ -1,12 +1,14 @@
 import { Button, Text, Flex } from '@jdesignlab/react';
 import Link from 'next/link';
+import type { PeriodFormat } from '../../types';
 
 interface Props {
   workspaceId: string;
+  period: PeriodFormat;
 }
 
 export const EmptyPost = (props: Props) => {
-  const { workspaceId } = props;
+  const { workspaceId, period } = props;
   return (
     <article css={{ height: '100%' }}>
       <Flex justify="center" items="center" direction="column" style={{ height: '480px' }} gap="16px">
@@ -17,7 +19,7 @@ export const EmptyPost = (props: Props) => {
           <Link
             href={{
               pathname: '/workspace/write',
-              query: { workspaceId }
+              query: { workspaceId, period }
             }}
             as="/workspace/write"
           >
