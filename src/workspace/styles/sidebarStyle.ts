@@ -79,6 +79,7 @@ export const scheduleListStyle = css({
 export const selectorStyle = css({
   '& button': {
     display: 'block',
+    width: '100%',
     height: 'auto'
   },
   [mq.md]: {},

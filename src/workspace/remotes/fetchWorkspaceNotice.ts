@@ -1,13 +1,12 @@
 import instance from '@shared/axiosInstance';
-import { Workspace } from '@workspace/types';
 import { errorMessage } from '@shared/errorMessage';
 import type { Response } from '@shared/responseEntity';
 
-export const fetchWorkspaceInfo = async (workspaceId: string): Promise<Workspace> => {
+export const fetchWorkspaceInfo = async (workspaceId: string): Promise<string> => {
   try {
-    const { data } = await instance<Response<Workspace>>({
+    const { data } = await instance<Response<string>>({
       method: 'get',
-      url: '/workspace/info',
+      url: '/workspace/notice',
       params: { workspaceId }
     });
 

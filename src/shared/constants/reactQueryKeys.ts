@@ -1,6 +1,8 @@
-type QueryKeys = 'user' | 'worksapace';
+type QueryKeys = 'user' | 'worksapace' | 'workspaceNotice' | 'workspacePosts';
 
-export const QUREY_KEYS: Record<QueryKeys, QueryKeys> = {
+export const QUREY_KEYS: Record<QueryKeys, string> = {
   user: 'user',
-  worksapace: 'worksapace'
+  worksapace: 'worksapace',
+  workspaceNotice: 'workspace-notice',
+  workspacePosts: 'workspace-posts'
 };
