@@ -1,5 +1,6 @@
-export const SKILLS: Record<string, number> = {
-  JavaScript: 1,
-  TypeScript: 2,
-  React: 3
+export type SkillType = Record<number, string>;
+export const SKILLS: SkillType = {
+  1: 'JavaScript',
+  2: 'TypeScript',
+  3: 'React'
 };
