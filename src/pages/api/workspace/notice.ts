@@ -24,9 +24,10 @@ const workspaceNoticeService = async (req: NextApiRequest, res: NextApiResponse)
       responseEntity<null>({
         responseData: null,
         success: false,
-        message: "공지사항이 존재하지 않습니다."
+        message: '공지사항이 존재하지 않습니다.'
       })
     );
+  } catch (error) {
     res.status(500).json(
       responseEntity<null>({
         responseData: null,
