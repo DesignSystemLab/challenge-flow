@@ -67,6 +67,7 @@ export const UserProfileForm = (props: Props) => {
         />
         <ImageUpload
           path={user?.uid}
+          src={user?.photoURL ?? ''}
           alt={`${user?.displayName} profile image` ?? 'unknown image'}
           onImage={getImagePath}
         />
