@@ -5,7 +5,11 @@ import { Reactions } from 'src/reaction/components/Reactions';
 import { useApplyMutation } from '@challenge/hooks/useApplyMutation';
 import { ChallengeInfo } from '@challenge/components/ChallengeInfo';
 import { Suggestion } from '@challenge/components/Suggestion';
-import { challengeInfoSectionStyle, challengeInfoWrapperStyle } from '@challenge/styles/challengeStyle';
+import {
+  challengeApplyButtonWrapperStyle,
+  challengeInfoSectionStyle,
+  challengeInfoWrapperStyle
+} from '@challenge/styles/challengeStyle';
 import { GetServerSideProps } from 'next';
 import { Button } from '@jdesignlab/react';
 
@@ -41,7 +45,7 @@ const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
       <div css={challengeInfoWrapperStyle}>
         <section css={challengeInfoSectionStyle}>
           <ChallengeInfo postInfo={postInfo} />
-          <div css={{ marginLeft: 'auto', display: 'flex', justifyContent: 'center' }}>
+          <div css={challengeApplyButtonWrapperStyle}>
             {postInfo.memberCapacity >= postInfo.members?.length && (
               <Button variant="outline" size="md" onClick={onClickApply}>
                 참여하기

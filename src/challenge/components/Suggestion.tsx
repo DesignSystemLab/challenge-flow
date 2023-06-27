@@ -1,16 +1,19 @@
 import { useEffect } from 'react';
-import { suggestionAsideStyle, suggestionHeaderStyle } from '@challenge/styles/suggestionStyle';
+import {
+  suggestListWrapperStyle,
+  suggestionAsideStyle,
+  suggestionHeaderStyle
+} from '@challenge/styles/suggestionStyle';
 import { Text } from '@jdesignlab/react';
 
 export const Suggestion = () => {
   useEffect(() => {}, []);
   return (
-    // <div style={suggestionWrapper}>
-    <aside css={{ ...suggestionAsideStyle, position: 'sticky' }}>
+    <aside css={suggestionAsideStyle}>
       <div css={suggestionHeaderStyle}>
         <Text variant="heading">이런 챌린지도 추천해요!</Text>
       </div>
-      <ol css={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: 0 }}>
+      <ol css={suggestListWrapperStyle}>
         <li>
           <Text variant="heading" size="md" truncate>
             1. blagkaglasglsdkfjsadfkblagkaglasglsdkfjsadfk
@@ -26,6 +29,5 @@ export const Suggestion = () => {
         <li>9. blagkaglasglsdkfjsadfk</li>
       </ol>
     </aside>
-    // </div>
   );
 };

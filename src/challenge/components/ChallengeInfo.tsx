@@ -5,6 +5,15 @@ import { useDeleteMutation } from '@challenge/hooks/useDeleteMutation';
 import { Chip } from '@shared/components/dataDisplay/Chip';
 import { SKILLS } from '@shared/constants';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
+import {
+  challengeInfoDdayStyle,
+  challengeInfoHeadingButtonWrapperStyle,
+  challengeInfoOptionListItemStyle,
+  challengeInfoOptionListWrapperStyle,
+  challengeInfoTitleStyle,
+  challengeInfoUserStyle,
+  challengeInfoUserWrapperStyle
+} from '@challenge/styles/challengeStyle';
 import { Button, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 
@@ -29,22 +38,10 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
 
   return (
     <>
-      <div
-        css={{
-          width: '80px',
-          border: 'solid 1px #e1e1e1',
-          // borderRadius: '6px',
-          padding: '6px 0 4px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'start'
-        }}
-      >
-        D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
-      </div>
+      <div css={challengeInfoDdayStyle}>D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}</div>
       <div>
-        <div css={{ display: 'inline', fontSize: '28px', lineHeight: '1.4', fontWeight: '700' }}>{postInfo.title}</div>
-        <div css={{ display: 'inline-flex', gap: '4px', flexWrap: 'nowrap' }}>
+        <div css={challengeInfoTitleStyle}>{postInfo.title}</div>
+        <div css={challengeInfoHeadingButtonWrapperStyle}>
           <Button variant="outline" size="sm" onClick={modifyPost}>
             수정
           </Button>
@@ -54,8 +51,8 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
         </div>
       </div>
 
-      <div css={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', alignItems: 'center' }}>
-        <div css={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+      <div css={challengeInfoUserWrapperStyle}>
+        <div css={challengeInfoUserStyle}>
           <Avatar size="md" />
           <Text variant="heading" size="md">
             useId
@@ -131,17 +128,8 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
         </tr>
       </table> */}
 
-      <ul
-        css={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-          marginTop: '12px',
-          padding: '16px 20px',
-          background: '#fafafa'
-        }}
-      >
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+      <ul css={challengeInfoOptionListWrapperStyle}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             모집 마감일
           </Text>
@@ -153,7 +141,7 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
           </Chip>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             진행 기간
           </Text>
@@ -165,14 +153,14 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
           </Chip>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             공부 주제
           </Text>
           <Chip size="sm" bordered>{`${SKILLS[postInfo.skill]}`}</Chip>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             공개 여부
           </Text>
@@ -181,7 +169,7 @@ export const ChallengeInfo = ({ postInfo }: { postInfo: ChallengePostFields }) =
           </Chip>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             인원
           </Text>

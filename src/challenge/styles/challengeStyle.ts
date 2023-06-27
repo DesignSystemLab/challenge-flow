@@ -10,8 +10,52 @@ export const challengeInfoWrapperStyle = css({
   }
 });
 
+export const challengeInfoDdayStyle = css({
+  width: '80px',
+  border: 'solid 1px #e1e1e1',
+  padding: '6px 0 4px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'start'
+});
+
+export const challengeInfoTitleStyle = css({
+  display: 'inline',
+  fontSize: '28px',
+  lineHeight: '1.4',
+  fontWeight: '700'
+});
+
+export const challengeInfoHeadingButtonWrapperStyle = css({ display: 'inline-flex', gap: '4px', flexWrap: 'nowrap' });
+
+export const challengeInfoUserWrapperStyle = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginTop: '8px',
+  alignItems: 'center'
+});
+
+export const challengeInfoUserStyle = css({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '4px'
+});
+
+export const challengeInfoOptionListWrapperStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+  marginTop: '12px',
+  padding: '16px 20px',
+  background: '#fafafa'
+});
+
+export const challengeInfoOptionListItemStyle = css({ display: 'flex', gap: '12px', alignItems: 'center' });
+
 export const challengeInfoSectionStyle = css({
   position: 'relative',
   width: '100%',
   [mq.lg]: { flex: '0 1 900px' }
 });
+
+export const challengeApplyButtonWrapperStyle = css({ marginLeft: 'auto', display: 'flex', justifyContent: 'center' });
