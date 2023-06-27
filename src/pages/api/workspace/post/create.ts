@@ -2,21 +2,18 @@ import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { ApplicationError } from '@shared/constants/appplicationError';
 import { errorMessage } from '@shared/errorMessage';
-import { getDate } from '@shared/utils/date';
+import { getDate, formatDateTime } from '@shared/utils/date';
 import { FIREBASE_COLLECTIONS } from '@shared/constants/firebaseCollections';
 import { Timestamp, doc, addDoc, updateDoc, collection, getDoc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 import type { PostForm, WorkspaceDocRef, PostCommentRef } from '@workspace/types';
 
-/**
- * 1.
- */
 const workspacePostService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { posts, workspace } = FIREBASE_COLLECTIONS;
     const { workspaceId, turn, ...post } = req.body as PostForm;
     const workspaceDocRef = doc(database, workspace, workspaceId);
-    const createdAt = Timestamp.fromDate(getDate());
+    const createdAt = formatDateTime(Timestamp.fromDate(getDate()).toDate());
     const insertedPost = await addDoc(collection(database, posts), { ...post, createdAt, isDeleted: false });
 
     if (insertedPost) {
@@ -32,6 +29,7 @@ const workspacePostService = async (req: NextApiRequest, res: NextApiResponse) =
           }
         ]
       });
+
       res.status(200).json(
         responseEntity<null>({
           responseData: null,

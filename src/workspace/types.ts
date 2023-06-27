@@ -3,7 +3,6 @@ import type { UserProfile } from '@auth/types';
 import type { ChallengeFormStates } from '@challenge/types';
 
 /** firebase Ref Type */
-
 export type PeriodFormat = `turn${number}`;
 
 export type PostCommentRef = {
@@ -38,4 +37,11 @@ export interface PostForm {
   title: string;
   workspaceId: string;
   turn: PeriodFormat;
+}
+
+export interface Post {
+  author: string;
+  content: string;
+  isDeleted: boolean;
+  title: string;
 }

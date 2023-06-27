@@ -1,25 +1,33 @@
+import { useMemo } from 'react';
+import { workspaceMachineContext } from '@workspace/machines/workspaceMachineContext';
 import { WorkspaceSidebar } from '@workspace/components/aside/WorkspaceSidebar';
+import { WorkspaceMain } from '@workspace/components/main/WorkspaceMain';
 import { workspaceLayout } from '@workspace/styles/layout';
-import { GroupStatistics } from '@workspace/components/GroupStatistics';
-import { Posts } from '@workspace/components/Posts';
-import { workspaceMainWrapper } from '@workspace/styles/workspaceStyle';
-import { Flex } from '@jdesignlab/react';
-import { useRouter } from 'next/router';
+import { workspaceContext } from '@workspace/workspaceContext';
+import { GetServerSideProps } from 'next';
 
-const WorkspacePage = () => {
-  const { query } = useRouter();
-  console.log(query);
+interface Props {
+  workspaceId: string;
+}
+
+const WorkspacePage = (props: Props) => {
+  const { workspaceId } = props;
+  const memoizedWorkspaceId = useMemo(() => ({ workspaceId }), [workspaceId]);
   return (
-    <section css={workspaceLayout}>
-      <WorkspaceSidebar />
-      <div css={workspaceMainWrapper}>
-        <Flex direction="column">
-          <GroupStatistics />
-          <Posts />
-        </Flex>
-      </div>
-    </section>
+    <workspaceMachineContext.Provider>
+      <workspaceContext.Provider value={memoizedWorkspaceId}>
+        <section css={workspaceLayout}>
+          <WorkspaceSidebar />
+          <WorkspaceMain />
+        </section>
+      </workspaceContext.Provider>
+    </workspaceMachineContext.Provider>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { query, res } = context;
+  return { props: { workspaceId: query.workspaceId }, notFound: res.statusCode === 404 };
 };
 
 export default WorkspacePage;
