@@ -8,7 +8,6 @@ import { Suggestion } from '@challenge/components/Suggestion';
 import { challengeInfoSectionStyle, challengeInfoWrapperStyle } from '@challenge/styles/challengeStyle';
 import { GetServerSideProps } from 'next';
 import { Button } from '@jdesignlab/react';
-import { useUserAuth } from '@auth/hooks/useUserAuth';
 
 interface QueryInterface extends ParsedUrlQuery {
   id?: string;
@@ -25,10 +24,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 // -------------
 
 const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
-  const { data: user } = useUserAuth();
-
   const successAction = () => {
-    alert('신청되었습니다!');
+    // alert('신청되었습니다!');
   };
 
   const { applyAction } = useApplyMutation('test1234', successAction);
