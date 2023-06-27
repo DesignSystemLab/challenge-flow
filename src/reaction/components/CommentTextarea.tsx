@@ -1,3 +1,5 @@
+import { commentTextareaWrapperStyle } from '@reaction/styles/commentStyle';
+import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { useForm } from 'react-hook-form';
 import { Button, Textarea } from '@jdesignlab/react';
 import { useHandleKeyDown } from '../hooks/useHandleKeyDown';
@@ -13,13 +15,12 @@ export const CommentTextarea = ({ originId }: { originId: string }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <Textarea {...register('comment')} onKeyDown={onKeyDown} />
-        <Button type="submit" variant="outline">
-          등록
-        </Button>
-      </div>
+    <form onSubmit={handleSubmit(onSubmit)} css={commentTextareaWrapperStyle}>
+      <Avatar size="lg" />
+      <Textarea {...register('comment')} onKeyDown={onKeyDown} />
+      <Button type="submit" variant="outline">
+        등록
+      </Button>
     </form>
   );
 };
