@@ -3,7 +3,7 @@ import { challengeCardContainer } from '@challenge/styles';
 import { ChallengePostFields } from '@challenge/types';
 import { useChallengeApi } from '@challenge/hooks/useChallengeApi';
 
-export const ChallengeList = () => {
+export const ChallengeList = ({ userId }: { userId: string | undefined }) => {
   const { useReadListQuery } = useChallengeApi();
   const { data } = useReadListQuery();
   // const { data, isLoading, isError } = useCommonQuery('challengeList', getPostList);
@@ -16,7 +16,7 @@ export const ChallengeList = () => {
           data.length > 0 &&
           data.map((post: ChallengePostFields) => (
             <div key={post.id}>
-              <ChallengeCard postInfo={post} />
+              <ChallengeCard postInfo={post} userId={userId} />
             </div>
           ))}
       </div>

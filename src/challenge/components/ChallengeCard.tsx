@@ -3,7 +3,7 @@ import { ChallengePostFields } from '@challenge/types';
 import { Button, Flex, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 
-export const ChallengeCard = ({ postInfo }: { postInfo: ChallengePostFields }) => {
+export const ChallengeCard = ({ postInfo, userId }: { postInfo: ChallengePostFields; userId: string | undefined }) => {
   const router = useRouter();
   const moveToPostDetail = () => {
     router.push({ pathname: `/challenge/${postInfo.id}` });
@@ -20,10 +20,9 @@ export const ChallengeCard = ({ postInfo }: { postInfo: ChallengePostFields }) =
         {postInfo.title}
       </Text>
       <Flex />
-      {postInfo.content}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Text variant="paragraph" size="sm">
-          dd
+          ?
         </Text>
         <Text variant="paragraph" size="sm">
           주별
