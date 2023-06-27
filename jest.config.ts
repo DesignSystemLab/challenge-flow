@@ -1,3 +1,4 @@
+/** @type {import('jest').Config} */
 import type { Config } from 'jest';
 import nextJest from 'next/jest';
 
@@ -10,10 +11,12 @@ const extendedJestConfig: Config = {
   verbose: true,
   rootDir: './',
   testEnvironment: 'jsdom',
+  setupFiles: ['<rootDir>/jestEnv.ts'],
   setupFilesAfterEnv: ['<rootDir>/jestSetup.ts'],
   testPathIgnorePatterns: ['<rootDir>/.yarn/', '<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '@/(.*)$': '<rootDir>/src/$1',
+    '^@auth/(.*)$': '<rootDir>/src/auth/$1',
     '^@challenge/(.*)$': '<rootDir>/src/challenge/$1',
     '^@banner/(.*)$': '<rootDir>/src/banner/$1',
     '^@user/(.*)$': '<rootDir>/src/user/$1',

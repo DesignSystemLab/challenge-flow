@@ -5,7 +5,7 @@ export const workspaceMainWrapper = css({
   [mq.md]: {},
   [mq.lg]: {
     border: '1px solid yellow',
-    flexGrow: 9
+    flexGrow: 8
   },
   [mq.xl]: {}
 });

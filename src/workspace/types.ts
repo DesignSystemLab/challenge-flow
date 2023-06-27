@@ -25,6 +25,10 @@ export interface WorkspaceDocRef {
 
 export interface ChallengeDocRef extends ChallengeFormStates {
   members: DocumentReference[];
+  duration: {
+    start: string;
+    end: string;
+  };
 }
 
 /** data model */
