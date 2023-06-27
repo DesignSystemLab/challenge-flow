@@ -9,7 +9,7 @@ export const markdownSection = css({
   [mq.xl]: {}
 });
 
-export const previewSection = (height?: number) =>
+export const previewSection = (height?: number, autoHeight?: boolean) =>
   css({
     boxSizing: 'border-box',
     padding: '12px',
@@ -19,7 +19,7 @@ export const previewSection = (height?: number) =>
     marginTop: '8px',
     marginLeft: '0',
     boxShadow: '0px 10px 10px -10px rgba(33, 35, 38, 0.1)',
-    height: `${height ?? DEFAULT_PREVIEW_HEIGHT}px`,
+    height: autoHeight ? 'auto' : `${height ?? DEFAULT_PREVIEW_HEIGHT}px`,
     overflow: 'auto',
     [mq.md]: {
       marginTop: '0'
