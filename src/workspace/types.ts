@@ -1,6 +1,6 @@
 import type { DocumentReference } from 'firebase/firestore';
 import type { UserProfile } from '@auth/types';
-import type { ChallengeFormStates } from '@challenge/types';
+import type { ChallengeHookFormValues } from '@challenge/types';
 
 /** firebase Ref Type */
 export type PeriodFormat = `turn${number}`;
@@ -16,7 +16,7 @@ export interface WorkspaceDocRef {
   notice: string;
 }
 
-export interface ChallengeDocRef extends ChallengeFormStates {
+export interface ChallengeDocRef extends ChallengeHookFormValues {
   members: DocumentReference[];
   duration: {
     start: string;
