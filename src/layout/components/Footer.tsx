@@ -1,4 +1,4 @@
-import { footerWrapper, footerContents } from '../styles/footer-style';
+import { footerWrapper, footerContents } from '../styles/footerStyle';
 
 export const Footer = () => (
   <footer css={footerWrapper}>

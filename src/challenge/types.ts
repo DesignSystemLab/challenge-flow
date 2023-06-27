@@ -1,24 +1,36 @@
-export interface ChallengeFormStates {
+export interface ChallengeHookFormValues {
   title: string;
   isDaily: boolean;
-  // skill: number | null;
-  content: string;
-  // memberCapacity: number;
   dueAt: string;
-  e_duration: string;
-  s_duration: string;
+  duration: {
+    start: string;
+    end: string;
+  };
   isPublic: boolean;
 }
+export interface ChallengeAllFormValues extends ChallengeHookFormValues {
+  memberCapacity: number;
+  content: string;
+  skill: number;
+}
 
-export interface ChallengeFormStatesWithId extends ChallengeFormStates {
+export interface ChallengeFormValuesWithUserId extends ChallengeAllFormValues {
+  userId: string;
+}
+
+export interface ChallengeFormValuesWithId extends ChallengeAllFormValues {
   id: string;
 }
 
-export interface ChallengePostFields extends ChallengeFormStatesWithId {
+export interface ChallengePostFields extends ChallengeFormValuesWithId {
   createdAt: string;
-  members: string[] | [];
+  members: string[];
+  updatedAt?: string;
 }
 
+export interface ChallengeModifyFetchProps extends ChallengeFormValuesWithId {
+  userId: string;
+}
 export interface CreateChallengeFormProps {
   id?: string;
 }

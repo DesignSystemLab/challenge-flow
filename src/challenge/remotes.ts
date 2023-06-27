@@ -2,13 +2,13 @@ import { database } from '@shared/firebase';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import { createOne, getList, getOne, moveDoc, addDataInArrayField, upsertDoc } from '@shared/utils/firestore';
 import { collection, doc, orderBy, query } from 'firebase/firestore';
-import { ChallengeFormStates } from './types';
+import { ChallengeAllFormValues } from './types';
 
 const REF_NAME = 'challenge';
 const DELETED_REF_NAME = 'deleted-challenge';
 const COLLECTION = collection(database, REF_NAME);
 
-async function create(postValue: ChallengeFormStates) {
+async function create(postValue: ChallengeAllFormValues) {
   const ref = doc(collection(database, REF_NAME));
   const param = {
     ...postValue,
@@ -39,7 +39,7 @@ async function deleteOne(postId: string) {
   return moveDoc(targetRef, destRef);
 }
 
-async function modifyPost(postId: string, postValue: ChallengeFormStates) {
+async function modifyPost(postId: string, postValue: ChallengeAllFormValues) {
   const docRef = doc(database, REF_NAME, postId);
   const param = {
     ...postValue,

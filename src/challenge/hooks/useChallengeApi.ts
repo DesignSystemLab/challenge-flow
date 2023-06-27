@@ -1,4 +1,4 @@
-import { ChallengeFormStates } from '@challenge/types';
+import { ChallengeAllFormValues } from '@challenge/types';
 import { ChallengeAPI } from '@challenge/remotes';
 import { useMutation, useQuery } from 'react-query';
 
@@ -14,7 +14,9 @@ export const useChallengeApi = () => {
   };
 
   const useWriteMutation = () => {
-    const writeMutation = useMutation(({ data }: { data: ChallengeFormStates }) => ChallengeAPI.create(data));
+    const writeMutation = useMutation(({ mergedFormValues }: { mergedFormValues: ChallengeAllFormValues }) =>
+      ChallengeAPI.create(mergedFormValues)
+    );
     return writeMutation;
   };
 
@@ -30,8 +32,9 @@ export const useChallengeApi = () => {
   };
 
   const useModifyMutation = () => {
-    const modifyMutation = useMutation(({ postId, data }: { postId: string; data: ChallengeFormStates }) =>
-      ChallengeAPI.modifyPost(postId, data)
+    const modifyMutation = useMutation(
+      ({ postId, mergedFormValues }: { postId: string; mergedFormValues: ChallengeAllFormValues }) =>
+        ChallengeAPI.modifyPost(postId, mergedFormValues)
     );
     return modifyMutation;
   };

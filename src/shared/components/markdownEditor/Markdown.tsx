@@ -13,10 +13,12 @@ interface MarkdownProps {
   viewer?: boolean;
   content?: string;
   height?: number;
+  minHeight?: number;
+  autoHeight?: boolean;
 }
 
 const Markdown = (props: MarkdownProps) => {
-  const { content = '', onChange, viewer = false, height = 720 } = props;
+  const { content = '', onChange, viewer = false, height, autoHeight = false, minHeight = 310 } = props;
   const editorRef = useRef<Editor>(null);
   const { breakpoint } = useWindowSize();
 
@@ -29,14 +31,14 @@ const Markdown = (props: MarkdownProps) => {
 
   if (viewer) {
     return (
-      <article css={previewSection(height)}>
+      <article css={previewSection(height, autoHeight)}>
         <Viewer initialValue={content} plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]} />
       </article>
     );
   }
 
   return (
-    <section css={{ height }} role="textbox">
+    <section css={{ height, minHeight }} role="textbox">
       <Editor
         ref={editorRef}
         toolbarItems={[
@@ -46,12 +48,12 @@ const Markdown = (props: MarkdownProps) => {
           ['table', 'image', 'link'],
           ['code', 'codeblock']
         ]}
-        minHeight="720px"
         previewStyle={breakpoint === 'sm' ? 'tab' : 'vertical'}
         initialValue={content}
         onChange={() => {
           onMarkdownChange(editorRef);
         }}
+        // height="auto"
         plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]}
       />
     </section>

@@ -3,10 +3,11 @@ import { SKILLS } from '@shared/constants';
 import { Select } from '@jdesignlab/react';
 
 interface DevSkillComboboxProps {
+  state: number;
   setState: Dispatch<SetStateAction<number>>;
 }
 
-export const DevSkillCombobox = ({ setState }: DevSkillComboboxProps) => {
+export const DevSkillCombobox = ({ state, setState }: DevSkillComboboxProps) => {
   const onValueChange = (value: string | null) => {
     if (value) {
       setState(Number(value));
@@ -14,15 +15,15 @@ export const DevSkillCombobox = ({ setState }: DevSkillComboboxProps) => {
   };
 
   return (
-    <Select onValueChange={(value) => onValueChange(value)}>
-      <Select.Trigger placeholder="기술 선택하기">
-        <Select.Input />
-      </Select.Trigger>
-      {Object.keys(SKILLS).map((key) => (
-        <Select.Option value={SKILLS[key]} key={SKILLS[key]}>
-          {key}
-        </Select.Option>
-      ))}
-    </Select>
+    <>
+      <Select defaultValue={`${state}`} onValueChange={(value) => onValueChange(value)}>
+        <Select.Trigger placeholder="ex) React">{/* <Select.Input /> */}</Select.Trigger>
+        {Object.entries(SKILLS).map(([key, value]) => (
+          <Select.Option value={key} key={key}>
+            {value}
+          </Select.Option>
+        ))}
+      </Select>
+    </>
   );
 };

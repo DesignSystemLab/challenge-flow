@@ -2,11 +2,13 @@ import { Suspense } from 'react';
 import DynamicWrapper from '@shared/components/DynamicWrapper';
 import { ErrorModal } from '@shared/components/ErrorModal';
 import { ChallengeList } from '@challenge/components/ChallengeList';
+import { useUserAuth } from '@auth/hooks/useUserAuth';
 import { Button } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import { ErrorBoundary } from 'react-error-boundary';
 
 const ChallengePage = () => {
+  const { data: user } = useUserAuth();
   const router = useRouter();
 
   const moveToNewChallenge = () => {
@@ -22,7 +24,7 @@ const ChallengePage = () => {
       <DynamicWrapper>
         <ErrorBoundary FallbackComponent={ErrorModal}>
           <Suspense fallback={<div>loading</div>}>
-            <ChallengeList />
+            <ChallengeList userId={user?.uid} />
           </Suspense>
         </ErrorBoundary>
       </DynamicWrapper>
