@@ -1,5 +1,4 @@
 import { ApplicationError, FIREBASE_COLLECTIONS } from '@shared/constants';
-import NotfoundPage from '@pages/404';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { WorkspaceDocRef } from '@workspace/types';
@@ -21,8 +20,13 @@ const workspaceNoticeService = async (req: NextApiRequest, res: NextApiResponse)
       return;
     }
 
-    res.status(404).send(NotfoundPage);
-  } catch (error) {
+    res.status(400).json(
+      responseEntity<null>({
+        responseData: null,
+        success: false,
+        message: "공지사항이 존재하지 않습니다."
+      })
+    );
     res.status(500).json(
       responseEntity<null>({
         responseData: null,
