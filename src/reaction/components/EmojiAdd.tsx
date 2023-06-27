@@ -6,7 +6,7 @@ import { ReactionContext } from '../context';
 export const EmojiAdd = ({ userId }: { userId: string | undefined }) => {
   const emojiDefaultSet = ['😀', '🤩', '😳', '😢', '😍'];
   const { originId } = useContext(ReactionContext);
-  const { onSubmit } = useCreateEmoji(originId, userId);
+  const { onSubmit } = useCreateEmoji(originId, userId as string);
   const createEmojiHandle = (value: string) => {
     onSubmit(value);
   };

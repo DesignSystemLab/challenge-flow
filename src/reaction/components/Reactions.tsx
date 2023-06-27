@@ -24,10 +24,10 @@ const ReactionError = ({ ...errorProps }: ErrorfallbackProps) => {
 };
 
 export const Reactions = ({ originId }: { originId: string }) => {
-  const { data: user } = useUserAuth();
+  // const { data: user } = useUserAuth();
   // console.log('user', user);
   // const userId = 'user1234';
-  // const userId = 'test1234';
+  const userId = 'test1234';
   return (
     <DynamicWrapper>
       <CompositionBoundaryReactQuery
@@ -36,8 +36,8 @@ export const Reactions = ({ originId }: { originId: string }) => {
       >
         <ReactionContext.Provider value={useMemo(() => ({ originId }), [originId])}>
           <div css={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <EmojiReactions userId={user?.uid} />
-            <CommentReactions userId={user?.uid} />
+            <EmojiReactions userId={userId} />
+            <CommentReactions userId={userId} />
           </div>
         </ReactionContext.Provider>
       </CompositionBoundaryReactQuery>
