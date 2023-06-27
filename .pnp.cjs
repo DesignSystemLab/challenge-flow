@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@emotion/styled", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.0"],\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.1"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
             ["@next/eslint-plugin-next", "npm:13.4.5"],\
             ["@testing-library/dom", "npm:9.3.1"],\
@@ -2896,13 +2896,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-box-virtual-f6a2927296/0/cache/@jdesignlab-box-npm-0.6.0-f80cc54af9-8449d636cc.zip/node_modules/@jdesignlab/box/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-box-virtual-90eec5b6b8/0/cache/@jdesignlab-box-npm-0.6.0-f80cc54af9-8449d636cc.zip/node_modules/@jdesignlab/box/",\
           "packageDependencies": [\
-            ["@jdesignlab/box", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/box", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -2930,14 +2930,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-button-virtual-a135bc444c/0/cache/@jdesignlab-button-npm-0.9.0-8ad0af3995-3619bbcfde.zip/node_modules/@jdesignlab/button/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-button-virtual-3ec15b365e/0/cache/@jdesignlab-button-npm-0.9.0-8ad0af3995-3619bbcfde.zip/node_modules/@jdesignlab/button/",\
           "packageDependencies": [\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -2965,12 +2965,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-card-virtual-136ff51af0/0/cache/@jdesignlab-card-npm-0.7.0-41f8a55129-1b639bab32.zip/node_modules/@jdesignlab/card/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-card-virtual-984a6205bb/0/cache/@jdesignlab-card-npm-0.7.0-41f8a55129-1b639bab32.zip/node_modules/@jdesignlab/card/",\
           "packageDependencies": [\
-            ["@jdesignlab/card", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/card", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -2998,13 +2998,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-checkbox-virtual-2f3a0ad8d3/0/cache/@jdesignlab-checkbox-npm-0.7.0-63ca79daf9-ab9358485f.zip/node_modules/@jdesignlab/checkbox/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-checkbox-virtual-77cbc169c3/0/cache/@jdesignlab-checkbox-npm-0.7.0-63ca79daf9-ab9358485f.zip/node_modules/@jdesignlab/checkbox/",\
           "packageDependencies": [\
-            ["@jdesignlab/checkbox", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/checkbox", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3032,16 +3032,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-drawer-virtual-935b010a92/0/cache/@jdesignlab-drawer-npm-0.6.0-de61e3c5f4-11c14a217e.zip/node_modules/@jdesignlab/drawer/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-drawer-virtual-891728deed/0/cache/@jdesignlab-drawer-npm-0.6.0-de61e3c5f4-11c14a217e.zip/node_modules/@jdesignlab/drawer/",\
           "packageDependencies": [\
-            ["@jdesignlab/drawer", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/drawer", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3069,14 +3069,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-dropdown-virtual-99afe428e7/0/cache/@jdesignlab-dropdown-npm-0.7.0-7d3dab0c79-72cd102745.zip/node_modules/@jdesignlab/dropdown/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-dropdown-virtual-ce0280c561/0/cache/@jdesignlab-dropdown-npm-0.7.0-7d3dab0c79-72cd102745.zip/node_modules/@jdesignlab/dropdown/",\
           "packageDependencies": [\
-            ["@jdesignlab/dropdown", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/dropdown", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3103,12 +3103,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-flex-virtual-ee5ffd2510/0/cache/@jdesignlab-flex-npm-0.8.0-fae69ccc41-95cba62492.zip/node_modules/@jdesignlab/flex/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-flex-virtual-6ec656e580/0/cache/@jdesignlab-flex-npm-0.8.0-fae69ccc41-95cba62492.zip/node_modules/@jdesignlab/flex/",\
           "packageDependencies": [\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3135,14 +3135,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-input-virtual-febc8fc4c6/0/cache/@jdesignlab-input-npm-0.8.0-f720109e06-0d20e41efa.zip/node_modules/@jdesignlab/input/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-input-virtual-6991536ee4/0/cache/@jdesignlab-input-npm-0.8.0-f720109e06-0d20e41efa.zip/node_modules/@jdesignlab/input/",\
           "packageDependencies": [\
-            ["@jdesignlab/input", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/input", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3170,12 +3170,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-j-provider-virtual-3b935ba9fc/0/cache/@jdesignlab-j-provider-npm-0.7.0-87d2853f02-3f9b135561.zip/node_modules/@jdesignlab/j-provider/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-j-provider-virtual-5d147acd97/0/cache/@jdesignlab-j-provider-npm-0.7.0-87d2853f02-3f9b135561.zip/node_modules/@jdesignlab/j-provider/",\
           "packageDependencies": [\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3198,16 +3198,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-modal-virtual-02b5ac0a74/0/cache/@jdesignlab-modal-npm-0.8.0-15bde31fbe-8d2fa60129.zip/node_modules/@jdesignlab/modal/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-modal-virtual-4e0e807ae7/0/cache/@jdesignlab-modal-npm-0.8.0-15bde31fbe-8d2fa60129.zip/node_modules/@jdesignlab/modal/",\
           "packageDependencies": [\
-            ["@jdesignlab/modal", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/modal", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/input", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/input", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3234,15 +3234,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-popover-virtual-17977fbd23/0/cache/@jdesignlab-popover-npm-0.6.0-e1ca0d91e7-d1b49760e0.zip/node_modules/@jdesignlab/popover/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-popover-virtual-6a02e90b53/0/cache/@jdesignlab-popover-npm-0.6.0-e1ca0d91e7-d1b49760e0.zip/node_modules/@jdesignlab/popover/",\
           "packageDependencies": [\
-            ["@jdesignlab/popover", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/popover", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3270,13 +3270,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-radio-virtual-58958369d0/0/cache/@jdesignlab-radio-npm-0.7.0-67b778e28b-44154a1931.zip/node_modules/@jdesignlab/radio/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-radio-virtual-14cb8dc068/0/cache/@jdesignlab-radio-npm-0.7.0-67b778e28b-44154a1931.zip/node_modules/@jdesignlab/radio/",\
           "packageDependencies": [\
-            ["@jdesignlab/radio", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/radio", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3297,38 +3297,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@jdesignlab/react", [\
-        ["npm:0.9.0", {\
-          "packageLocation": "./.yarn/cache/@jdesignlab-react-npm-0.9.0-a6e15ec64a-62f433167d.zip/node_modules/@jdesignlab/react/",\
+        ["npm:0.9.1", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-react-npm-0.9.1-5f50583dff-6789d88257.zip/node_modules/@jdesignlab/react/",\
           "packageDependencies": [\
-            ["@jdesignlab/react", "npm:0.9.0"]\
+            ["@jdesignlab/react", "npm:0.9.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-virtual-72bc526ec0/0/cache/@jdesignlab-react-npm-0.9.0-a6e15ec64a-62f433167d.zip/node_modules/@jdesignlab/react/",\
+        ["virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.1", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-virtual-16f7596c7b/0/cache/@jdesignlab-react-npm-0.9.1-5f50583dff-6789d88257.zip/node_modules/@jdesignlab/react/",\
           "packageDependencies": [\
-            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.0"],\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.1"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/box", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/card", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/checkbox", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/drawer", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/dropdown", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/input", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/modal", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/popover", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/radio", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/select", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
-            ["@jdesignlab/stack", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/tabs", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/textarea", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/box", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/card", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/checkbox", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/drawer", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
+            ["@jdesignlab/dropdown", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/input", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/modal", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/popover", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
+            ["@jdesignlab/radio", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/select", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
+            ["@jdesignlab/stack", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
+            ["@jdesignlab/tabs", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/textarea", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.1"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
-            ["@jdesignlab/tooltip", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
-            ["@jdesignlab/typography", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/tooltip", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
+            ["@jdesignlab/typography", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3384,10 +3384,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:206663662e90d9b47f29bbaf8c0ee0743a400edd86fca25ee3af28b397a9980de45b8869d58442459cb39164b927af5614466f1b143880cf04a3120d60ae2176#npm:0.5.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-utils-virtual-b05ba6069e/0/cache/@jdesignlab-react-utils-npm-0.5.0-780f6ec8fe-2449eb3442.zip/node_modules/@jdesignlab/react-utils/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-utils-virtual-3d71156519/0/cache/@jdesignlab-react-utils-npm-0.8.0-2e9d2523e9-1544a9e015.zip/node_modules/@jdesignlab/react-utils/",\
           "packageDependencies": [\
-            ["@jdesignlab/react-utils", "virtual:206663662e90d9b47f29bbaf8c0ee0743a400edd86fca25ee3af28b397a9980de45b8869d58442459cb39164b927af5614466f1b143880cf04a3120d60ae2176#npm:0.5.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3402,10 +3402,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-utils-virtual-84d0fb15b7/0/cache/@jdesignlab-react-utils-npm-0.8.0-2e9d2523e9-1544a9e015.zip/node_modules/@jdesignlab/react-utils/",\
+        ["virtual:ef038358ee1788983741cbbdf6e807514e69a5db473ede81fbb03d17d48f1acb9150fe8a2f4b25c2fbded01956749036ddc2e395bab17a958f7ffe772623b936#npm:0.5.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-react-utils-virtual-bc962689e2/0/cache/@jdesignlab-react-utils-npm-0.5.0-780f6ec8fe-2449eb3442.zip/node_modules/@jdesignlab/react-utils/",\
           "packageDependencies": [\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:ef038358ee1788983741cbbdf6e807514e69a5db473ede81fbb03d17d48f1acb9150fe8a2f4b25c2fbded01956749036ddc2e395bab17a958f7ffe772623b936#npm:0.5.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3429,15 +3429,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-select-virtual-b06252a9d6/0/cache/@jdesignlab-select-npm-0.8.0-c569f0151c-dcdcc7992b.zip/node_modules/@jdesignlab/select/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-select-virtual-e605f96124/0/cache/@jdesignlab-select-npm-0.8.0-c569f0151c-dcdcc7992b.zip/node_modules/@jdesignlab/select/",\
           "packageDependencies": [\
-            ["@jdesignlab/select", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/select", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/flex", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/flex", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3465,12 +3465,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-stack-virtual-4eb5ac6006/0/cache/@jdesignlab-stack-npm-0.6.0-31dc297ed0-398df74d03.zip/node_modules/@jdesignlab/stack/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-stack-virtual-4bf912c6cb/0/cache/@jdesignlab-stack-npm-0.6.0-31dc297ed0-398df74d03.zip/node_modules/@jdesignlab/stack/",\
           "packageDependencies": [\
-            ["@jdesignlab/stack", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/stack", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3491,19 +3491,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@jdesignlab/tabs", [\
-        ["npm:0.6.0", {\
-          "packageLocation": "./.yarn/cache/@jdesignlab-tabs-npm-0.6.0-0cb6f01704-917ec950e5.zip/node_modules/@jdesignlab/tabs/",\
+        ["npm:0.7.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-tabs-npm-0.7.0-025294c9eb-e08ef994f7.zip/node_modules/@jdesignlab/tabs/",\
           "packageDependencies": [\
-            ["@jdesignlab/tabs", "npm:0.6.0"]\
+            ["@jdesignlab/tabs", "npm:0.7.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tabs-virtual-206663662e/0/cache/@jdesignlab-tabs-npm-0.6.0-0cb6f01704-917ec950e5.zip/node_modules/@jdesignlab/tabs/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tabs-virtual-ef038358ee/0/cache/@jdesignlab-tabs-npm-0.7.0-025294c9eb-e08ef994f7.zip/node_modules/@jdesignlab/tabs/",\
           "packageDependencies": [\
-            ["@jdesignlab/tabs", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/tabs", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react-utils", "virtual:206663662e90d9b47f29bbaf8c0ee0743a400edd86fca25ee3af28b397a9980de45b8869d58442459cb39164b927af5614466f1b143880cf04a3120d60ae2176#npm:0.5.0"],\
+            ["@jdesignlab/react-utils", "virtual:ef038358ee1788983741cbbdf6e807514e69a5db473ede81fbb03d17d48f1acb9150fe8a2f4b25c2fbded01956749036ddc2e395bab17a958f7ffe772623b936#npm:0.5.0"],\
             ["@jdesignlab/theme", "npm:0.5.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3524,21 +3524,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@jdesignlab/textarea", [\
-        ["npm:0.8.0", {\
-          "packageLocation": "./.yarn/cache/@jdesignlab-textarea-npm-0.8.0-8d33a299fa-24a0a2c888.zip/node_modules/@jdesignlab/textarea/",\
+        ["npm:0.8.1", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-textarea-npm-0.8.1-0eedfaaf30-0360e230fd.zip/node_modules/@jdesignlab/textarea/",\
           "packageDependencies": [\
-            ["@jdesignlab/textarea", "npm:0.8.0"]\
+            ["@jdesignlab/textarea", "npm:0.8.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-textarea-virtual-d09a6b584b/0/cache/@jdesignlab-textarea-npm-0.8.0-8d33a299fa-24a0a2c888.zip/node_modules/@jdesignlab/textarea/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.1", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-textarea-virtual-56b080390f/0/cache/@jdesignlab-textarea-npm-0.8.1-0eedfaaf30-0360e230fd.zip/node_modules/@jdesignlab/textarea/",\
           "packageDependencies": [\
-            ["@jdesignlab/textarea", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/textarea", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.1"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
-            ["@jdesignlab/typography", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/typography", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
             ["@types/react", "npm:18.2.5"],\
@@ -3581,15 +3581,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tooltip-virtual-25ff8e2df5/0/cache/@jdesignlab-tooltip-npm-0.6.0-9d7de80e9d-852cc2a85d.zip/node_modules/@jdesignlab/tooltip/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-tooltip-virtual-516ff519d5/0/cache/@jdesignlab-tooltip-npm-0.6.0-9d7de80e9d-852cc2a85d.zip/node_modules/@jdesignlab/tooltip/",\
           "packageDependencies": [\
-            ["@jdesignlab/tooltip", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/tooltip", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.6.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/button", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.9.0"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
+            ["@jdesignlab/button", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.9.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -3610,20 +3610,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@jdesignlab/typography", [\
-        ["npm:0.6.0", {\
-          "packageLocation": "./.yarn/cache/@jdesignlab-typography-npm-0.6.0-7c13239efb-74a005b932.zip/node_modules/@jdesignlab/typography/",\
+        ["npm:0.7.0", {\
+          "packageLocation": "./.yarn/cache/@jdesignlab-typography-npm-0.7.0-97612ba922-b1eb697810.zip/node_modules/@jdesignlab/typography/",\
           "packageDependencies": [\
-            ["@jdesignlab/typography", "npm:0.6.0"]\
+            ["@jdesignlab/typography", "npm:0.7.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/@jdesignlab-typography-virtual-14e237fa3e/0/cache/@jdesignlab-typography-npm-0.6.0-7c13239efb-74a005b932.zip/node_modules/@jdesignlab/typography/",\
+        ["virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/@jdesignlab-typography-virtual-864e3dae08/0/cache/@jdesignlab-typography-npm-0.7.0-97612ba922-b1eb697810.zip/node_modules/@jdesignlab/typography/",\
           "packageDependencies": [\
-            ["@jdesignlab/typography", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.6.0"],\
+            ["@jdesignlab/typography", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/j-provider", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.7.0"],\
-            ["@jdesignlab/react-utils", "virtual:72bc526ec0cf725c7a9514d572695bc0cc1f9b9d052b88151354dc9145bb523d9efef1b62f9b185d78780ebcaedfb15c63896eab8349ffe346b64740f6ff3f26#npm:0.8.0"],\
+            ["@jdesignlab/j-provider", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.7.0"],\
+            ["@jdesignlab/react-utils", "virtual:16f7596c7b82c8bc89b4aa509a4f662f4522487037d5632a4932c00fb7bc912969205d70567d293334e4dc8832ab58f8412f5de8d9d310183a029b1f2a8260f3#npm:0.8.0"],\
             ["@jdesignlab/theme", "npm:0.7.0"],\
             ["@jdesignlab/utils", "npm:0.5.0"],\
             ["@types/emotion__react", null],\
@@ -6558,7 +6558,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.0"],\
             ["@emotion/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
             ["@emotion/styled", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:11.10.8"],\
-            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.0"],\
+            ["@jdesignlab/react", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.9.1"],\
             ["@jdesignlab/react-icons", "virtual:37fb0967fa619d0f54303ceb6f7bb98ffce61f47d129e56247c9fc2ab3361835b20cca2fec5d5fe12d390fda56882a0fbb4fa51ada85039237812a3b0bf7efbf#npm:0.6.0"],\
             ["@next/eslint-plugin-next", "npm:13.4.5"],\
             ["@testing-library/dom", "npm:9.3.1"],\

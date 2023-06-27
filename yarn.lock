@@ -1934,9 +1934,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/react@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "@jdesignlab/react@npm:0.9.0"
+"@jdesignlab/react@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@jdesignlab/react@npm:0.9.1"
   dependencies:
     "@jdesignlab/box": 0.6.0
     "@jdesignlab/button": 0.9.0
@@ -1953,17 +1953,17 @@ __metadata:
     "@jdesignlab/react-utils": 0.8.0
     "@jdesignlab/select": 0.8.0
     "@jdesignlab/stack": 0.6.0
-    "@jdesignlab/tabs": 0.6.0
-    "@jdesignlab/textarea": 0.8.0
+    "@jdesignlab/tabs": 0.7.0
+    "@jdesignlab/textarea": 0.8.1
     "@jdesignlab/theme": 0.7.0
     "@jdesignlab/tooltip": 0.6.0
-    "@jdesignlab/typography": 0.6.0
+    "@jdesignlab/typography": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 62f433167deb2133b2ed55aa2e5bbfdb3c0d73d005c09cd9037c71bfe9fda6b7c8aa2572a28935e4b29c5eebf40e8e38b0b3e5ad9454715c684fd02b2fdc6b34
+  checksum: 6789d88257b2b0c073fbacc957e0eb83180b39b8eae5887b930832cd4bc137edb65f428056eb9cb395839640dd1cd5e8786713889e1fd4f98aa4eb2c28c90555
   languageName: node
   linkType: hard
 
@@ -2000,9 +2000,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/tabs@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/tabs@npm:0.6.0"
+"@jdesignlab/tabs@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@jdesignlab/tabs@npm:0.7.0"
   dependencies:
     "@jdesignlab/react-utils": "*"
     "@jdesignlab/theme": "*"
@@ -2011,23 +2011,23 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 917ec950e5aa66729f4dc3aa9ae7075346b375cef96fb82a3edf57706c03052af4e3893bd4cf4da30eb203cc14f6bc1e5ade76f9e09564d3366a03fd8a861c91
+  checksum: e08ef994f73a55a229ee43902b1a79b4541f3f5d3071a676b974ed117dc408b3f2e798aa44e6f3a310cb8768168a21a34d8334f5f8a91a9b716b9dcd4a4799d3
   languageName: node
   linkType: hard
 
-"@jdesignlab/textarea@npm:0.8.0":
-  version: 0.8.0
-  resolution: "@jdesignlab/textarea@npm:0.8.0"
+"@jdesignlab/textarea@npm:0.8.1":
+  version: 0.8.1
+  resolution: "@jdesignlab/textarea@npm:0.8.1"
   dependencies:
     "@jdesignlab/react-utils": 0.8.0
     "@jdesignlab/theme": 0.7.0
-    "@jdesignlab/typography": 0.6.0
+    "@jdesignlab/typography": 0.7.0
     "@jdesignlab/utils": 0.5.0
   peerDependencies:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 24a0a2c8884727879b194595f8bae73230dbebe5611699806d03bb7f71a449a0e413f026f57ada01b102c4dba4ccddd6ab06e12212c1913dc2f97f2f6b499c1e
+  checksum: 0360e230fdab6c5c0a9b0cdac8eefd9b46c04b47f79a80a246a40b5d5d00f3c36a1e115eebf32cbbf6c77217add1e468f2715a9d28e1afd181d30da03b9577d1
   languageName: node
   linkType: hard
 
@@ -2063,9 +2063,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/typography@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@jdesignlab/typography@npm:0.6.0"
+"@jdesignlab/typography@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@jdesignlab/typography@npm:0.7.0"
   dependencies:
     "@jdesignlab/j-provider": 0.7.0
     "@jdesignlab/react-utils": 0.8.0
@@ -2075,7 +2075,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 74a005b932a16501251b57349ea04f227dfb7b126b90018b4785c1939dc879026acd131f654c73a997158ba8a7b86ce502f689bfa0dc7a545e1d279e42978978
+  checksum: b1eb697810058825fdd072dbb9dbf7b0a7a5dad607b1d3f7f258deda1aefbb5b03e2105e7644bfd23a489abff3ab94e7a861f63b26febe424a3b41ba65f73d44
   languageName: node
   linkType: hard
 
@@ -4337,7 +4337,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8
-    "@jdesignlab/react": ^0.9.0
+    "@jdesignlab/react": ^0.9.1
     "@jdesignlab/react-icons": ^0.6.0
     "@next/eslint-plugin-next": ^13.4.5
     "@testing-library/dom": ^9.3.1
