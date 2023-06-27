@@ -1,3 +1,4 @@
+import { errorMessage } from '@shared/errorMessage';
 import { responseEntity } from '@shared/responseEntity';
 import { auth } from '@shared/firebase';
 import { ApplicationError } from '@shared/constants';
@@ -20,7 +21,7 @@ const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
       responseEntity<null>({
         responseData: null,
         success: false,
-        message: ApplicationError.SERVER
+        message: errorMessage(error) ?? ApplicationError.SERVER
       })
     );
   }
