@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import DynamicWrapper from '@shared/components/DynamicWrapper';
-import { useUserAuth } from '@auth/hooks/useUserAuth';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Button } from '@jdesignlab/react';
 import { CommentReactions } from './CommentReactions';
