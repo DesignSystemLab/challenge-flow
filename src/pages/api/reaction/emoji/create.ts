@@ -10,7 +10,7 @@ const REF_NAME = 'emoji';
 const CHALLENGE_REF_NAME = 'challenge';
 const COLLECTION = collection(database, REF_NAME);
 
-const EmojiReactionCreateService = async (req: NextApiRequest, res: NextApiResponse) => {
+const emojiReactionCreateService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const param = req.body;
     const ref = doc(COLLECTION);
@@ -39,4 +39,4 @@ const EmojiReactionCreateService = async (req: NextApiRequest, res: NextApiRespo
     );
   }
 };
-export default EmojiReactionCreateService;
+export default emojiReactionCreateService;

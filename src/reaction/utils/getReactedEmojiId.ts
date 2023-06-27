@@ -1,11 +1,13 @@
 import { EmojiDataWithId } from '@reaction/types';
 
-export const getReactedEmojiId = (values: EmojiDataWithId[], userId: string) => {
+export const getReactedEmojiId = (values: EmojiDataWithId[], userId: string | undefined) => {
   let reactedEmojiId = null;
-  for (const value of values) {
+
+  values.forEach((value) => {
     if (value.userId === userId) {
       reactedEmojiId = value.id;
     }
-  }
+  });
+
   return reactedEmojiId;
 };
