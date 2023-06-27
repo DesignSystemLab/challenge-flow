@@ -4,6 +4,7 @@ import { Button, Flex, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 
 export const ChallengeCard = ({ postInfo, userId }: { postInfo: ChallengePostFields; userId: string | undefined }) => {
+  console.log(userId);
   const router = useRouter();
   const moveToPostDetail = () => {
     router.push({ pathname: `/challenge/${postInfo.id}` });
