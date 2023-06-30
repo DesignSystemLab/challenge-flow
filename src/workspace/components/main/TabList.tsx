@@ -4,11 +4,13 @@ import { useQueryWorkspaceNotice } from '@workspace/hooks/useQueryWorkspaceNotic
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { useUserAuth } from '@auth/hooks/useUserAuth';
 import { CommonModal } from '@shared/components/CommonModal';
-import { Button, Flex, Tabs, Text } from '@jdesignlab/react';
+import { Tabs } from '@jdesignlab/react';
 import { EmptyPost } from './EmptyPost';
 import { workspaceMachineContext } from '../../machines/workspaceMachineContext';
 import { workspaceContext } from '../../workspaceContext';
 import { useQueryPosts } from '../../hooks/useQueryPosts';
+import { ContentExistTabItem } from '../posts/ContentExistTabItem';
+import { ContentNotExistTabItem } from '../posts/ContentNotExistTabItem';
 import type { Post } from '../../types';
 
 export const TabList = () => {
@@ -44,32 +46,20 @@ export const TabList = () => {
         {workspaceData?.members.map((member) => {
           const { email } = member;
           const userPost = posts?.find((post: Post) => post.author === email);
-          const content = userPost?.content ?? '';
+          const content: string = userPost?.content ?? '';
+          const isOwnTab = email === user?.email ?? false;
+          console.log(isOwnTab);
+
           return (
             <Tabs.Content value={email ?? ''} key={email}>
-              {content && (
-                <Flex direction="column" justify="center" gap="8px">
-                  <MarkdownEditor viewer content={content} />
-                  <Flex direction="row" gap="8px" justify="flex-end">
-                    <Button
-                      color="red-lighten2"
-                      onClick={() => {
-                        setOpenModal(true);
-                      }}
-                    >
-                      삭제
-                    </Button>
-                    <Button type="button">수정</Button>
-                  </Flex>
-                </Flex>
-              )}
-              {!content && email === user?.email && (
-                <EmptyPost workspaceId={workspaceId} period={state.context.period} />
-              )}
-              {!content && email !== user?.email && (
-                <Text align="center" variant="heading">
-                  작성된 글이 없어요!
-                </Text>
+              {content ? (
+                <ContentExistTabItem isOwnPost={!!content} isOwnTab={isOwnTab}>
+                  <MarkdownEditor viewer content={content} autoHeight />
+                </ContentExistTabItem>
+              ) : (
+                <ContentNotExistTabItem isOwnTab={isOwnTab}>
+                  <EmptyPost workspaceId={workspaceId} period={state.context.period} />
+                </ContentNotExistTabItem>
               )}
             </Tabs.Content>
           );
