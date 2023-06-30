@@ -48,7 +48,6 @@ export const TabList = () => {
           const userPost = posts?.find((post: Post) => post.author === email);
           const content: string = userPost?.content ?? '';
           const isOwnTab = email === user?.email ?? false;
-          console.log(isOwnTab);
 
           return (
             <Tabs.Content value={email ?? ''} key={email}>
