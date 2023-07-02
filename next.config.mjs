@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, tls: false, net: false, child_process: false };
+    return config;
+  },
   images: {
     remotePatterns: [
       //firebase storage
