@@ -59,15 +59,17 @@ export const EmailPasswordForm = (props: Props) => {
       {errors.password && <Text color="red-base">{errors.password.message as string}</Text>}
       <Modal.Footer>
         <Flex>
-          <Button
-            variant="outline"
-            color="red-lighten2"
-            onClick={() => {
-              refSend({ type: 'CLEAR' });
-            }}
-          >
-            뒤로가기
-          </Button>
+          {!signup && (
+            <Button
+              variant="outline"
+              color="red-lighten2"
+              onClick={() => {
+                refSend({ type: 'CLEAR' });
+              }}
+            >
+              뒤로가기
+            </Button>
+          )}
           <Button type="submit" variant="outline" color="primary-500" disabled={isLoading}>
             {signup ? '회원가입' : '로그인'}
           </Button>
