@@ -2,17 +2,21 @@ import { errorMessage } from '@shared/errorMessage';
 import { responseEntity } from '@shared/responseEntity';
 import { auth } from '@shared/firebase';
 import { ApplicationError } from '@shared/constants';
-import { User, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import type { UserSession, EamilPasswordField } from '@auth/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { EamilPasswordField } from '@auth/types';
 
 const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { email, password } = req.body as EamilPasswordField;
     const { user } = await signInWithEmailAndPassword(auth, email, password);
+    const token = await user.getIdToken();
     res.status(200).json(
-      responseEntity<User>({
-        responseData: user,
+      responseEntity<UserSession>({
+        responseData: {
+          user,
+          token
+        },
         success: true
       })
     );
