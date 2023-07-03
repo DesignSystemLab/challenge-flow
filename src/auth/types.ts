@@ -3,7 +3,7 @@ import type { User } from 'firebase/auth';
 declare module 'next-auth' {
   interface Session {
     user: {
-      uid: string | null;
+      uid: string;
       name: string | null;
       email: string | null;
       image: string | null;
