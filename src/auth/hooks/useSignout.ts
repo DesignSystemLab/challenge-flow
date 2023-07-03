@@ -1,6 +1,7 @@
 import { clearLocalStorageItem } from '@shared/storage';
 import { STORAGE_KEYS, QUREY_KEYS } from '@shared/constants';
 import { useMutation, useQueryClient } from 'react-query';
+import { signOut } from 'next-auth/react';
 import { fetchSignout } from '../remotes/fetchSignout';
 
 export const useSignout = () => {
@@ -9,6 +10,7 @@ export const useSignout = () => {
   const { user } = QUREY_KEYS;
   const { mutate, isLoading } = useMutation(fetchSignout, {
     onSuccess: () => {
+      signOut();
       clearLocalStorageItem(userAuth);
       queryClient.setQueryData(user, null);
     }
