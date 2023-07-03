@@ -22,4 +22,9 @@ export interface UserProfile {
   challenges: string[];
 }
 
+export interface UserSession {
+  user: User;
+  token: string;
+}
+
 export type UserType = User | null;

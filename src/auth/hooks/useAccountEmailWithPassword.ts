@@ -1,6 +1,6 @@
+import { User } from 'firebase/auth';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useMutation } from 'react-query';
-import { User } from 'firebase/auth';
 import { signIn } from 'next-auth/react';
 import { useSetUserAuthData } from './useSetUserAuthData';
 import { fetchSignUpWithEmail } from '../remotes/fetchSignupWithEmail';
@@ -15,23 +15,26 @@ export const useAccountEmailWithPassword = (
   const fetchFn = signup ? fetchSignUpWithEmail : fetchSignInWithEmail;
   const { mutate, isLoading } = useMutation(fetchFn, {
     onSuccess: async (data) => {
-      const tokenId = await data.getIdToken(true);
-      send({ type: 'REGISTRY', user: data });
-      signIn(
-        'credentials',
-        {
-          callbackUrl: '/'
-        },
-        { tokenId, providerType: 'none' }
-      );
+      const { user, token: tokenId } = data;
 
-      if (!signup) {
-        if (data) {
-          updateUserData(data);
-          return;
-        }
-        clearUserData();
+      if (signup) {
+        send({ type: 'REGISTRY', user });
+        return;
       }
+
+      if (user && tokenId) {
+        signIn(
+          'credentials',
+          {
+            callbackUrl: '/'
+          },
+          { tokenId, providerType: 'none' }
+        );
+        updateUserData(user);
+        return;
+      }
+
+      clearUserData();
     },
     onError: (error) => {
       showBoundary(error);
