@@ -31,10 +31,7 @@ export const authOptions: NextAuthOptions = {
             id,
             name,
             image,
-            email: {
-              uid: id,
-              address: email
-            }
+            email
           };
         } else {
           return null;
@@ -57,6 +54,15 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token }) {
       return token;
+    },
+    async session({ session, token }) {
+      if (session && token) {
+        session.user.uid = token.sub || null;
+        session.user.name = token.name || null;
+        session.user.email = token.email || null;
+        session.user.image = token.picture || null;
+      }
+      return session;
     }
   }
 };

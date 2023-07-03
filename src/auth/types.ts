@@ -1,5 +1,16 @@
 import type { User } from 'firebase/auth';
 
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      uid: string | null;
+      name: string | null;
+      email: string | null;
+      image: string | null;
+    };
+  }
+}
+
 export type AuthProvider = 'GOOGLE' | 'GITHUB';
 export interface FormState {
   email: string;
