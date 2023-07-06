@@ -4,7 +4,7 @@ import { mq } from '@shared/styles/mixins/responsive';
 export const footerWrapper = {
   margin: '0 auto',
   height: `${FOOTER_WRAPPER_HEIGHT}px`,
-  background: 'lightgrey'
+  background: '#f1f1f1'
 };
 
 export const footerContents = {

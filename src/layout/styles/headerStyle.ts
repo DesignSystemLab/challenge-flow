@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 
 export const headerWrapper = () =>
   css({
-    borderBottom: 'solid #cccccc 1px',
+    boxShadow: '0px 13px 27px -26px rgba(133,133,133,0.75)',
     height: `${HEADER_WRPPER_HEIGHT}px`,
     boxSizing: 'border-box'
   });
