@@ -3,7 +3,7 @@ import { errorMessage } from '@shared/errorMessage';
 import type { Response } from '@shared/responseEntity';
 import type { PostForm } from '../types';
 
-export const fetchCreatePost = async (postForm: PostForm): Promise<boolean> => {
+export const fetchCreatePost = async (postForm: Omit<PostForm, 'postId'>): Promise<boolean> => {
   try {
     const { data } = await instance<Response<boolean>>({
       method: 'post',

@@ -4,6 +4,7 @@ import { ApplicationError } from '@shared/constants/appplicationError';
 import { errorMessage } from '@shared/errorMessage';
 import { getDate, formatDateTime } from '@shared/utils/date';
 import { FIREBASE_COLLECTIONS } from '@shared/constants/firebaseCollections';
+import { getAuth } from 'firebase-admin/auth';
 import { Timestamp, doc, addDoc, updateDoc, collection, getDoc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 import type { PostForm, WorkspaceDocRef, PostCommentRef } from '@workspace/types';
@@ -11,10 +12,18 @@ import type { PostForm, WorkspaceDocRef, PostCommentRef } from '@workspace/types
 const workspacePostService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { posts, workspace } = FIREBASE_COLLECTIONS;
-    const { workspaceId, turn, ...post } = req.body as PostForm;
+    const { workspaceId, turn, author: uid, ...post } = req.body as PostForm;
     const workspaceDocRef = doc(database, workspace, workspaceId);
+    const { email, displayName } = await getAuth().getUser(uid);
+
     const createdAt = formatDateTime(Timestamp.fromDate(getDate()).toDate());
-    const insertedPost = await addDoc(collection(database, posts), { ...post, createdAt, isDeleted: false });
+    const insertedPost = await addDoc(collection(database, posts), {
+      ...post,
+      author: email ?? displayName,
+      createdAt,
+      authorId: uid,
+      isDeleted: false
+    });
 
     if (insertedPost) {
       const workspaceData = (await getDoc(workspaceDocRef)).data() as WorkspaceDocRef;
@@ -46,7 +55,7 @@ const workspacePostService = async (req: NextApiRequest, res: NextApiResponse) =
       })
     );
   } catch (error) {
-    res.status(404).json(
+    res.status(500).json(
       responseEntity<null>({
         responseData: null,
         success: false,

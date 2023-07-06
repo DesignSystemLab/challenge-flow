@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
-import { useUserAuth } from '@auth/hooks/useUserAuth';
 import { Loading } from '@shared/components/Icons';
 import { TextInput, Button } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useCreatePost } from '../hooks/useCreatePost';
-import type { PeriodFormat } from '../types';
+import type { PeriodFormat, ContextProps } from '../types';
 
-export const WritePost = () => {
-  const { data } = useUserAuth();
+interface Props extends ContextProps {
+  period: PeriodFormat;
+}
+
+export const WritePost = (props: Props) => {
+  const { userSession, workspaceId, period } = props;
   const { register, handleSubmit } = useForm();
   const [content, setContent] = useState<string>('');
   const router = useRouter();
-  const { workspaceId, period } = router.query;
   const prevPaage = `/workspace/${router.query.workspaceId}`;
   const { mutate, isLoading } = useCreatePost(() => {
     router.replace(prevPaage);
@@ -22,13 +24,13 @@ export const WritePost = () => {
   return (
     <form
       onSubmit={handleSubmit((postInfo) => {
-        if (data?.email && typeof workspaceId === 'string' && period) {
+        if (userSession && typeof workspaceId === 'string') {
           mutate({
-            author: data.email,
+            author: userSession.user.uid,
             title: postInfo.post,
             content,
             workspaceId,
-            turn: period as PeriodFormat
+            turn: period
           });
         }
       })}
@@ -53,7 +55,7 @@ export const WritePost = () => {
         취소
       </Button>
       <Button type="submit" disabled={isLoading} icon={isLoading ? <Loading /> : undefined}>
-        제출하기
+        작성하기
       </Button>
     </form>
   );

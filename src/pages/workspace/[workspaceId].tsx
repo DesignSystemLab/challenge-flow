@@ -5,14 +5,12 @@ import { WorkspaceMain } from '@workspace/components/main/WorkspaceMain';
 import { workspaceLayout } from '@workspace/styles/layout';
 import { workspaceContext } from '@workspace/workspaceContext';
 import { GetServerSideProps } from 'next';
+import { getSession } from 'next-auth/react';
+import type { ContextProps } from '@workspace/types';
 
-interface Props {
-  workspaceId: string;
-}
-
-const WorkspacePage = (props: Props) => {
-  const { workspaceId } = props;
-  const memoizedWorkspaceId = useMemo(() => ({ workspaceId }), [workspaceId]);
+const WorkspacePage = (props: ContextProps) => {
+  const { workspaceId, userSession } = props;
+  const memoizedWorkspaceId = useMemo(() => ({ workspaceId, userSession }), [workspaceId, userSession]);
   return (
     <workspaceMachineContext.Provider>
       <workspaceContext.Provider value={memoizedWorkspaceId}>
@@ -27,7 +25,9 @@ const WorkspacePage = (props: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query, res } = context;
-  return { props: { workspaceId: query.workspaceId }, notFound: res.statusCode === 404 };
+  const session = await getSession(context);
+
+  return { props: { workspaceId: query.workspaceId, userSession: session }, notFound: res.statusCode === 404 };
 };
 
 export default WorkspacePage;
