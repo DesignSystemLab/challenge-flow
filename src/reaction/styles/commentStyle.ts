@@ -1,3 +1,7 @@
+import { css } from '@emotion/react';
+
+export const reactionWrapperStyle = css({ display: 'flex', flexDirection: 'column', gap: '12px' });
+
 export const commentTextareaWrapperStyle = {
   display: 'flex',
   gap: '12px',

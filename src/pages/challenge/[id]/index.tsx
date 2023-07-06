@@ -128,14 +128,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   return { props: {} };
 };
-<<<<<<< Updated upstream
 // -------------
 
 const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
-  const { data: user } = useUserAuth();
-
   const successAction = () => {
-    alert('신청되었습니다!');
+    // alert('신청되었습니다!');
   };
 
   const { applyAction } = useApplyMutation('test1234', successAction);
@@ -151,7 +148,7 @@ const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
       <div css={challengeInfoWrapperStyle}>
         <section css={challengeInfoSectionStyle}>
           <ChallengeInfo postInfo={postInfo} />
-          <div css={{ marginLeft: 'auto', display: 'flex', justifyContent: 'center' }}>
+          <div css={challengeApplyButtonWrapperStyle}>
             {postInfo.memberCapacity >= postInfo.members?.length && (
               <Button variant="outline" size="md" onClick={onClickApply}>
                 참여하기
@@ -166,5 +163,3 @@ const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
   );
 };
 export default ChallengeDetail;
-=======
->>>>>>> Stashed changes

@@ -1,6 +1,7 @@
 import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
 import { Modal, Stack, Button } from '@jdesignlab/react';
 import { useMachine } from '@xstate/react';
+import { Mail } from '@jdesignlab/react-icons';
 import { EmailPasswordForm } from './EmailPasswordForm';
 import { useSigninWithProvider } from '../hooks/useSigninWithProvider';
 import { signMachine } from '../machines/signMachine';
@@ -32,7 +33,7 @@ export const SigninModal = () => {
             <Button
               color="primary-500"
               variant="outline"
-              // icon={<Mail />}
+              icon={<Mail />}
               onClick={() => {
                 send('EMAIL');
               }}
@@ -48,7 +49,7 @@ export const SigninModal = () => {
               disabled={loadingGithub}
               icon={loadingGithub ? <Loading /> : <GitHubIcon />}
             >
-              GitHub계정으로 로그인
+              GitHub 계정으로 로그인
             </Button>
             <Button
               color="primary-500"
@@ -59,7 +60,7 @@ export const SigninModal = () => {
                 signinGoogle();
               }}
             >
-              Google계정으로 로그인
+              Google 계정으로 로그인
             </Button>
           </Stack>
         )}

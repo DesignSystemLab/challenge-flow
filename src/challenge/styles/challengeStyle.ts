@@ -57,8 +57,6 @@ export const challengeInfoSectionStyle = css({
   width: '100%',
   [mq.lg]: { flex: '0 1 900px' }
 });
-<<<<<<< Updated upstream
-=======
 
 export const challengeApplyButtonWrapperStyle = css({
   margin: '20px 0 40px',
@@ -66,4 +64,3 @@ export const challengeApplyButtonWrapperStyle = css({
   gap: '8px',
   justifyContent: 'center'
 });
->>>>>>> Stashed changes

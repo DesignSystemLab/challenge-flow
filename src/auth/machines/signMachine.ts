@@ -19,6 +19,7 @@ export const signMachine = createMachine<UserContext, UserEvent>(
   {
     id: 'sign',
     initial: 'selection',
+    predictableActionArguments: true,
     context: {
       user: null
     },

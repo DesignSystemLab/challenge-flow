@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ImageUpload } from '@shared/components/ImageUpload';
 import { Loading } from '@shared/components/Icons';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
-import { Stack, TextInput, Button, Modal } from '@jdesignlab/react';
+import { TextInput, Button, Modal } from '@jdesignlab/react';
 import { useProfileUpdate } from '../hooks/useProfileUpdate';
 import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 import { parseUserInfo } from '../parseUserInfo';
@@ -23,7 +23,7 @@ export const UserProfileForm = (props: Props) => {
   const { user } = refState.context;
   const defaultProfile = parseUserInfo(user);
   const { updateUserData } = useSetUserAuthData();
-  const { control, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
   const { mutate: updateProfile, isLoading } = useProfileUpdate(refSend, user?.uid);
 
   const getImagePath = (imageUrl: string | null) => {
@@ -40,37 +40,31 @@ export const UserProfileForm = (props: Props) => {
         updateProfile(defaultProfile as UserProfile);
       })}
     >
-      <Stack direction="vertical">
-        <Controller
-          name="nickname"
-          control={control}
-          rules={{
-            required: '닉네임을 입력해주세요.'
-          }}
-          render={({ field }) => (
-            <TextInput {...field} size="md" clearable defaultValue={defaultProfile.name || ''}>
-              <TextInput.Label>닉네임을 입력해주세요.</TextInput.Label>
-            </TextInput>
-          )}
-        />
-        <Controller
-          name="skills"
-          control={control}
-          rules={{
-            required: '관심 분야를 입력해주세요.'
-          }}
-          render={({ field }) => (
-            <TextInput {...field} size="md" clearable>
-              <TextInput.Label>관심분야 (#JavaScript, #HTML...)</TextInput.Label>
-            </TextInput>
-          )}
-        />
-        <ImageUpload
-          path={user?.uid}
-          alt={`${user?.displayName} profile image` ?? 'unknown image'}
-          onImage={getImagePath}
-        />
-      </Stack>
+      <TextInput
+        {...register('nickname', {
+          required: '닉네임을 입력해주세요.'
+        })}
+        size="md"
+        clearable
+        defaultValue={defaultProfile.name || ''}
+      >
+        <TextInput.Label>닉네임을 입력해주세요.</TextInput.Label>
+      </TextInput>
+      <TextInput
+        {...register('skills', {
+          required: '관심 분야를 입력해주세요.'
+        })}
+        size="md"
+        clearable
+      >
+        <TextInput.Label>관심분야 (#JavaScript, #HTML...)</TextInput.Label>
+      </TextInput>
+      <ImageUpload
+        path={user?.uid}
+        src={user?.photoURL ?? ''}
+        alt={`${user?.displayName} profile image` ?? 'unknown image'}
+        onImage={getImagePath}
+      />
       <Modal.Footer>
         <Flex>
           <Button

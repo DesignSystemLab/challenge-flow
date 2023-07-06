@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { reactionWrapperStyle } from '@reaction/styles/commentStyle';
 import { useQuery } from 'react-query';
 import { EachComment } from './EachComment';
 import { CommentTextarea } from './CommentTextarea';
@@ -19,7 +20,7 @@ export const CommentReactions = ({ userId }: { userId: string | undefined | null
   return (
     <>
       <CommentTextarea originId={originId} />
-      <div css={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div css={reactionWrapperStyle}>
         {data &&
           data.length > 0 &&
           data.map((comment: CommentFields) => (

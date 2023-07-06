@@ -49,6 +49,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
 
   return (
     <>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <div
         css={{
@@ -63,9 +64,12 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
       >
         D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
       </div>
+=======
+      <div css={challengeInfoDdayStyle}>D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}</div>
+>>>>>>> main
       <div>
-        <div css={{ display: 'inline', fontSize: '28px', lineHeight: '1.4', fontWeight: '700' }}>{postInfo.title}</div>
-        <div css={{ display: 'inline-flex', gap: '4px', flexWrap: 'nowrap' }}>
+        <div css={challengeInfoTitleStyle}>{postInfo.title}</div>
+        <div css={challengeInfoHeadingButtonWrapperStyle}>
           <Button variant="outline" size="sm" onClick={modifyPost}>
             수정
           </Button>
@@ -88,8 +92,8 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
         </div>
       </div>
 
-      <div css={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', alignItems: 'center' }}>
-        <div css={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+      <div css={challengeInfoUserWrapperStyle}>
+        <div css={challengeInfoUserStyle}>
           <Avatar size="md" />
           <Text variant="heading" size="md">
             {userInfo?.name}
@@ -167,6 +171,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
         </tr>
       </table> */}
 
+<<<<<<< HEAD
       <ul
         css={{
           display: 'flex',
@@ -182,6 +187,10 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
       <ul css={challengeInfoOptionListWrapperStyle}>
         <li css={challengeInfoOptionListItemStyle}>
 >>>>>>> Stashed changes
+=======
+      <ul css={challengeInfoOptionListWrapperStyle}>
+        <li css={challengeInfoOptionListItemStyle}>
+>>>>>>> main
           <Text variant="heading" size="md" color="grey-darken1">
             모집 마감일
           </Text>
@@ -209,7 +218,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           </Text>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             진행 기간
           </Text>
@@ -218,7 +227,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           </Text>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             진행 간격
           </Text>
@@ -227,7 +236,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           </Text>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             공개 여부
           </Text>
@@ -236,7 +245,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           </Text>
         </li>
 
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <li css={challengeInfoOptionListItemStyle}>
           <Text variant="heading" size="md" color="grey-darken1">
             인원
           </Text>

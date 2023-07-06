@@ -14,6 +14,8 @@
     "next.config.mjs",
     "jest.config.ts",
     "jestSetup.ts",
+    "jestEnv.ts",
+    "mockServiceWorker.js",
     "cypress.config.js",
     "cypress/"
   ],

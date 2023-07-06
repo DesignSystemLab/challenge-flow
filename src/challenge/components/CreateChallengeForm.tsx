@@ -49,6 +49,7 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
 
   useEffect(() => {
     if (fillData) {
+      setMemberCapacity(fillData.memberCapacity);
       setValue('title', fillData.title);
       setValue('isDaily', fillData.isDaily);
       setValue('isPublic', fillData.isPublic);

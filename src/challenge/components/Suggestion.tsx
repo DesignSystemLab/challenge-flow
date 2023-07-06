@@ -14,8 +14,7 @@ export const Suggestion = memo(() => {
     console.log('suggestion');
   });
   return (
-    // <div style={suggestionWrapper}>
-    <aside css={{ ...suggestionAsideStyle, position: 'sticky' }}>
+    <aside css={suggestionAsideStyle}>
       <div css={suggestionHeaderStyle}>
         <Text variant="label">이런 챌린지도 추천해요!🔥</Text>
       </div>
@@ -29,6 +28,5 @@ export const Suggestion = memo(() => {
         ))}
       </ol>
     </aside>
-    // </div>
   );
 });

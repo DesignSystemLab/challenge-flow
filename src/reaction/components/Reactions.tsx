@@ -58,13 +58,8 @@ export const Reactions = memo(({ originId, domain }: Props) => {
       >
         <ReactionContext.Provider value={useMemo(() => ({ originId, domain }), [originId, domain])}>
           <div css={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-<<<<<<< Updated upstream
-            <EmojiReactions userId={user?.uid} />
-            <CommentReactions userId={user?.uid} />
-=======
             <Emojis currentUser={userSession?.user} />
             <Comments currentUser={userSession?.user} />
->>>>>>> Stashed changes
           </div>
         </ReactionContext.Provider>
       </CompositionBoundaryReactQuery>

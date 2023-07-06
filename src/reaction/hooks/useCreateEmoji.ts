@@ -3,7 +3,7 @@ import { useMutation } from 'react-query';
 import fetchCreateEmoji from '../remotes/fetchCreateEmoji';
 import { CreateMutationParam } from '../types';
 
-export const useCreateEmoji = (originId: string, userId: string | undefined) => {
+export const useCreateEmoji = (originId: string, userId: string) => {
   const { mutate } = useMutation((param: CreateMutationParam) => fetchCreateEmoji(param));
 
   const onSubmit = (value: string) => {

@@ -1,5 +1,6 @@
 import { getTimeDiff } from '@shared/utils/date';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
+import { commentEachWrapperStyle, commentProfileWrapperStyle } from '@reaction/styles/commentStyle';
 import { Button, Text, Textarea } from '@jdesignlab/react';
 import { useForm } from 'react-hook-form';
 import { EachCommentProps } from '../types';
@@ -15,8 +16,8 @@ export const EachComment = ({ data, onUpdateComment, editMode, setEditMode }: Ea
 
   return (
     <>
-      <div css={{ position: 'relative', padding: '12px 16px', border: 'solid grey 1px', borderRadius: '4px' }}>
-        <div css={{ display: 'flex', gap: '8px' }}>
+      <div css={commentEachWrapperStyle}>
+        <div css={commentProfileWrapperStyle}>
           <Avatar size="md" />
           <div>
             <Text variant="label" size="md">
@@ -64,7 +65,7 @@ export const EachComment = ({ data, onUpdateComment, editMode, setEditMode }: Ea
         </form>
 
         {!editMode && (
-          <div css={{ position: 'absolute', top: '16px', right: '16px' }}>
+          <div css={commentProfileWrapperStyle}>
             <Button size="sm" variant="ghost" onClick={toggleEditMode}>
               수정
             </Button>
