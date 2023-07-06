@@ -26,9 +26,6 @@ interface Props {
 }
 
 export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
-  useEffect(() => {
-    console.log('info 렌더링');
-  });
   const { userInfo } = useGetUserInfoById(postInfo.userId);
 
   const router = useRouter();
@@ -49,34 +46,6 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
 
   return (
     <>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      <div
-        css={{
-          width: '80px',
-          border: 'solid 1px #e1e1e1',
-          // borderRadius: '6px',
-          padding: '6px 0 4px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'start'
-        }}
-      >
-        D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
-      </div>
-=======
-      <div css={challengeInfoDdayStyle}>D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}</div>
->>>>>>> main
-      <div>
-        <div css={challengeInfoTitleStyle}>{postInfo.title}</div>
-        <div css={challengeInfoHeadingButtonWrapperStyle}>
-          <Button variant="outline" size="sm" onClick={modifyPost}>
-            수정
-          </Button>
-          <Button variant="outline" size="sm" color="error" onClick={deletePost}>
-            삭제
-          </Button>
-=======
       <div style={{ marginTop: '12px' }}>
         <div css={challengeInfoTitleStyle}>{postInfo.title}</div>
         <div css={challengeInfoHeadingButtonWrapperStyle}>
@@ -88,7 +57,6 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
               삭제
             </Button>
           </CanI.Update>
->>>>>>> Stashed changes
         </div>
       </div>
 
@@ -100,97 +68,10 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           </Text>
         </div>
         <TimeAgo createdAt={postInfo.createdAt} updatedAt={postInfo?.updatedAt} />
-        {/* <Text variant="paragraph" size="md">
-          {getTimeDiff(postInfo.createdAt)} 작성{' '}
-          {postInfo?.updatedAt && <>({getTimeDiff(postInfo.updatedAt)} 수정됨)</>}
-        </Text> */}
       </div>
 
-<<<<<<< Updated upstream
-      {/* <table css={{ width: '100%', margin: '12px 0', padding: '16px 20px', background: '#fafafa' }}>
-        <tr>
-          <td>
-            <Text variant="heading" size="md" color="grey-darken1" align="center">
-              모집 마감일
-            </Text>
-          </td>
-          <td css={{ display: 'flex', gap: '4px' }}>
-            <Text variant="paragraph" size="md">
-              {postInfo.dueAt}
-            </Text>
-            <Chip size="sm" bordered>
-              D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
-            </Chip>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <Text variant="heading" size="md" color="grey-darken1">
-              진행 기간
-            </Text>
-          </td>
-          <td css={{ display: 'flex', gap: '4px' }}>
-            <Text variant="paragraph" size="md">
-              {postInfo.duration.start} ~ {postInfo.duration.end}
-            </Text>
-            <Chip size="sm" bordered>
-              {postInfo.isDaily ? '일별' : '주별'}
-            </Chip>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Text variant="heading" size="md" color="grey-darken1">
-              공부 주제
-            </Text>
-          </td>
-          <td>
-            <Chip size="sm" bordered>{`${SKILLS[postInfo.skill]}`}</Chip>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Text variant="heading" size="md" color="grey-darken1">
-              공개 여부
-            </Text>
-          </td>
-          <td>
-            {postInfo.isPublic ? '공개' : '비공개'}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Text variant="heading" size="md" color="grey-darken1">
-              인원
-            </Text>
-          </td>
-          <td>
-            {postInfo.memberCapacity}명
-          </td>
-        </tr>
-      </table> */}
-
-<<<<<<< HEAD
-      <ul
-        css={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-          marginTop: '12px',
-          padding: '16px 20px',
-          background: '#fafafa'
-        }}
-      >
-        <li css={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-=======
       <ul css={challengeInfoOptionListWrapperStyle}>
         <li css={challengeInfoOptionListItemStyle}>
->>>>>>> Stashed changes
-=======
-      <ul css={challengeInfoOptionListWrapperStyle}>
-        <li css={challengeInfoOptionListItemStyle}>
->>>>>>> main
           <Text variant="heading" size="md" color="grey-darken1">
             모집 마감일
           </Text>

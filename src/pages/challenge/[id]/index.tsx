@@ -128,38 +128,3 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   return { props: {} };
 };
-// -------------
-
-const ChallengeDetail = ({ postInfo }: { postInfo: ChallengePostFields }) => {
-  const successAction = () => {
-    // alert('신청되었습니다!');
-  };
-
-  const { applyAction } = useApplyMutation('test1234', successAction);
-
-  const onClickApply = () => {
-    if (!(postInfo.members as string[]).includes('test1234')) {
-      applyAction(postInfo.id);
-    }
-  };
-
-  return (
-    <>
-      <div css={challengeInfoWrapperStyle}>
-        <section css={challengeInfoSectionStyle}>
-          <ChallengeInfo postInfo={postInfo} />
-          <div css={challengeApplyButtonWrapperStyle}>
-            {postInfo.memberCapacity >= postInfo.members?.length && (
-              <Button variant="outline" size="md" onClick={onClickApply}>
-                참여하기
-              </Button>
-            )}
-          </div>
-          <Reactions originId={postInfo.id} />
-        </section>
-        <Suggestion />
-      </div>
-    </>
-  );
-};
-export default ChallengeDetail;
