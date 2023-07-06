@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const Banner = () => (
   <div
     style={{
