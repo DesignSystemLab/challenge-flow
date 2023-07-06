@@ -22,6 +22,10 @@ export interface ChallengeFormValuesWithId extends ChallengeAllFormValues {
   id: string;
 }
 
+export interface ChallengeFormModifyParams extends ChallengeAllFormValues {
+  id: string;
+  userId: string;
+}
 export interface ChallengePostFields extends ChallengeFormValuesWithId {
   createdAt: string;
   members: string[];
