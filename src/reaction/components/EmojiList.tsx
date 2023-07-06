@@ -38,7 +38,7 @@ export const EmojiList = ({ userId }: { userId: string | undefined }) => {
         Object.entries<EmojiDataWithId[]>(emojiCount)
           .sort()
           .map(([key, value]) => (
-            <Chip as="button" onClick={() => toggleEmoji(key, value)} bordered size="md" key={key}>
+            <Chip as="button" onClick={() => toggleEmoji(key, value)} size="md" key={key}>
               <span className="emoji" css={{ fontSize: '16px', marginRight: '4px' }}>
                 {key}
               </span>

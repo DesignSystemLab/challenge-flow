@@ -14,13 +14,17 @@ import {
   updateDoc
 } from 'firebase/firestore';
 
-const addIdToData = (datatDoc: QueryDocumentSnapshot<DocumentData>) =>
+const addIdToData = async (dataDoc: QueryDocumentSnapshot<DocumentData>) =>
   ({
-    ...datatDoc.data(),
-    id: datatDoc.id
+    ...dataDoc.data(),
+    userId: dataDoc.data().userId.id,
+    id: dataDoc.id
   } as any);
 
-const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => Array.from(querySnapshot.docs, addIdToData);
+export const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) => {
+  const data = Array.from(querySnapshot.docs, addIdToData);
+  return data;
+};
 
 export const getDocRef = (collection: string, id: string) => doc(database, `${collection}/${id}`);
 
@@ -30,7 +34,8 @@ export const createOne = async (ref: DocumentReference<DocumentData>, data: any)
 
 export const getList = async (query: Query<DocumentData>) => {
   const querySnapshot = await getDocs(query);
-  return parseSnapshotToList(querySnapshot);
+  const data = parseSnapshotToList(querySnapshot);
+  return data;
 };
 
 export const getOne = async (ref: DocumentReference<DocumentData>) => {
@@ -76,4 +81,13 @@ export const upsertDoc = async (ref: DocumentReference<DocumentData>, newData: a
   } else {
     throw new Error('해당 게시물이 존재하지 않습니다.');
   }
+};
+
+export const getUserInfo = async (userId: string) => {
+  const ref = getDocRef('user', userId);
+  const snapshot = await getDoc(ref);
+  if (snapshot.exists()) {
+    return snapshot.data();
+  }
+  return null;
 };

@@ -18,7 +18,7 @@ export const CommentTextarea = ({ originId }: { originId: string }) => {
     <form onSubmit={handleSubmit(onSubmit)} css={commentTextareaWrapperStyle}>
       <Avatar size="lg" />
       <Textarea {...register('comment')} onKeyDown={onKeyDown} />
-      <Button type="submit" variant="outline">
+      <Button type="submit" variant="outline" color="grey-darken1">
         등록
       </Button>
     </form>

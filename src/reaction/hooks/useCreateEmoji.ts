@@ -7,7 +7,6 @@ export const useCreateEmoji = (originId: string, userId: string) => {
   const { mutate } = useMutation((param: CreateMutationParam) => fetchCreateEmoji(param));
 
   const onSubmit = (value: string) => {
-    // if (userId) {
     const param = {
       emojiValue: value,
       originId,
@@ -15,7 +14,6 @@ export const useCreateEmoji = (originId: string, userId: string) => {
     };
     mutate(param);
     queryClient.invalidateQueries(`emoji-${originId}`);
-    // }
   };
   return { onSubmit };
 };

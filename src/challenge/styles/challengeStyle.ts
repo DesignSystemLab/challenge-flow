@@ -38,7 +38,7 @@ export const challengeInfoUserWrapperStyle = css({
 export const challengeInfoUserStyle = css({
   display: 'flex',
   alignItems: 'center',
-  gap: '4px'
+  gap: '8px'
 });
 
 export const challengeInfoOptionListWrapperStyle = css({
@@ -50,7 +50,7 @@ export const challengeInfoOptionListWrapperStyle = css({
   background: '#fafafa'
 });
 
-export const challengeInfoOptionListItemStyle = css({ display: 'flex', gap: '12px', alignItems: 'center' });
+export const challengeInfoOptionListItemStyle = css({ display: 'flex', gap: '12px', alignItems: 'end' });
 
 export const challengeInfoSectionStyle = css({
   position: 'relative',
@@ -58,4 +58,9 @@ export const challengeInfoSectionStyle = css({
   [mq.lg]: { flex: '0 1 900px' }
 });
 
-export const challengeApplyButtonWrapperStyle = css({ marginLeft: 'auto', display: 'flex', justifyContent: 'center' });
+export const challengeApplyButtonWrapperStyle = css({
+  margin: '20px 0 40px',
+  display: 'flex',
+  gap: '8px',
+  justifyContent: 'center'
+});

@@ -1,5 +1,3 @@
-import { FieldValues } from 'react-hook-form';
-
 export interface CommentFormValues {
   content: string;
   userId: string;
@@ -14,9 +12,15 @@ export interface CommentFields extends CommentFormValues {
 
 export interface EachCommentProps {
   data: CommentFields;
-  onUpdateComment: (formValues: FieldValues, commentId: string) => void;
-  editMode: string | null;
-  setEditMode: React.Dispatch<React.SetStateAction<string | null>>;
+  // onUpdateComment: (formValues: FieldValues, commentId: string) => void;
+  editModeId: string | null;
+  setEditModeId: React.Dispatch<React.SetStateAction<string | null>>;
+  currentUser: {
+    uid: string;
+    email?: string;
+    name?: string;
+    image?: string;
+  };
 }
 
 export interface CreateMutationParam {

@@ -14,10 +14,10 @@ const emojiReactionCreateService = async (req: NextApiRequest, res: NextApiRespo
   try {
     const param = req.body;
     const ref = doc(COLLECTION);
+
     await createOne(ref, {
       emoji: param.emojiValue,
-      userId: param.userId,
-      // uerId: getDocRef('user', props.userId),
+      userId: getDocRef('user', param.userId),
       originId: getDocRef(CHALLENGE_REF_NAME, param.originId),
       createdAt: formatDateTime(getDate())
     });

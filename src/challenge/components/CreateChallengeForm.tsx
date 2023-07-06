@@ -3,14 +3,25 @@ import { useCreateMuation } from '@challenge/hooks/useCreateMutation';
 import { useModifyMutation } from '@challenge/hooks/useModifyMutation';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { DevSkillCombobox } from '@shared/components/form/DevSkillCombobox';
-// import { useUserAuth } from '@auth/hooks/useUserAuth';
+// import { ChallengeContext } from '@challenge/context';
 import { Button, Flex, Radio, Select, TextInput } from '@jdesignlab/react';
 import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import type { ChallengeHookFormValues, ChallengeAllFormValues, ChallengePostFields } from '@challenge/types';
+import type { ChallengeHookFormValues, ChallengeAllFormValues, ChallengeModifyFetchProps } from '@challenge/types';
 
-export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFields }) => {
-  // const { data: user } = useUserAuth();
+interface Props {
+  currentUser: {
+    uid: string;
+    email?: string;
+    name?: string;
+    image?: string;
+  };
+  fillData?: ChallengeModifyFetchProps;
+}
+export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
+  // const { currentUser } = useContext(ChallengeContext);
+
+  const router = useRouter();
 
   const { control, register, handleSubmit, setValue } = useForm({
     defaultValues: {
@@ -24,7 +35,6 @@ export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFiel
       dueAt: ''
     }
   });
-  const router = useRouter();
   const [memberCapacity, setMemberCapacity] = useState<number>(1);
   const [content, setContent] = useState<string>(fillData?.content ?? '');
   const [skill, setSkill] = useState<number>(fillData?.skill ?? 0);
@@ -34,8 +44,8 @@ export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFiel
       router.push({ pathname: `/challenge/${id}` });
     }
   };
-  const { onSubmitCreate } = useCreateMuation('test1234', successAction);
-  const { onSubmitModify } = useModifyMutation('test1234', successAction);
+  const { onSubmitCreate } = useCreateMuation(currentUser.uid, successAction);
+  const { onSubmitModify } = useModifyMutation(currentUser.uid, successAction);
 
   useEffect(() => {
     if (fillData) {
@@ -49,8 +59,8 @@ export const CreateChallengeForm = ({ fillData }: { fillData?: ChallengePostFiel
     }
   }, [fillData]);
 
-  const createChallenge = (data: ChallengeHookFormValues) => {
-    const { isDaily, isPublic, ...rest } = data;
+  const createChallenge = (fieldsValue: ChallengeHookFormValues) => {
+    const { isDaily, isPublic, ...rest } = fieldsValue;
     const mergedFormValues: ChallengeAllFormValues = {
       memberCapacity,
       content,

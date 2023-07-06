@@ -1,4 +1,4 @@
-import fetchCreateChallenge from '@challenge/remotes/fetchCreateChallenge';
+import fetchCreateChallenge from '@challenge/remotes/fetchCreate';
 import { ChallengeAllFormValues, ChallengeFormValuesWithUserId } from '@challenge/types';
 import { useMutation } from 'react-query';
 
@@ -10,6 +10,8 @@ export const useCreateMuation = (userId: string, successAction?: (id: string) =>
     const param = {
       ...value,
       members: [userId],
+      likes: [],
+      isOpened: false,
       userId
     };
     mutate(param);

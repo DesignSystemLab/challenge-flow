@@ -20,7 +20,8 @@ async function create(postValue: ChallengeAllFormValues) {
 
 async function getPostList() {
   const q = query(COLLECTION, orderBy('createdAt', 'desc'));
-  return getList(q);
+  const data = await getList(q);
+  return data;
 }
 
 async function getPostDetail(postId: string) {
