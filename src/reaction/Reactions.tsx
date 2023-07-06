@@ -7,7 +7,7 @@ import { Button } from '@jdesignlab/react';
 import { useSession } from 'next-auth/react';
 // import { CommentReactions } from './CommentReactions';
 // import { EmojiReactions } from './EmojiReactions';
-import { ReactionContext } from '../context';
+import { ReactionContext } from './context';
 import type { FallbackProps } from 'react-error-boundary';
 
 interface ErrorfallbackProps extends FallbackProps {

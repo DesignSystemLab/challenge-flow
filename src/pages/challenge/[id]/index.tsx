@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ParsedUrlQuery } from 'querystring';
 import { ChallengeModifyFetchProps, ChallengePostFields, UserSession } from '@challenge/types';
-import { Reactions } from 'src/reaction/components/Reactions';
+import { Reactions } from '@reaction/Reactions';
 import { useApplyMutation } from '@challenge/hooks/useApplyMutation';
 import { ChallengeInfo } from '@challenge/components/ChallengeInfo';
 import { Suggestion } from '@challenge/components/Suggestion';
