@@ -17,7 +17,9 @@ export const DevSkillCombobox = ({ state, setState }: DevSkillComboboxProps) => 
   return (
     <>
       <Select defaultValue={`${state}`} onValueChange={(value) => onValueChange(value)}>
-        <Select.Trigger placeholder="ex) React">{/* <Select.Input /> */}</Select.Trigger>
+        <Select.Trigger placeholder="ex) React">
+          <Select.Input />
+        </Select.Trigger>
         {Object.entries(SKILLS).map(([key, value]) => (
           <Select.Option value={key} key={key}>
             {value}
