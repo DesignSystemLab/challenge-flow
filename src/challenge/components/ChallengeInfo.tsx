@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { ChallengeModifyFetchProps, UserData } from '@challenge/types';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
