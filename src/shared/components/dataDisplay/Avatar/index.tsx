@@ -5,7 +5,7 @@ import { commentProfileAvatar } from './style';
 type AvatarSize = 'sm' | 'md' | 'lg';
 
 export const Avatar = (props: { src?: string; size?: AvatarSize }) => {
-  const { src = '', size = 'md', ...rest } = props;
+  const { size = 'md', ...rest } = props;
   return (
     <div css={commentProfileAvatar(size)} {...rest}>
       {/* <Image src={src} layout="fill" /> */} {/* {src} */}
