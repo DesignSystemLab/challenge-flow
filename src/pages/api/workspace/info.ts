@@ -15,8 +15,13 @@ const workspaceInfoHandler = async (req: NextApiRequest, res: NextApiResponse) =
     if (workspaceDoc) {
       const challengeRef = await getDoc(workspaceDoc.challenge);
       const challenge = challengeRef.data() as unknown as ChallengeDocRef;
+
       const members = (await Promise.all(
-        challenge.members.map(async (member) => (await getDoc(member)).data())
+        challenge.members.map(async (member) => {
+          const memberData = (await getDoc(member)).data() as UserProfile;
+          memberData.uid = member.id;
+          return memberData;
+        })
       )) as UserProfile[];
 
       res.status(200).json(

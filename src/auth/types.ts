@@ -25,6 +25,7 @@ export interface EamilPasswordField {
 }
 
 export interface UserProfile {
+  uid: string;
   name: string | null;
   email: string | null;
   photo: string | null;
