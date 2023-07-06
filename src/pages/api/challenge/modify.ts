@@ -11,7 +11,7 @@ const challengeModifyService = async (req: NextApiRequest, res: NextApiResponse)
   try {
     const param = req.body;
     // TODO id 검사
-    const { id, ...updateValue } = param;
+    const { id, userId, ...updateValue } = param;
 
     const ref = doc(database, REF_NAME, param.id);
     const docSnapshot = await getDoc(ref);

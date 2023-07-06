@@ -21,6 +21,6 @@ export const suggestionHeaderStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  background: '#FFE38B',
+  background: '#dceafa',
   padding: '8px 8px 6px'
 };

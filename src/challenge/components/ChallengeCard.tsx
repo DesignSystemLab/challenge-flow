@@ -1,36 +1,158 @@
-import { challengeCard } from '@challenge/styles';
-import { ChallengePostFields } from '@challenge/types';
-import { Button, Flex, Text } from '@jdesignlab/react';
-import { useRouter } from 'next/router';
+import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
+import {
+  cardTop,
+  cardWrapper,
+  cardTitle,
+  cardWrittenInfoWrapper,
+  cardWrittenUser,
+  cardOptionContainer,
+  cardEachOption,
+  cardBottomWrapper,
+  cardAvatarWrapper,
+  cardReactionWrapper,
+  cardEachReaction
+} from '@challenge/styles/challengeCardStyle';
+import { ChallengeModifyFetchProps } from '@challenge/types';
+import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';
+import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
+import { Chip } from '@shared/components/dataDisplay/Chip';
+import { Avatar } from '@shared/components/dataDisplay/Avatar';
+import { SKILLS } from '@shared/constants';
+import { Text } from '@jdesignlab/react';
+import { Eye, Heart, Message } from '@jdesignlab/react-icons';
 
-export const ChallengeCard = ({ postInfo, userId }: { postInfo: ChallengePostFields; userId: string | undefined }) => {
-  const router = useRouter();
-  const moveToPostDetail = () => {
-    router.push({ pathname: `/challenge/${postInfo.id}` });
+interface Props {
+  postInfo: ChallengeModifyFetchProps;
+  currentUser: {
+    uid: string;
+    email?: string;
+    name?: string;
+    image?: string;
   };
+}
+
+export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
+  const { userInfo } = useGetUserInfoById(postInfo.userId);
+  const restMemberSlot = postInfo.memberCapacity - postInfo.members.length;
 
   return (
-    <div css={challengeCard} style={{ display: 'flex', flexDirection: 'column', padding: '16px 12px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Text variant="label" size="sm">
-          마감 D-2
-        </Text>
+    <a href={`/challenge/${postInfo.id}`} css={cardWrapper}>
+      <div css={cardTop}>
+        {isEarlierThanNow(postInfo.dueAt) || postInfo.isOpened ? (
+          <Chip size="sm" color="#f48fb1">
+            D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
+          </Chip>
+        ) : (
+          <Chip size="sm" color="#808080">
+            마감
+          </Chip>
+        )}
+        {isEarlierThanNow(postInfo.dueAt) && restMemberSlot > 0 && (
+          <Text variant="label" size="sm">
+            {`${postInfo.memberCapacity - postInfo.members.length}`}명 남음🔥
+          </Text>
+        )}
       </div>
-      <Text variant="heading" size="md">
-        {postInfo.title}
-      </Text>
-      <Flex />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Text variant="paragraph" size="sm">
-          ?
-        </Text>
-        <Text variant="paragraph" size="sm">
-          주별
-        </Text>
+      {/* <Chip size="sm"  color="#f48fb1">
+          인기
+        </Chip> */}
+
+      <h2 css={cardTitle}>{postInfo.title}</h2>
+
+      <div css={cardWrittenInfoWrapper}>
+        <div css={cardWrittenUser}>
+          <Avatar size="sm" />
+          <Text variant="label" size="sm">
+            {userInfo?.name}
+          </Text>
+        </div>
+        <TimeAgo createdAt={postInfo.createdAt} updatedAt={postInfo.updatedAt} size="sm" />
+        {/* <Text variant="label" size="sm">
+          {getTimeDiff(postInfo.createdAt)} 작성
+        </Text> */}
       </div>
-      <Button variant="outline" onClick={moveToPostDetail}>
-        자세히보기
-      </Button>
-    </div>
+
+      <div css={cardOptionContainer}>
+        <div css={cardEachOption}>
+          <Text variant="heading" size="sm">
+            기술 스택
+          </Text>
+          <Text variant="paragraph" size="sm">
+            {SKILLS[postInfo.skill]}
+          </Text>
+        </div>
+        <div css={cardEachOption}>
+          <Text variant="heading" size="sm">
+            진행 기간
+          </Text>
+          <Text variant="paragraph" size="sm">
+            {postInfo.duration.start} ~ {postInfo.duration.end}
+          </Text>
+        </div>
+        <div css={cardEachOption}>
+          <Text variant="heading" size="sm">
+            진행 간격
+          </Text>
+          <Text variant="paragraph" size="sm">
+            {postInfo.isDaily ? '일별' : '주별'}
+          </Text>
+        </div>
+        <div css={cardEachOption}>
+          <Text variant="heading" size="sm">
+            공개 여부
+          </Text>
+          <Text variant="paragraph" size="sm">
+            {postInfo.isPublic ? '공개' : '비공개'}
+          </Text>
+        </div>
+        <div css={cardEachOption}>
+          <Text variant="heading" size="sm">
+            인원
+          </Text>
+          <Text variant="paragraph" size="sm">
+            {`${postInfo.members.length}`}명 / {`${postInfo.memberCapacity}`}명
+          </Text>
+        </div>
+      </div>
+
+      <div css={cardBottomWrapper}>
+        <div css={cardAvatarWrapper}>
+          {postInfo.members.length > 1 ? <Avatar.Group src={['1', '2']} /> : <Avatar size="sm" />}
+          {postInfo.members.length > 2 && (
+            <Text variant="paragraph" size="md" color="grey-base">
+              {`+${postInfo.members.length - 2}`}
+            </Text>
+          )}
+          <Text variant="paragraph" size="sm" color="grey-base">
+            참여중!
+          </Text>
+        </div>
+        <div css={cardReactionWrapper}>
+          <div css={cardEachReaction}>
+            <Eye color="grey" width={20} height={20} />
+            <Text variant="label" size="md" color="grey-darken1">
+              0
+            </Text>
+          </div>
+          <div css={cardEachReaction}>
+            <Heart
+              color="grey"
+              width={20}
+              height={20}
+              fill={postInfo.likes?.includes(currentUser?.uid) ? '#f8aaae' : 'none'}
+            />
+            <Text variant="label" size="md" color="grey-darken1">
+              {`${postInfo.likes?.length ?? 0}`}
+            </Text>
+          </div>
+          <div css={cardEachReaction}>
+            <Message color="grey" width={20} height={20} />
+            <Text variant="label" size="md" color="grey-darken1">
+              0
+            </Text>
+          </div>
+        </div>
+      </div>
+    </a>
   );
 };

@@ -1,5 +1,26 @@
 import { CreateChallengeForm } from '@challenge/components/CreateChallengeForm';
+import { HasValidSession } from '@shared/components/HasValidSession';
+import { useSession } from 'next-auth/react';
 
-const newChallengePost = () => <CreateChallengeForm />;
+interface UserSession {
+  user: {
+    uid: string;
+    address?: string;
+    name?: string;
+    image?: string;
+  };
+  expires: string;
+}
 
-export default newChallengePost;
+const NewChallengePage = () => {
+  const { data } = useSession();
+  const userSession = data as unknown as UserSession;
+
+  return (
+    <HasValidSession>
+      <CreateChallengeForm currentUser={userSession?.user} />
+    </HasValidSession>
+  );
+};
+
+export default NewChallengePage;

@@ -25,12 +25,27 @@ export interface ChallengeFormValuesWithId extends ChallengeAllFormValues {
 export interface ChallengePostFields extends ChallengeFormValuesWithId {
   createdAt: string;
   members: string[];
+  likes: string[];
+  isOpened: boolean;
   updatedAt?: string;
 }
 
-export interface ChallengeModifyFetchProps extends ChallengeFormValuesWithId {
+export interface ChallengeModifyFetchProps extends ChallengePostFields {
   userId: string;
 }
 export interface CreateChallengeFormProps {
   id?: string;
+}
+
+// tmp
+
+export interface UserData {
+  uid: string;
+  email?: string;
+  name?: string;
+  image?: string;
+}
+export interface UserSession {
+  user: UserData;
+  expires: string;
 }
