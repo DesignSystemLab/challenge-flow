@@ -6,11 +6,14 @@ import {
   differenceInHours,
   differenceInMinutes,
   addDays,
-  addWeeks,
-  isBefore,
-  isAfter
+  addWeeks
 } from 'date-fns';
 
+/**
+ * @description 시간차이 계산.
+ * @param time
+ * @returns
+ */
 export const getTimeDiff = (time: string) => {
   const now = new Date();
   const dataTime = new Date(time);
@@ -36,15 +39,17 @@ export const getTimeDiff = (time: string) => {
   return str;
 };
 
+export const formatDateToYYYYMMDD = (now: Date) => format(now, 'yyyyMMdd');
 export const formatDateTime = (now: Date) => format(now, 'yyyy-MM-dd HH:mm:ss');
 
 type DateInput = number | string | Date;
 export const getDate = (input?: DateInput) => (input ? new Date(input) : new Date());
 
 type CalculateDateType = 'week' | 'day';
-export const calculateDayDiff = (start: string, end: string, type?: CalculateDateType): number => {
-  const startDate = new Date(start);
-  const endDate = new Date(end);
+export const calculateDateDiff = (start: string, end: string, type?: CalculateDateType): number => {
+  const startDate = getDate(start);
+  const endDate = getDate(end);
+
   const timeDiff = endDate.getTime() - startDate.getTime();
   const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
@@ -81,7 +86,6 @@ export const formatDate = (date: Date, type?: FormatType) => {
       return `${year}년 ${month}월 ${day}일`;
   }
 };
-
 export const isEarlierThanNow = (date: string) => {
   const now = getDate();
   const inputDate = getDate(date);
