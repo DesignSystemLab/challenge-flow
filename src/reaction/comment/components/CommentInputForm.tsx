@@ -1,13 +1,25 @@
 import { commentTextareaWrapperStyle } from '@reaction/styles/commentStyle';
+import { useHandleKeyDown } from '@reaction/hooks/useHandleKeyDown';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
-import { useForm } from 'react-hook-form';
 import { Button, Textarea } from '@jdesignlab/react';
-import { useHandleKeyDown } from '../hooks/useHandleKeyDown';
-import { useCreateComment } from '../hooks/useCreateComment';
+import { useForm } from 'react-hook-form';
+import { useCreateMutation } from '../hooks/useCreateMutation';
 
-export const CommentTextarea = ({ originId }: { originId: string }) => {
+interface Props {
+  originId: string;
+  currentUser: {
+    uid: string;
+    email?: string;
+    name?: string;
+    image?: string;
+  };
+}
+export const CommentInputForm = ({ originId, currentUser }: Props) => {
   const { register, handleSubmit, reset } = useForm();
-  const { onSubmit } = useCreateComment(originId, reset);
+  const successAction = () => {
+    reset();
+  };
+  const { onSubmit } = useCreateMutation(currentUser.uid, originId, successAction);
 
   const { enterKeyDown } = useHandleKeyDown();
   const onKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -17,7 +29,7 @@ export const CommentTextarea = ({ originId }: { originId: string }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} css={commentTextareaWrapperStyle}>
       <Avatar size="lg" />
-      <Textarea {...register('comment')} onKeyDown={onKeyDown} />
+      <Textarea {...register('comment')} onKeyDown={onKeyDown} resize="smart" />
       <Button type="submit" variant="outline" color="grey-darken1">
         등록
       </Button>

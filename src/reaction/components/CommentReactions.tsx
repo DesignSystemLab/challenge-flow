@@ -8,6 +8,7 @@ import { CommentFields } from '../types';
 import { ReactionContext } from '../context';
 
 export const CommentReactions = ({ userId }: { userId: string | undefined | null }) => {
+  // console.log(userId);
   const { originId } = useContext(ReactionContext);
 
   const [editMode, setEditMode] = useState<string | null>(null);

@@ -1,10 +1,12 @@
-import { useMemo } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import DynamicWrapper from '@shared/components/DynamicWrapper';
-import { useUserAuth } from '@auth/hooks/useUserAuth';
+import { Emojis } from '@reaction/emoji/components/Emojis';
+import { Comments } from '@reaction/comment/components/Comments';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Button } from '@jdesignlab/react';
-import { CommentReactions } from './CommentReactions';
-import { EmojiReactions } from './EmojiReactions';
+import { useSession } from 'next-auth/react';
+// import { CommentReactions } from './CommentReactions';
+// import { EmojiReactions } from './EmojiReactions';
 import { ReactionContext } from '../context';
 import type { FallbackProps } from 'react-error-boundary';
 
@@ -23,24 +25,49 @@ const ReactionError = ({ ...errorProps }: ErrorfallbackProps) => {
   );
 };
 
-export const Reactions = ({ originId }: { originId: string }) => {
-  const { data: user } = useUserAuth();
-  // console.log('user', user);
-  // const userId = 'user1234';
-  // const userId = 'test1234';
+interface UserSession {
+  user: {
+    uid: string;
+    address?: string;
+    name?: string;
+    image?: string;
+  };
+  expires: string;
+}
+
+type DomainType = 'challenge' | 'workspace';
+
+interface Props {
+  originId: string;
+  domain: DomainType;
+}
+
+export const Reactions = memo(({ originId, domain }: Props) => {
+  const { data } = useSession();
+  const userSession = data as unknown as UserSession;
+
+  useEffect(() => {
+    console.log('댓글 렌더링');
+  });
+
   return (
     <DynamicWrapper>
       <CompositionBoundaryReactQuery
         suspense={<div>reactions 로딩중이얍</div>}
         error={(prop) => <ReactionError {...prop} />}
       >
-        <ReactionContext.Provider value={useMemo(() => ({ originId }), [originId])}>
+        <ReactionContext.Provider value={useMemo(() => ({ originId, domain }), [originId, domain])}>
           <div css={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+<<<<<<< Updated upstream
             <EmojiReactions userId={user?.uid} />
             <CommentReactions userId={user?.uid} />
+=======
+            <Emojis currentUser={userSession?.user} />
+            <Comments currentUser={userSession?.user} />
+>>>>>>> Stashed changes
           </div>
         </ReactionContext.Provider>
       </CompositionBoundaryReactQuery>
     </DynamicWrapper>
   );
-};
+});
