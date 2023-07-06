@@ -1,7 +1,7 @@
 import type { User } from 'firebase/auth';
 import type { UserProfile } from './types';
 
-type OmitFields = 'challenges' | 'note';
+type OmitFields = 'challenges' | 'note' | 'uid';
 export const parseUserInfo = (user: User | null): Omit<UserProfile, OmitFields> => {
   const userInfo: Omit<UserProfile, OmitFields> = {
     name: null,
