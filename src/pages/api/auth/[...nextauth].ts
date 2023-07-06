@@ -1,10 +1,11 @@
 import NextAuth from 'next-auth';
-import type { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { friebaseAdmin } from '../../../shared/firebase';
+import { friebaseAdmin } from '../../../shared/firebaseAdmin';
+import type { NextAuthOptions } from 'next-auth';
 import type { AuthProvider } from '../../../auth/types';
+
 type RequestParam = {
   providerType: AuthProvider | 'none';
   tokenId: string;
@@ -22,8 +23,8 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: 'challengeflow',
       credentials: {},
-      async authorize(_, req): Promise<any> {
-        const { providerType, tokenId } = req.query as RequestParam;
+      async authorize(_, req) {
+        const { tokenId } = req.query as RequestParam;
         const decodeUserInfo = (await friebaseAdmin.auth().verifyIdToken(tokenId)) as unknown as TokenType;
         const { uid: id, name, picture: image, email } = decodeUserInfo;
         if (decodeUserInfo) {
@@ -33,9 +34,8 @@ export const authOptions: NextAuthOptions = {
             image,
             email
           };
-        } else {
-          return null;
         }
+        return null;
       }
     }),
     GoogleProvider({
@@ -57,10 +57,15 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (session && token) {
-        session.user.uid = token.sub || '';
-        session.user.name = token.name || null;
-        session.user.email = token.email || null;
-        session.user.image = token.picture || null;
+        return {
+          ...session,
+          user: {
+            uid: token.sub || '',
+            name: token.name || null,
+            email: token.email || null,
+            image: token.picture || null
+          }
+        };
       }
       return session;
     }

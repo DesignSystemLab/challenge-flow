@@ -5,7 +5,7 @@ import type { PostForm } from '../types';
 
 export const useCreatePost = (successAction: () => void) => {
   const { showBoundary } = useErrorBoundary();
-  const { mutate, isLoading } = useMutation((postForm: PostForm) => fetchCreatePost(postForm), {
+  const { mutate, isLoading } = useMutation((postForm: Omit<PostForm, 'postId'>) => fetchCreatePost(postForm), {
     onError: (error) => {
       showBoundary(error);
     },

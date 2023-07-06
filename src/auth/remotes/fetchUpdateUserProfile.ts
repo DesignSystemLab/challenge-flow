@@ -7,6 +7,7 @@ export const fetchUpdateUserProfile = async (profile: Omit<UserProfile, 'challen
   const { email, name, photo, skills } = profile;
   try {
     const sendData = {
+      uid,
       name,
       email,
       photo,

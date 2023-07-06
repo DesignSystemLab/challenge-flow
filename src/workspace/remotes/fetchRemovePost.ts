@@ -1,14 +1,16 @@
 import instance from '@shared/axiosInstance';
 import { errorMessage } from '@shared/errorMessage';
-import type { Response } from '@shared/responseEntity';
 import type { PostForm } from '../types';
+import type { Response } from '@shared/responseEntity';
 
-export const fetchCreatePost = async (postForm: Omit<PostForm, 'postId'>): Promise<boolean> => {
+export const fetchRemovePost = async (
+  reqParam: Pick<PostForm, 'postId' | 'turn' | 'workspaceId'>
+): Promise<boolean> => {
   try {
     const { data } = await instance<Response<boolean>>({
-      method: 'post',
-      url: '/workspace/post/create',
-      data: postForm
+      method: 'delete',
+      url: '/workspace/post/delete',
+      data: reqParam
     });
     return data.success;
   } catch (error) {

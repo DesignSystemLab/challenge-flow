@@ -1,3 +1,4 @@
+import { Session } from 'next-auth';
 import type { DocumentReference } from 'firebase/firestore';
 import type { UserProfile } from '@auth/types';
 import type { ChallengeHookFormValues } from '@challenge/types';
@@ -26,20 +27,27 @@ export interface ChallengeDocRef extends ChallengeHookFormValues {
 
 /** data model */
 
+export interface ContextProps {
+  workspaceId: string;
+  userSession: Session | null;
+}
+
 export interface Workspace {
   members: UserProfile[];
   challengeInfo: ChallengeDocRef;
 }
 
 export interface PostForm {
+  postId: string;
   author: string;
   content: string;
   title: string;
   workspaceId: string;
   turn: PeriodFormat;
 }
-
 export interface Post {
+  postId: string;
+  authorId: string;
   author: string;
   content: string;
   isDeleted: boolean;
