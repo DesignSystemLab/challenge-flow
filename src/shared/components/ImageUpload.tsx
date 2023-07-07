@@ -1,4 +1,4 @@
-import { useId, useEffect } from 'react';
+import { useId } from 'react';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { Button } from '@jdesignlab/react';
@@ -45,11 +45,9 @@ export const ImageUpload = (props: Props) => {
   const uploadPath = path || imageUid;
   const { mutate: uploadImage, isLoading, data: imageUrl = '' } = useImageUpload(uploadPath);
 
-  useEffect(() => {
-    if (onImage && imageUrl) {
-      onImage(imageUrl);
-    }
-  }, [imageUrl, onImage]);
+  if (imageUrl && onImage) {
+    onImage(imageUrl);
+  }
 
   const uploadPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
