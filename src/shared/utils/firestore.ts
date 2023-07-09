@@ -87,7 +87,7 @@ export const getUserInfo = async (userId: string) => {
   const ref = getDocRef('user', userId);
   const snapshot = await getDoc(ref);
   if (snapshot.exists()) {
-    return snapshot.data();
+    return { ...snapshot.data(), id: userId };
   }
   return null;
 };
