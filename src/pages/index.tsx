@@ -33,7 +33,7 @@ const MainPage = () => {
               더 보러 가기
             </Button>
           </div>
-          <ChallengeList currentUser={userSession?.user} showTotalCount />
+          <ChallengeList currentUser={userSession?.user} />
         </div>
       </CompositionBoundaryReactQuery>
     </div>
