@@ -27,13 +27,23 @@ export const authOptions: NextAuthOptions = {
       async authorize(_, req) {
         const { tokenId, providerType } = req.query as RequestParam;
         const decodeUserInfo = (await friebaseAdmin.auth().verifyIdToken(tokenId)) as unknown as TokenType;
-        const { uid: id, name, picture: image, email } = decodeUserInfo;
-        fetchAddUser({ provider: providerType, userInfo: decodeUserInfo });
+        const { uid: id, name, picture: photo, email } = decodeUserInfo;
         if (decodeUserInfo) {
+          if (providerType !== 'none') {
+            await fetchAddUser({
+              provider: providerType,
+              userInfo: {
+                uid: id,
+                name,
+                photo,
+                email
+              }
+            });
+          }
           return {
             id,
             name,
-            image,
+            photo,
             email
           };
         }
