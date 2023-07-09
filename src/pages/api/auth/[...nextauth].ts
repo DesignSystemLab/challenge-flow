@@ -1,3 +1,4 @@
+import { fetchAddUser } from '@auth/remotes/fetchAddUser';
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
@@ -24,14 +25,25 @@ export const authOptions: NextAuthOptions = {
       name: 'challengeflow',
       credentials: {},
       async authorize(_, req) {
-        const { tokenId } = req.query as RequestParam;
+        const { tokenId, providerType } = req.query as RequestParam;
         const decodeUserInfo = (await friebaseAdmin.auth().verifyIdToken(tokenId)) as unknown as TokenType;
-        const { uid: id, name, picture: image, email } = decodeUserInfo;
+        const { uid: id, name, picture: photo, email } = decodeUserInfo;
         if (decodeUserInfo) {
+          if (providerType !== 'none') {
+            await fetchAddUser({
+              provider: providerType,
+              userInfo: {
+                uid: id,
+                name,
+                photo,
+                email
+              }
+            });
+          }
           return {
             id,
             name,
-            image,
+            photo,
             email
           };
         }

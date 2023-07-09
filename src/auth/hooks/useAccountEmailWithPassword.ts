@@ -8,7 +8,8 @@ import { fetchSignInWithEmail } from '../remotes/fetchSignWithEmail';
 
 export const useAccountEmailWithPassword = (
   signup: boolean,
-  send: (props: { type: 'REGISTRY'; user: User }) => void
+  send: (props: { type: 'REGISTRY'; user: User }) => void,
+  onSignupSuccess?: (uid: string, email: string | null) => void
 ) => {
   const { updateUserData, clearUserData } = useSetUserAuthData();
   const { showBoundary } = useErrorBoundary();
@@ -16,8 +17,13 @@ export const useAccountEmailWithPassword = (
   const { mutate, isLoading } = useMutation(fetchFn, {
     onSuccess: async (data) => {
       const { user, token: tokenId } = data;
+      const { uid, email } = user;
 
       if (signup) {
+        if (onSignupSuccess) {
+          onSignupSuccess(uid, email);
+        }
+
         send({ type: 'REGISTRY', user });
         return;
       }

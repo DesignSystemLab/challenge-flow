@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
 import { Flex } from '../styles/Profile';
 import { useAccountEmailWithPassword } from '../hooks/useAccountEmailWithPassword';
+import { useCreateUserMutation } from '../hooks/useCreateUserMutation';
 import type { InterpreterFrom } from 'xstate';
 import type { SignMachineType } from '../machines/signMachine';
 import type { EamilPasswordField } from '../types';
@@ -20,7 +21,10 @@ export const EmailPasswordForm = (props: Props) => {
   } = useForm();
   const { signMachine, signup } = props;
   const [, refSend] = useActor(signMachine);
-  const { mutate: registry, isLoading } = useAccountEmailWithPassword(signup, refSend);
+  const { mutate: createUser } = useCreateUserMutation();
+  const { mutate: registry, isLoading } = useAccountEmailWithPassword(signup, refSend, (uid, email) => {
+    createUser({ uid, email });
+  });
 
   return (
     <form

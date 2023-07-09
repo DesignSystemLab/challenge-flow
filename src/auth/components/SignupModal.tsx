@@ -17,10 +17,10 @@ export const SignupModal = () => {
       open={openFlag}
       hasCloseIcon
       onClose={() => {
-        send('CLEAR');
         if (userInfo) {
           updateUserData(userInfo);
         }
+        send('CLEAR');
       }}
     >
       <Modal.Trigger>
