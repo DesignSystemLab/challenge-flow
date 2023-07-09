@@ -9,15 +9,18 @@ interface UserFetchData {
   skills?: string[] | number[];
   challenges?: [];
   note?: string;
+  id: string;
 }
 
-export const useGetUserInfoById = (userId: string) => {
+export const useGetUserInfoById = (userId: string | undefined) => {
   const [userInfo, setUserInfo] = useState<UserFetchData | null>(null);
 
   useEffect(() => {
     async function fetchUserData() {
-      const data = await getUserInfo(userId);
-      setUserInfo(data);
+      if (userId) {
+        const data = await getUserInfo(userId);
+        setUserInfo(data);
+      }
     }
     fetchUserData();
   }, [userId]);

@@ -1,14 +1,15 @@
-// import Image from 'next/image';
 import { useEffect } from 'react';
+import Image from 'next/image';
 import { commentProfileAvatar } from './style';
-
-type AvatarSize = 'sm' | 'md' | 'lg';
+import { AvatarSize } from './type';
+import { parseSize } from './parseSize';
 
 export const Avatar = (props: { src?: string; size?: AvatarSize }) => {
-  const { size = 'md', ...rest } = props;
+  const { src = '/', size = 'md', ...rest } = props;
+
   return (
     <div css={commentProfileAvatar(size)} {...rest}>
-      {/* <Image src={src} layout="fill" /> */} {/* {src} */}
+      <Image src={src} width={parseSize(size)} height={parseSize(size)} css={{ borderRadius: '50%' }} />
     </div>
   );
 };
