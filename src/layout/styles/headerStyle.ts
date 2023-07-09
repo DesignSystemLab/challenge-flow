@@ -40,8 +40,3 @@ export const headerLogo = {
     fontSize: '38px'
   }
 };
-
-export const headerRight = {
-  display: 'flex',
-  gap: '4px'
-};
