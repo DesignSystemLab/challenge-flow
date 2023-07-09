@@ -7,25 +7,25 @@ import type { AuthProvider, UserProfile } from '../types';
 type ExtendsProvider = AuthProvider | 'none';
 interface UpdateUser {
   provider: ExtendsProvider;
-  userInfo: Partial<Omit<UserProfile, 'photo'> & { picture: string }>;
+  userInfo: Partial<UserProfile>;
 }
 
 export const fetchAddUser = async (params: UpdateUser) => {
   try {
     const { user } = FIREBASE_COLLECTIONS;
     const { provider, userInfo } = params;
-    const { uid, challenges = [], email = null, name = null, note = null, picture = null, skills = [] } = userInfo;
+    const { uid, challenges = [], email = null, name = null, note = null, photo = null, skills = [] } = userInfo;
     if (uid) {
-      const sendUser = {
+      const initialUserInfo = {
         challenges,
         email,
         name,
         note,
-        picture,
+        photo,
         skills,
         provider
       };
-      return await setDoc(doc(database, user, uid), sendUser);
+      return await setDoc(doc(database, user, uid), initialUserInfo);
     }
     throw new Error('올바르지 않은 사용자 입니다.');
   } catch (error) {
