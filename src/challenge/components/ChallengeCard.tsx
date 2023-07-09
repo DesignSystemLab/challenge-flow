@@ -117,7 +117,7 @@ export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
 
       <div css={cardBottomWrapper}>
         <div css={cardAvatarWrapper}>
-          {postInfo.members.length > 1 ? <Avatar.Group src={['1', '2']} /> : <Avatar size="sm" />}
+          {postInfo.members.length > 1 ? <Avatar.Group src={['/', '/']} /> : <Avatar size="sm" />}
           {postInfo.members.length > 2 && (
             <Text variant="paragraph" size="md" color="grey-base">
               {`+${postInfo.members.length - 2}`}
