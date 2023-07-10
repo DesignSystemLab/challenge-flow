@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { challengeFormSubmitWrapperStyle } from '@challenge/styles/challengeStyle';
 import { useCreateMuation } from '@challenge/hooks/useCreateMutation';
 import { useModifyMutation } from '@challenge/hooks/useModifyMutation';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { DevSkillCombobox } from '@shared/components/form/DevSkillCombobox';
-// import { ChallengeContext } from '@challenge/context';
-import { Button, Flex, Radio, Select, TextInput } from '@jdesignlab/react';
+import { Layout } from '@shared/components/dataDisplay/FlexLayout';
+import { Button, Radio, Select, TextInput, Text } from '@jdesignlab/react';
 import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import type { ChallengeHookFormValues, ChallengeAllFormValues, ChallengeModifyFetchProps } from '@challenge/types';
@@ -19,8 +20,6 @@ interface Props {
   fillData?: ChallengeModifyFetchProps;
 }
 export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
-  // const { currentUser } = useContext(ChallengeContext);
-
   const router = useRouter();
 
   const { control, register, handleSubmit, setValue } = useForm({
@@ -79,105 +78,121 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
   return (
     <form onSubmit={handleSubmit(createChallenge)}>
       <TextInput {...register('title', { required: true })} size="sm" />
-      <br />
-      <Flex>
-        <Flex.Item> 진행 주기</Flex.Item>
-        <Flex.Item>
-          <Controller
-            name="isDaily"
-            control={control}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <Radio defaultChecked {...register('isDaily')} {...field} value="true">
-                일별
-              </Radio>
-            )}
-          />
-          <Controller
-            name="isDaily"
-            control={control}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <Radio {...register('isDaily')} {...field} value="false">
-                주별
-              </Radio>
-            )}
-          />
-        </Flex.Item>
-      </Flex>
-      <Flex>
-        <Flex.Item> 공개 여부</Flex.Item>
-        <Flex.Item>
-          <Controller
-            name="isPublic"
-            control={control}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <Radio {...register('isPublic')} {...field} defaultChecked value="true">
-                공개
-              </Radio>
-            )}
-          />
-          <Controller
-            name="isPublic"
-            control={control}
-            rules={{ required: true }}
-            render={({ field }) => (
-              <Radio {...register('isPublic')} {...field} value="false">
-                비공개
-              </Radio>
-            )}
-          />
-        </Flex.Item>
-      </Flex>
-      <Flex>
-        <Flex.Item> 진행 기간</Flex.Item>
-        <Flex.Item>
-          <input type="date" {...register('duration.start', { required: true })} />
-          ~
-          <input type="date" {...register('duration.end', { required: true })} />
-        </Flex.Item>
-      </Flex>
-      <Flex>
-        <Flex.Item> 모집 마감일</Flex.Item>
-        <Flex.Item>
+      <Layout.Column gap={8}>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            진행 주기
+          </Text>
+          <div>
+            <Controller
+              name="isDaily"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Radio defaultChecked {...register('isDaily')} {...field} value="true">
+                  일별
+                </Radio>
+              )}
+            />
+            <Controller
+              name="isDaily"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Radio {...register('isDaily')} {...field} value="false">
+                  주별
+                </Radio>
+              )}
+            />
+          </div>
+        </Layout.Row>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            공개 여부
+          </Text>
+          <div>
+            <Controller
+              name="isPublic"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Radio {...register('isPublic')} {...field} defaultChecked value="true">
+                  공개
+                </Radio>
+              )}
+            />
+            <Controller
+              name="isPublic"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Radio {...register('isPublic')} {...field} value="false">
+                  비공개
+                </Radio>
+              )}
+            />
+          </div>
+        </Layout.Row>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            진행 기간
+          </Text>
+          <div>
+            <input type="date" {...register('duration.start', { required: true })} />
+            ~
+            <input type="date" {...register('duration.end', { required: true })} />
+          </div>
+        </Layout.Row>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            모집 마감
+          </Text>
           <input type="date" {...register('dueAt', { required: true })} />
-        </Flex.Item>
-      </Flex>
-      <Select
-        onValueChange={(value) => {
-          setMemberCapacity(Number(value));
-        }}
-        defaultValue={`${memberCapacity}`}
-      >
-        <Select.Trigger placeholder="" />
-        {Array.from({ length: 20 }, (_, index) => index + 1).map((item: number) => (
-          <Select.Option value={`${item}`} key={item}>
-            {`${item}`}
-          </Select.Option>
-        ))}
-      </Select>
-      <Flex>
-        <Flex.Item> 진행 주제</Flex.Item>
-        <Flex.Item>
+        </Layout.Row>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            모집 인원
+          </Text>
+          <div css={{ width: '196px' }}>
+            <Select
+              onValueChange={(value) => {
+                setMemberCapacity(Number(value));
+              }}
+              defaultValue={`${memberCapacity}`}
+            >
+              <Select.Trigger placeholder="" />
+              {Array.from({ length: 20 }, (_, index) => index + 1).map((item: number) => (
+                <Select.Option value={`${item}`} key={item}>
+                  {`${item}명`}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
+        </Layout.Row>
+        <Layout.Row gap={20}>
+          <Text variant="label" color="grey-darken1">
+            진행 주제
+          </Text>
           <DevSkillCombobox state={skill} setState={setSkill} />
-        </Flex.Item>
-      </Flex>
-      <MarkdownEditor
-        height={310}
-        content={content}
-        onChange={(value: string) => {
-          setContent(value);
-        }}
-      />
-      <Button
-        type="submit"
-        variant="outline"
-        color="primary-500"
-        //  disabled={!!writeMutation.isLoading}
-      >
-        작성
-      </Button>
+        </Layout.Row>
+
+        <MarkdownEditor
+          content={content}
+          onChange={(value: string) => {
+            setContent(value);
+          }}
+        />
+      </Layout.Column>
+      <div css={challengeFormSubmitWrapperStyle}>
+        <Button
+          type="submit"
+          size="xl"
+          color="primary-500"
+          //  disabled={!!writeMutation.isLoading}
+        >
+          작성
+        </Button>
+      </div>
     </form>
   );
 };

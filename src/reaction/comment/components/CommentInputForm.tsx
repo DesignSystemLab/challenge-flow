@@ -1,3 +1,4 @@
+import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { commentTextareaWrapperStyle } from '@reaction/styles/commentStyle';
 import { useHandleKeyDown } from '@reaction/hooks/useHandleKeyDown';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
@@ -25,10 +26,11 @@ export const CommentInputForm = ({ originId, currentUser }: Props) => {
   const onKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     enterKeyDown(event, handleSubmit(onSubmit));
   };
+  const { userInfo } = useGetUserInfoById(currentUser.uid);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} css={commentTextareaWrapperStyle}>
-      <Avatar size="lg" />
+      <Avatar src={userInfo?.photo} size="lg" />
       <Textarea {...register('comment')} onKeyDown={onKeyDown} resize="smart" />
       <Button type="submit" variant="outline" color="grey-darken1">
         등록

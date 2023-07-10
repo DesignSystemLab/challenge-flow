@@ -61,7 +61,7 @@ export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
 
       <div css={cardWrittenInfoWrapper}>
         <div css={cardWrittenUser}>
-          <Avatar size="sm" />
+          <Avatar src={userInfo?.photo} size="sm" />
           <Text variant="label" size="sm">
             {userInfo?.name}
           </Text>
@@ -117,7 +117,7 @@ export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
 
       <div css={cardBottomWrapper}>
         <div css={cardAvatarWrapper}>
-          {postInfo.members.length > 1 ? <Avatar.Group src={['/', '/']} /> : <Avatar size="sm" />}
+          {postInfo.members.length > 1 ? <Avatar.Group /> : <Avatar size="sm" />}
           {postInfo.members.length > 2 && (
             <Text variant="paragraph" size="md" color="grey-base">
               {`+${postInfo.members.length - 2}`}

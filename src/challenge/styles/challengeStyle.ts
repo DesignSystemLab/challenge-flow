@@ -64,3 +64,11 @@ export const challengeApplyButtonWrapperStyle = css({
   gap: '8px',
   justifyContent: 'center'
 });
+
+export const challengeFormSubmitWrapperStyle = css({
+  '& button': {
+    display: 'block',
+    marginLeft: 'auto',
+    width: '150px'
+  }
+});

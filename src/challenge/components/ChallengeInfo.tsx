@@ -62,7 +62,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
 
       <div css={challengeInfoUserWrapperStyle}>
         <div css={challengeInfoUserStyle}>
-          <Avatar size="md" />
+          <Avatar src={userInfo?.photo} size="md" />
           <Text variant="heading" size="md">
             {userInfo?.name}
           </Text>
@@ -133,7 +133,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           <Text variant="paragraph" size="md">
             {`${postInfo.members.length}`}명 / {`${postInfo.memberCapacity}`}명
           </Text>
-          {postInfo.members.length > 1 ? <Avatar.Group src={['1', '2']} /> : <Avatar size="sm" />}
+          {postInfo.members.length > 1 ? <Avatar.Group /> : <Avatar size="sm" />}
           {postInfo.members.length > 2 && (
             <Text variant="paragraph" size="md" color="grey-base">
               {`+${postInfo.members.length - 2}`}
