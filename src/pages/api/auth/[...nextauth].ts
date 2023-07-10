@@ -41,6 +41,12 @@ export const authOptions: NextAuthOptions = {
                 email: email ?? providerUserEmail
               }
             });
+            return {
+              id,
+              photo,
+              email: email ?? providerUserEmail,
+              name: name ?? providerUserName
+            };
           }
           return {
             id,
