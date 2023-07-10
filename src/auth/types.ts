@@ -19,7 +19,7 @@ export interface FormState {
   message: string;
 }
 
-export interface EamilPasswordField {
+export interface EmailPasswordField {
   email: string;
   password: string;
 }

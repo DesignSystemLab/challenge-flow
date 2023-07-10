@@ -1,9 +1,9 @@
 import { errorMessage } from '@shared/errorMessage';
 import instance from '@shared/axiosInstance';
-import type { EamilPasswordField, UserSession } from '../types';
+import type { EmailPasswordField, UserSession } from '../types';
 import type { Response } from '@shared/responseEntity';
 
-export const fetchSignInWithEmail = async ({ email, password }: EamilPasswordField): Promise<UserSession> => {
+export const fetchSignInWithEmail = async ({ email, password }: EmailPasswordField): Promise<UserSession> => {
   try {
     const { data } = await instance<Response<UserSession>>({
       method: 'post',

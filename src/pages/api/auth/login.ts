@@ -3,12 +3,12 @@ import { responseEntity } from '@shared/responseEntity';
 import { auth } from '@shared/firebase';
 import { ApplicationError } from '@shared/constants';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import type { UserSession, EamilPasswordField } from '@auth/types';
+import type { UserSession, EmailPasswordField } from '@auth/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { email, password } = req.body as EamilPasswordField;
+    const { email, password } = req.body as EmailPasswordField;
     const { user } = await signInWithEmailAndPassword(auth, email, password);
     const token = await user.getIdToken();
     res.status(200).json(
