@@ -4,10 +4,10 @@ export interface MultipleNodeLayoutProps {
   children: React.ReactNode[];
   gap?: number;
   wrap?: boolean;
-  css?: CSSObject;
+  style?: CSSObject;
 }
 
 export interface SingleNodeLayoutProps {
   children: React.ReactNode;
-  css?: CSSObject;
+  style?: CSSObject;
 }
