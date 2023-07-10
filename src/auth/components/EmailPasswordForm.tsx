@@ -6,7 +6,7 @@ import { useAccountEmailWithPassword } from '../hooks/useAccountEmailWithPasswor
 import { useCreateUserMutation } from '../hooks/useCreateUserMutation';
 import type { InterpreterFrom } from 'xstate';
 import type { SignMachineType } from '../machines/signMachine';
-import type { EamilPasswordField } from '../types';
+import type { EmailPasswordField } from '../types';
 
 interface Props {
   signMachine: InterpreterFrom<SignMachineType>;
@@ -29,7 +29,7 @@ export const EmailPasswordForm = (props: Props) => {
   return (
     <form
       onSubmit={handleSubmit((userInfo) => {
-        registry(userInfo as EamilPasswordField);
+        registry(userInfo as EmailPasswordField);
       })}
     >
       <TextInput
