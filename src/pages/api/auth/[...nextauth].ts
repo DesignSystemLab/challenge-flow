@@ -9,6 +9,8 @@ import type { AuthProvider } from '../../../auth/types';
 
 type RequestParam = {
   providerType: AuthProvider | 'none';
+  providerUserName: string | null;
+  providerUserEmail: string | null;
   tokenId: string;
 };
 
@@ -25,7 +27,7 @@ export const authOptions: NextAuthOptions = {
       name: 'challengeflow',
       credentials: {},
       async authorize(_, req) {
-        const { tokenId, providerType } = req.query as RequestParam;
+        const { tokenId, providerType, providerUserName, providerUserEmail } = req.query as RequestParam;
         const decodeUserInfo = (await friebaseAdmin.auth().verifyIdToken(tokenId)) as unknown as TokenType;
         const { uid: id, name, picture: photo, email } = decodeUserInfo;
         if (decodeUserInfo) {
@@ -34,9 +36,9 @@ export const authOptions: NextAuthOptions = {
               provider: providerType,
               userInfo: {
                 uid: id,
-                name,
                 photo,
-                email
+                name: name ?? providerUserName,
+                email: email ?? providerUserEmail
               }
             });
           }
