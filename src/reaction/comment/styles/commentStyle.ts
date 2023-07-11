@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 export const reactionWrapperStyle = css({ display: 'flex', flexDirection: 'column', gap: '12px' });
 
-export const commentTextareaWrapperStyle = {
+export const commentTextareaWrapper = {
   display: 'flex',
   gap: '12px',
   '& .j-textarea__wrapper': {
@@ -19,7 +19,7 @@ export const commentTextareaWrapperStyle = {
   }
 };
 
-export const commentEachWrapperStyle = css({
+export const eachCommentWrapper = css({
   position: 'relative',
   padding: '12px 0',
   borderRadius: '2px',
@@ -28,9 +28,19 @@ export const commentEachWrapperStyle = css({
   }
 });
 
-export const commentProfileWrapperStyle = css({ display: 'flex', gap: '8px' });
-export const commentFormEditStyle = css({
+export const profileWrapper = css({ display: 'flex', gap: '8px' });
+
+export const profileInfo = css({
+  width: '100px'
+});
+
+export const contentWrapper = css({
+  flex: '2'
+});
+
+export const editForm = css({
   display: 'flex',
+  gap: '8px',
   '& .j-textarea__wrapper': {
     flex: '2',
     '& .j-textarea__input': {
@@ -38,4 +48,12 @@ export const commentFormEditStyle = css({
       minWidth: '100%'
     }
   }
+});
+
+export const editButtonWrapper = css({
+  marginTop: 'auto'
+});
+
+export const defaultButtonWrapper = css({
+  marginLeft: 'auto'
 });

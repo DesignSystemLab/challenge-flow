@@ -5,3 +5,6 @@ export const EmojiSet: Record<string, number> = {
   sad: 4,
   lovely: 5
 };
+
+export const EMOJI_LIST = 'emojiList';
+export const COMMENT_LIST = 'commentList';

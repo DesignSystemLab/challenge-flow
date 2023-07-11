@@ -7,15 +7,25 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { DocumentData, QueryDocumentSnapshot, collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 
 const REF_NAME = 'emoji';
-const CHALLENGE_REF_NAME = 'challenge';
 const COLLECTION = collection(database, REF_NAME);
 
 const EmojiReactionListService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { originId } = req.query;
+    const { domain, originId } = req.query;
+
+    if (!originId) {
+      res.status(400).json(
+        responseEntity<null>({
+          responseData: null,
+          success: false,
+          message: ApplicationError.BADREQUEST
+        })
+      );
+    }
+
     const q = query(
       COLLECTION,
-      where('originId', '==', getDocRef(CHALLENGE_REF_NAME, originId as string)),
+      where('originId', '==', getDocRef(domain as string, originId as string)),
       orderBy('createdAt', 'desc')
     );
 
@@ -23,6 +33,7 @@ const EmojiReactionListService = async (req: NextApiRequest, res: NextApiRespons
     const parseData = docs?.map((eachDoc: QueryDocumentSnapshot<DocumentData>) => ({
       ...eachDoc.data(),
       userId: eachDoc.data().userId.id,
+      originId: eachDoc.data().originId.id,
       id: eachDoc.id
     })) as EmojiDataWithId[];
 

@@ -1,5 +1,5 @@
 type ChipSize = 'sm' | 'md' | 'lg';
-export const chipStyle = (size: ChipSize, color: string) => {
+export const chipStyle = (size: ChipSize, color: string, clickable: boolean) => {
   let chipPadding = '7px 12px 5px';
   let chipHeight = '32px';
   let fontSize = '15px';
@@ -28,6 +28,13 @@ export const chipStyle = (size: ChipSize, color: string) => {
     backgroundColor: `${color}26`,
     borderRadius: radius,
     color,
-    fontSize
+    fontSize,
+    cursor: clickable ? 'hover' : 'default',
+    '&:hover': {
+      boxShadow: clickable
+        ? // eslint-disable-next-line max-len
+          'rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px'
+        : 'none'
+    }
   };
 };
