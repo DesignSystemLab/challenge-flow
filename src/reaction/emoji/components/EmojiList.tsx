@@ -19,7 +19,7 @@ export const EmojiList = ({ emojiList }: EmojiListProps) => {
       {emojiList &&
         Object.entries<EmojiDataWithId[]>(emojiCount)
           .sort()
-          .map(([key, value]) => <EmojiChip emojiList={emojiList} emoji={key} value={value} />)}
+          .map(([key, value]) => <EmojiChip emojiList={emojiList} emoji={key} value={value} key={key} />)}
     </div>
   );
 };

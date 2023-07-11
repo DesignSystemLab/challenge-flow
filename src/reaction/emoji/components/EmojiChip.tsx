@@ -42,7 +42,6 @@ export const EmojiChip = ({ emojiList, emoji, value }: EmojiChipProps) => {
           onClick={() => toggleEmoji(emoji, value)}
           color="#4695E5"
           size="md"
-          key={emoji}
           clickable={!!currentUser?.uid}
         >
           <span className="emoji" css={chipEmoji}>
