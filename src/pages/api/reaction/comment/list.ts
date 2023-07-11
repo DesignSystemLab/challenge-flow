@@ -1,4 +1,4 @@
-import { CommentFields } from '@reaction/types';
+import { CommentDataWithId } from '@reaction/comment/types/data';
 import { ApplicationError } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
@@ -7,20 +7,25 @@ import { DocumentData, QueryDocumentSnapshot, collection, getDocs, orderBy, quer
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const REF_NAME = 'comment';
-const CHALLENGE_REF_NAME = 'challenge';
 const COLLECTION = collection(database, REF_NAME);
 
 const getCommentListService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { originId } = req.query;
+    const { domain, originId } = req.query;
 
     if (!originId) {
-      console.log('originId 없음');
+      res.status(400).json(
+        responseEntity<null>({
+          responseData: null,
+          success: false,
+          message: ApplicationError.BADREQUEST
+        })
+      );
     }
 
     const q = query(
       COLLECTION,
-      where('originId', '==', getDocRef(CHALLENGE_REF_NAME, originId as string)),
+      where('originId', '==', getDocRef(domain as string, originId as string)),
       orderBy('createdAt', 'desc')
     );
 
@@ -29,10 +34,10 @@ const getCommentListService = async (req: NextApiRequest, res: NextApiResponse) 
       ...eachDoc.data(),
       userId: eachDoc.data().userId.id,
       id: eachDoc.id
-    })) as CommentFields[];
+    })) as CommentDataWithId[];
 
     res.status(200).json(
-      responseEntity<CommentFields[]>({
+      responseEntity<CommentDataWithId[]>({
         responseData: parseData,
         success: true
       })

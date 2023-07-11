@@ -34,6 +34,7 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
   };
 
   const [liked, setLiked] = useState<boolean>(false);
+  const [likeCount, setLikeCount] = useState<number>(postInfo.likes.length);
 
   useEffect(() => {
     if (userSession) {
@@ -42,11 +43,13 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
   }, [userSession]);
 
   const likeErrorAction = () => {
+    setLikeCount((prev) => (liked ? prev + 1 : prev - 1));
     setLiked((prev) => !prev);
   };
   const { toggleAction } = useLikeMutation(postInfo.id, userSession?.user?.uid, likeErrorAction);
   const onClickLike = () => {
     toggleAction();
+    setLikeCount((prev) => (liked ? prev - 1 : prev + 1));
     setLiked((prev) => !prev);
   };
 
@@ -68,7 +71,7 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
               />
             }
           >
-            좋아요
+            {likeCount}
           </Button>
           <CanI.Apply postInfo={postInfo} currentUser={userSession?.user}>
             <Button

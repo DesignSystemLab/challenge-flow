@@ -1,61 +1,25 @@
-import { useContext, useEffect, useState } from 'react';
-import { calculateEmojiCount } from '@reaction/utils/calculateEmojiCount';
-import { getReactedEmojiId } from '@reaction/utils/getReactedEmojiId';
-import { useDeleteEmoji } from '@reaction/hooks/useDeleteEmoji';
-import { Chip } from '@shared/components/dataDisplay/Chip';
-import { EmojiDataWithEmojiKey, EmojiDataWithId } from '@reaction/types';
-import { ReactionContext } from '@reaction/context';
-import fetchReadEmojiList from '@reaction/remotes/fetchReadEmojiList';
-import { useCreateEmoji } from '@reaction/hooks/useCreateEmoji';
-import { useQuery } from 'react-query';
+import { useEffect, useState } from 'react';
+import { calculateEmojiCount } from '@reaction/emoji/utils/calculateEmojiCount';
+import { EmojiChip } from './EmojiChip';
+import { chipList } from '../styles/emojiStyle';
+import { EmojiListProps } from '../types/componentProps';
+import { EmojiDataWithEmojiKey, EmojiDataWithId } from '../types/data';
 
-export const EmojiList = ({
-  currentUser
-}: {
-  currentUser: {
-    uid: string;
-    email?: string;
-    name?: string;
-    image?: string;
-  };
-}) => {
-  const { originId } = useContext(ReactionContext);
-  const { data } = useQuery(`emoji-${originId}`, () => fetchReadEmojiList({ originId }));
-  const { onSubmit } = useCreateEmoji(originId, currentUser.uid);
-  const { onDelete } = useDeleteEmoji(originId);
+export const EmojiList = ({ emojiList }: EmojiListProps) => {
   const [emojiCount, setEmojiCount] = useState<EmojiDataWithEmojiKey>({});
 
   useEffect(() => {
-    if (data) {
-      setEmojiCount(calculateEmojiCount(data));
+    if (emojiList) {
+      setEmojiCount(calculateEmojiCount(emojiList));
     }
-  }, [data]);
-
-  const toggleEmoji = (emojiKey: string, values: EmojiDataWithId[]) => {
-    const reactedEmojiId = getReactedEmojiId(values, currentUser.uid);
-    if (reactedEmojiId) {
-      onDelete(reactedEmojiId);
-    } else {
-      onSubmit(emojiKey);
-    }
-  };
+  }, [emojiList]);
 
   return (
-    <div css={{ display: 'flex', gap: '4px', marginLeft: '16px' }}>
-      {data &&
-        data.length > 0 &&
+    <div css={chipList}>
+      {emojiList &&
         Object.entries<EmojiDataWithId[]>(emojiCount)
           .sort()
-          .map(([key, value]) => (
-            <Chip as="button" onClick={() => toggleEmoji(key, value)} color="#e1" size="md" key={key}>
-              <span className="emoji" css={{ fontSize: '16px', marginRight: '4px' }}>
-                {key}
-              </span>
-              <span className="count" css={{ color: 'black' }}>
-                {value.length}
-              </span>
-            </Chip>
-          ))}
+          .map(([key, value]) => <EmojiChip emojiList={emojiList} emoji={key} value={value} />)}
     </div>
   );
 };

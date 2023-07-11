@@ -1,12 +1,11 @@
-import { memo, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
+import { Layout } from '@shared/components/dataDisplay/FlexLayout';
 import DynamicWrapper from '@shared/components/DynamicWrapper';
 import { Emojis } from '@reaction/emoji/components/Emojis';
 import { Comments } from '@reaction/comment/components/Comments';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Button } from '@jdesignlab/react';
 import { useSession } from 'next-auth/react';
-// import { CommentReactions } from './CommentReactions';
-// import { EmojiReactions } from './EmojiReactions';
 import { ReactionContext } from './context';
 import type { FallbackProps } from 'react-error-boundary';
 
@@ -42,27 +41,25 @@ interface Props {
   domain: DomainType;
 }
 
-export const Reactions = memo(({ originId, domain }: Props) => {
+export const Reactions = ({ originId, domain }: Props) => {
   const { data } = useSession();
   const userSession = data as unknown as UserSession;
-
-  useEffect(() => {
-    console.log('댓글 렌더링');
-  });
 
   return (
     <DynamicWrapper>
       <CompositionBoundaryReactQuery
-        suspense={<div>reactions 로딩중이얍</div>}
+        suspense={<Layout.Center>reactions 로딩중이얍</Layout.Center>}
         error={(prop) => <ReactionError {...prop} />}
       >
-        <ReactionContext.Provider value={useMemo(() => ({ originId, domain }), [originId, domain])}>
-          <div css={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <Emojis currentUser={userSession?.user} />
-            <Comments currentUser={userSession?.user} />
-          </div>
+        <ReactionContext.Provider
+          value={useMemo(() => ({ originId, domain, currentUser: userSession?.user }), [originId, domain, userSession])}
+        >
+          <Layout.Column gap={12}>
+            <Emojis />
+            <Comments />
+          </Layout.Column>
         </ReactionContext.Provider>
       </CompositionBoundaryReactQuery>
     </DynamicWrapper>
   );
-});
+};

@@ -1,3 +1,4 @@
+import { authOptions } from '@pages/api/auth/[...nextauth]';
 import { ApplicationError } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
@@ -5,13 +6,25 @@ import { formatDateTime, getDate } from '@shared/utils/date';
 import { createOne, getDocRef } from '@shared/utils/firestore';
 import { collection, doc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth';
 
 const REF_NAME = 'comment';
 const COLLECTION = collection(database, REF_NAME);
 const createCommentService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const param = req.body;
-    param.originId = getDocRef('challenge', param.originId); // TODO
+    const session = await getServerSession(req, res, authOptions);
+    if (!session) {
+      res.status(401).json(
+        responseEntity<null>({
+          responseData: null,
+          success: false,
+          message: '로그인 후 이용하실 수 있습니다.'
+        })
+      );
+    }
+
+    const { domain, ...param } = req.body;
+    param.originId = getDocRef(domain, param.originId);
     param.userId = getDocRef('user', param.userId);
     const ref = doc(COLLECTION);
 
