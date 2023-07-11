@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
 import {
   cardTop,
@@ -12,6 +13,7 @@ import {
   cardReactionWrapper,
   cardEachReaction
 } from '@challenge/styles/challengeCardStyle';
+import { ChallengeContext } from '@challenge/context';
 import { ChallengeModifyFetchProps } from '@challenge/types';
 import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';
 import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
@@ -23,15 +25,10 @@ import { Eye, Heart, Message } from '@jdesignlab/react-icons';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
-  currentUser: {
-    uid: string;
-    email?: string;
-    name?: string;
-    image?: string;
-  };
 }
 
-export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
+export const ChallengeCard = ({ postInfo }: Props) => {
+  const { currentUser } = useContext(ChallengeContext);
   const { userInfo } = useGetUserInfoById(postInfo.userId);
   const restMemberSlot = postInfo.memberCapacity - postInfo.members.length;
 

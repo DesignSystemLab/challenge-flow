@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ParsedUrlQuery } from 'querystring';
 import { ChallengeModifyFetchProps, ChallengePostFields, UserSession } from '@challenge/types';
 import { Reactions } from '@reaction/Reactions';
@@ -15,6 +15,7 @@ import {
 import { database } from '@shared/firebase';
 import { Loading } from '@shared/components/Icons';
 import { isEarlierThanNow } from '@shared/utils/date';
+import { ChallengeContext } from '@challenge/context';
 import { useLikeMutation } from '@challenge/hooks/useLikeMutation';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { GetServerSideProps } from 'next';
@@ -40,7 +41,7 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
     if (userSession) {
       setLiked(postInfo.likes.includes(userSession?.user?.uid));
     }
-  }, [userSession]);
+  }, [postInfo.likes, userSession]);
 
   const likeErrorAction = () => {
     setLikeCount((prev) => (liked ? prev + 1 : prev - 1));
@@ -54,51 +55,53 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
   };
 
   return (
-    <div css={challengeInfoWrapperStyle}>
-      <section css={challengeInfoSectionStyle}>
-        <ChallengeInfo postInfo={postInfo} currentUser={userSession?.user} />
-        <div css={challengeApplyButtonWrapperStyle}>
-          <Button
-            onClick={onClickLike}
-            size="lg"
-            variant="outline"
-            icon={
-              <Heart
-                fill={liked ? '#f8aaae' : 'none'}
-                width={18}
-                height={18}
-                style={{ marginBottom: '2px', color: liked ? '#f8aaae' : '#4695e5' }}
-              />
-            }
-          >
-            {likeCount}
-          </Button>
-          <CanI.Apply postInfo={postInfo} currentUser={userSession?.user}>
+    <ChallengeContext.Provider value={useMemo(() => ({ currentUser: userSession?.user }), [userSession])}>
+      <div css={challengeInfoWrapperStyle}>
+        <section css={challengeInfoSectionStyle}>
+          <ChallengeInfo postInfo={postInfo} />
+          <div css={challengeApplyButtonWrapperStyle}>
             <Button
-              onClick={onClickApply}
+              onClick={onClickLike}
               size="lg"
-              disabled={postInfo.members.includes(userSession?.user.uid)}
-              icon={<Checkmark width={16} height={16} style={{ marginBottom: '2px' }} />}
+              variant="outline"
+              icon={
+                <Heart
+                  fill={liked ? '#f8aaae' : 'none'}
+                  width={18}
+                  height={18}
+                  style={{ marginBottom: '2px', color: liked ? '#f8aaae' : '#4695e5' }}
+                />
+              }
             >
-              {postInfo.members.includes(userSession?.user.uid) ? '참여완료' : '참여하기'}
+              {likeCount}
             </Button>
-          </CanI.Apply>
-          <CanI.MakeWorkspace postInfo={postInfo} currentUser={userSession?.user}>
-            <Button
-              disabled={isEarlierThanNow(postInfo.dueAt)}
-              size="lg"
-              icon={<Plus width={16} height={16} style={{ marginBottom: '2px' }} />}
-            >
-              워크스페이스 생성
-            </Button>
-          </CanI.MakeWorkspace>
-        </div>
-        <Reactions originId={postInfo.id} domain="challenge" />
-      </section>
-      <CompositionBoundaryReactQuery suspense={<Loading />} error={(prop) => <ChallengeListError {...prop} />}>
-        <Suggestion />
-      </CompositionBoundaryReactQuery>
-    </div>
+            <CanI.Apply postInfo={postInfo}>
+              <Button
+                onClick={onClickApply}
+                size="lg"
+                disabled={postInfo.members.includes(userSession?.user.uid)}
+                icon={<Checkmark width={16} height={16} style={{ marginBottom: '2px' }} />}
+              >
+                {postInfo.members.includes(userSession?.user.uid) ? '참여완료' : '참여하기'}
+              </Button>
+            </CanI.Apply>
+            <CanI.MakeWorkspace postInfo={postInfo}>
+              <Button
+                disabled={isEarlierThanNow(postInfo.dueAt)}
+                size="lg"
+                icon={<Plus width={16} height={16} style={{ marginBottom: '2px' }} />}
+              >
+                워크스페이스 생성
+              </Button>
+            </CanI.MakeWorkspace>
+          </div>
+          <Reactions originId={postInfo.id} domain="challenge" />
+        </section>
+        <CompositionBoundaryReactQuery suspense={<Loading />} error={(prop) => <ChallengeListError {...prop} />}>
+          <Suggestion />
+        </CompositionBoundaryReactQuery>
+      </div>
+    </ChallengeContext.Provider>
   );
 };
 export default ChallengeDetailPage;

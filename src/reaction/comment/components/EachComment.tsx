@@ -84,7 +84,7 @@ export const EachComment = ({ data, editModeId, setEditModeId }: EachCommentProp
           )}
         </div>
 
-        <CanI.Update allowedUserId={data.userId} currentUser={currentUser}>
+        <CanI.Update allowedUserId={data.userId}>
           <div css={defaultButtonWrapper}>
             {!editModeId && (
               <Layout.Row>
