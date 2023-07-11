@@ -5,7 +5,7 @@ import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { Tabs } from '@jdesignlab/react';
 import { EmptyPost } from './EmptyPost';
 import { workspaceMachineContext } from '../../machines/workspaceMachineContext';
-import { workspaceContext } from '../../workspaceContext';
+import { WorkspaceGroupContext } from '../../contexts/workspaceGroupContext';
 import { useQueryPosts } from '../../hooks/useQueryPosts';
 import { ContentExistTabItem } from '../posts/ContentExistTabItem';
 import { ContentNotExistTabItem } from '../posts/ContentNotExistTabItem';
@@ -13,7 +13,7 @@ import type { Post } from '../../types';
 
 export const TabList = () => {
   const [state] = workspaceMachineContext.useActor();
-  const { workspaceId, userSession } = useContext(workspaceContext);
+  const { workspaceId, userSession } = useContext(WorkspaceGroupContext);
   const { data: workspaceData } = useQueryWorkspace(workspaceId);
   const { data: notice } = useQueryWorkspaceNotice(workspaceId);
   const { data: posts } = useQueryPosts(state.context.period, workspaceId);

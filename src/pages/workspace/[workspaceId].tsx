@@ -3,7 +3,7 @@ import { workspaceMachineContext } from '@workspace/machines/workspaceMachineCon
 import { WorkspaceSidebar } from '@workspace/components/aside/WorkspaceSidebar';
 import { WorkspaceMain } from '@workspace/components/main/WorkspaceMain';
 import { workspaceLayout } from '@workspace/styles/layout';
-import { workspaceContext } from '@workspace/workspaceContext';
+import { WorkspaceGroupContext } from '@workspace/contexts/workspaceGroupContext';
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/react';
 import type { ContextProps } from '@workspace/types';
@@ -13,12 +13,12 @@ const WorkspacePage = (props: ContextProps) => {
   const memoizedWorkspaceId = useMemo(() => ({ workspaceId, userSession }), [workspaceId, userSession]);
   return (
     <workspaceMachineContext.Provider>
-      <workspaceContext.Provider value={memoizedWorkspaceId}>
+      <WorkspaceGroupContext.Provider value={memoizedWorkspaceId}>
         <section css={workspaceLayout}>
           <WorkspaceSidebar />
           <WorkspaceMain />
         </section>
-      </workspaceContext.Provider>
+      </WorkspaceGroupContext.Provider>
     </workspaceMachineContext.Provider>
   );
 };
