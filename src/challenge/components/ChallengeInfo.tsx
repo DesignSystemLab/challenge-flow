@@ -1,13 +1,13 @@
-import { memo } from 'react';
-import { ChallengeModifyFetchProps, UserData } from '@challenge/types';
+import { useContext } from 'react';
+import { ChallengeModifyFetchProps } from '@challenge/types';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
 import { useDeleteMutation } from '@challenge/hooks/useDeleteMutation';
+import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { Chip } from '@shared/components/dataDisplay/Chip';
 import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';
 import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { SKILLS } from '@shared/constants';
-import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import {
   challengeInfoHeadingButtonWrapperStyle,
   challengeInfoOptionListItemStyle,
@@ -16,18 +16,19 @@ import {
   challengeInfoUserStyle,
   challengeInfoUserWrapperStyle
 } from '@challenge/styles/challengeStyle';
+import { ChallengeContext } from '@challenge/context';
 import { Button, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import { CanI } from './CanI';
+import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
-  currentUser: UserData;
 }
 
-export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
+export const ChallengeInfo = ({ postInfo }: Props) => {
+  const { currentUser } = useContext(ChallengeContext);
   const { userInfo } = useGetUserInfoById(postInfo.userId);
-
   const router = useRouter();
 
   const successAction = () => {
@@ -49,7 +50,7 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
       <div style={{ marginTop: '12px' }}>
         <div css={challengeInfoTitleStyle}>{postInfo.title}</div>
         <div css={challengeInfoHeadingButtonWrapperStyle}>
-          <CanI.Update allowedUserId={postInfo.userId} currentUser={currentUser}>
+          <CanI.Update allowedUserId={postInfo.userId}>
             <Button variant="ghost" size="md" onClick={modifyPost}>
               수정
             </Button>
@@ -133,16 +134,11 @@ export const ChallengeInfo = memo(({ postInfo, currentUser }: Props) => {
           <Text variant="paragraph" size="md">
             {`${postInfo.members.length}`}명 / {`${postInfo.memberCapacity}`}명
           </Text>
-          {postInfo.members.length > 1 ? <Avatar.Group /> : <Avatar size="sm" />}
-          {postInfo.members.length > 2 && (
-            <Text variant="paragraph" size="md" color="grey-base">
-              {`+${postInfo.members.length - 2}`}
-            </Text>
-          )}
+          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser?.uid} />
         </li>
       </ul>
 
       <MarkdownEditor viewer minHeight={320} autoHeight content={postInfo.content} />
     </>
   );
-});
+};

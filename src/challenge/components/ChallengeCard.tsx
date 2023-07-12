@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
 import {
   cardTop,
@@ -12,6 +13,7 @@ import {
   cardReactionWrapper,
   cardEachReaction
 } from '@challenge/styles/challengeCardStyle';
+import { ChallengeContext } from '@challenge/context';
 import { ChallengeModifyFetchProps } from '@challenge/types';
 import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';
 import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
@@ -20,21 +22,16 @@ import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { SKILLS } from '@shared/constants';
 import { Text } from '@jdesignlab/react';
 import { Eye, Heart, Message } from '@jdesignlab/react-icons';
+import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
-  currentUser: {
-    uid: string;
-    email?: string;
-    name?: string;
-    image?: string;
-  };
 }
 
-export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
+export const ChallengeCard = ({ postInfo }: Props) => {
+  const { currentUser } = useContext(ChallengeContext);
   const { userInfo } = useGetUserInfoById(postInfo.userId);
   const restMemberSlot = postInfo.memberCapacity - postInfo.members.length;
-
   return (
     <a href={`/challenge/${postInfo.id}`} css={cardWrapper}>
       <div css={cardTop}>
@@ -117,12 +114,7 @@ export const ChallengeCard = ({ postInfo, currentUser }: Props) => {
 
       <div css={cardBottomWrapper}>
         <div css={cardAvatarWrapper}>
-          {postInfo.members.length > 1 ? <Avatar.Group /> : <Avatar size="sm" />}
-          {postInfo.members.length > 2 && (
-            <Text variant="paragraph" size="md" color="grey-base">
-              {`+${postInfo.members.length - 2}`}
-            </Text>
-          )}
+          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser.uid} />
           <Text variant="paragraph" size="sm" color="grey-base">
             참여중!
           </Text>

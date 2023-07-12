@@ -1,17 +1,9 @@
 import { createContext } from 'react';
+import { ChallengeModifyFetchProps } from './types';
 
-interface Props {
-  currentUser:
-    | {
-        uid: string;
-        email?: string;
-        name?: string;
-        image?: string;
-      }
-    | null
-    | undefined;
-}
-
-export const ChallengeContext = createContext<Props>({
-  currentUser: undefined
+export const ChallengeContext = createContext({
+  postInfo: {} as ChallengeModifyFetchProps,
+  currentUser: {
+    uid: ''
+  }
 });

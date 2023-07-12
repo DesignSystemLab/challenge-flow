@@ -1,18 +1,13 @@
-import { UserSession } from '@challenge/types';
 import { ChallengeList } from '@challenge/components/ChallengeList';
 import { ChallengeFilter } from '@challenge/components/ChallengeFilter';
 import { ChallengeListError } from '@challenge/components/Error';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Button } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/react';
 
 const Loading = () => <div>페이지 로딩중이얍</div>;
 
 const ChallengePage = () => {
-  const { data } = useSession();
-  const userSession = data as unknown as UserSession;
-
   const router = useRouter();
 
   const moveToNewChallenge = () => {
@@ -28,7 +23,7 @@ const ChallengePage = () => {
       </Button>
       <ChallengeFilter />
       <CompositionBoundaryReactQuery suspense={<Loading />} error={(prop) => <ChallengeListError {...prop} />}>
-        <ChallengeList showTotalCount currentUser={userSession?.user} />
+        <ChallengeList />
       </CompositionBoundaryReactQuery>
     </div>
   );

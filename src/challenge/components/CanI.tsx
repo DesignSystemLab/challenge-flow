@@ -1,48 +1,18 @@
-import { ChallengeModifyFetchProps, UserData } from '@challenge/types';
-import { isAfterThanNow, isEarlierThanNow } from '@shared/utils/date';
+import { useContext } from 'react';
+import { ChallengeContext } from '@challenge/context';
+import { ChallengeModifyFetchProps } from '@challenge/types';
+import { isAfterThanNow } from '@shared/utils/date';
 
-const Apply = ({
-  children,
-  postInfo,
-  currentUser
-}: {
-  children: React.ReactNode;
-  postInfo: ChallengeModifyFetchProps;
-  currentUser: UserData;
-}) => {
-  const hasValidSession = currentUser;
-  const isAvailableCapacity = postInfo.memberCapacity > postInfo.members.length;
-  const isBeforeDue = isEarlierThanNow(postInfo.dueAt);
-  const notAppliedYet = postInfo.members.includes(currentUser?.uid);
-
-  if (hasValidSession && notAppliedYet && isAvailableCapacity && isBeforeDue) return <>{children}</>;
-  return null;
-};
-
-const Update = ({
-  children,
-  allowedUserId,
-  currentUser
-}: {
-  children: React.ReactNode;
-  allowedUserId: string;
-  currentUser: UserData;
-}) => {
+const Update = ({ children, allowedUserId }: { children: React.ReactNode; allowedUserId: string }) => {
+  const { currentUser } = useContext(ChallengeContext);
   const isAuthor = allowedUserId === currentUser?.uid;
 
   if (isAuthor) return <>{children}</>;
   return null;
 };
 
-const MakeWorkspace = ({
-  children,
-  postInfo,
-  currentUser
-}: {
-  children: React.ReactNode;
-  postInfo: ChallengeModifyFetchProps;
-  currentUser: UserData;
-}) => {
+const MakeWorkspace = ({ children, postInfo }: { children: React.ReactNode; postInfo: ChallengeModifyFetchProps }) => {
+  const { currentUser } = useContext(ChallengeContext);
   const isAuthor = postInfo.userId === currentUser?.uid;
   const duePassed = isAfterThanNow(postInfo.dueAt);
   const isFull = postInfo.memberCapacity <= postInfo.members.length;
@@ -51,8 +21,7 @@ const MakeWorkspace = ({
   return null;
 };
 
-export const CanI = () => <></>;
-
-CanI.Apply = Apply;
-CanI.Update = Update;
-CanI.MakeWorkspace = MakeWorkspace;
+export const CanI = {
+  Update,
+  MakeWorkspace
+};

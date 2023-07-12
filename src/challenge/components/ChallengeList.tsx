@@ -4,16 +4,10 @@ import { ChallengeModifyFetchProps } from '@challenge/types';
 import { useReadListQuery } from '@challenge/hooks/useReadQuery';
 
 interface Props {
-  currentUser: {
-    uid: string;
-    email?: string;
-    name?: string;
-    image?: string;
-  };
   showTotalCount?: boolean;
 }
 
-export const ChallengeList = ({ currentUser, showTotalCount }: Props) => {
+export const ChallengeList = ({ showTotalCount }: Props) => {
   const { data } = useReadListQuery();
 
   return (
@@ -27,7 +21,7 @@ export const ChallengeList = ({ currentUser, showTotalCount }: Props) => {
       <div css={challengeCardContainer}>
         {data?.map((post: ChallengeModifyFetchProps) => (
           <div key={post.id}>
-            <ChallengeCard postInfo={post} currentUser={currentUser} />
+            <ChallengeCard postInfo={post} />
           </div>
         ))}
       </div>
