@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Image from 'next/image';
 import { commentProfileAvatar } from './style';
 import { AvatarSize } from './type';
@@ -13,11 +12,11 @@ export const Avatar = (props: { src?: string; size?: AvatarSize }) => {
   );
 };
 
-export const Group = ({ src }: { src?: string[] }) => {
-  useEffect(() => {}, []);
+export const Group = ({ src, limit }: { src?: string[]; limit?: number }) => {
+  const slicedArray = limit ? src?.slice(0, limit) : src;
   return (
     <div style={{ display: 'flex' }}>
-      {src?.map((s: string, index: number) => (
+      {slicedArray?.map((s: string, index: number) => (
         <div key={s} style={{ marginLeft: `${index === 0 || '-12px'}` }}>
           <Avatar size="sm" src={s} />
         </div>

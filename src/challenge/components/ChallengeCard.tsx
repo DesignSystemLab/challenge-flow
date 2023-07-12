@@ -22,6 +22,7 @@ import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { SKILLS } from '@shared/constants';
 import { Text } from '@jdesignlab/react';
 import { Eye, Heart, Message } from '@jdesignlab/react-icons';
+import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
@@ -31,7 +32,6 @@ export const ChallengeCard = ({ postInfo }: Props) => {
   const { currentUser } = useContext(ChallengeContext);
   const { userInfo } = useGetUserInfoById(postInfo.userId);
   const restMemberSlot = postInfo.memberCapacity - postInfo.members.length;
-
   return (
     <a href={`/challenge/${postInfo.id}`} css={cardWrapper}>
       <div css={cardTop}>
@@ -114,12 +114,7 @@ export const ChallengeCard = ({ postInfo }: Props) => {
 
       <div css={cardBottomWrapper}>
         <div css={cardAvatarWrapper}>
-          {postInfo.members.length > 1 ? <Avatar.Group /> : <Avatar size="sm" />}
-          {postInfo.members.length > 2 && (
-            <Text variant="paragraph" size="md" color="grey-base">
-              {`+${postInfo.members.length - 2}`}
-            </Text>
-          )}
+          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser.uid} />
           <Text variant="paragraph" size="sm" color="grey-base">
             참여중!
           </Text>
