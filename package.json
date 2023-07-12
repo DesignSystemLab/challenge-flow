@@ -20,7 +20,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
-    "@jdesignlab/react": "^0.10.2",
+    "@jdesignlab/react": "^0.10.3",
     "@jdesignlab/react-icons": "^0.7.0",
     "@toast-ui/editor": "^3.2.2",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.1.0",
@@ -38,6 +38,7 @@
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.9",
     "react-hook-form": "^7.43.9",
+    "react-intersection-observer": "^9.5.2",
     "react-query": "^3.39.3",
     "xstate": "^4.37.2"
   },

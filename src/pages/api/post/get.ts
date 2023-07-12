@@ -3,7 +3,7 @@ import { database } from '@shared/firebase';
 import { errorMessage } from '@shared/errorMessage';
 import { responseEntity } from '@shared/responseEntity';
 import { doc, getDoc } from 'firebase/firestore';
-import type { Post } from '@workspace/types';
+import type { QueryablePost } from '@workspace/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type RequestParams = {
@@ -16,10 +16,10 @@ const getPostService = async (req: NextApiRequest, res: NextApiResponse) => {
     const { posts } = FIREBASE_COLLECTIONS;
 
     const postDocRef = doc(database, posts, postId);
-    const postData = (await getDoc(postDocRef)).data() as Post;
+    const postData = (await getDoc(postDocRef)).data() as QueryablePost;
 
     res.status(200).json(
-      responseEntity<Post>({
+      responseEntity<QueryablePost>({
         responseData: { ...postData, postId },
         success: true
       })

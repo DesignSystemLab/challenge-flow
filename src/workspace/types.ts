@@ -1,7 +1,7 @@
 import { Session } from 'next-auth';
 import type { DocumentReference } from 'firebase/firestore';
 import type { UserProfile } from '@auth/types';
-import type { ChallengeHookFormValues } from '@challenge/types';
+import type { ChallengeHookFormValues, ChallengePostFields } from '@challenge/types';
 
 /** firebase Ref Type */
 export type PeriodFormat = `turn${number}`;
@@ -26,7 +26,6 @@ export interface ChallengeDocRef extends ChallengeHookFormValues {
 }
 
 /** data model */
-
 export interface ContextProps {
   workspaceId: string;
   userSession: Session | null;
@@ -37,6 +36,20 @@ export interface Workspace {
   challengeInfo: ChallengeDocRef;
 }
 
+export interface WorkspaceWithChallenge {
+  workspaceId: string;
+  posts: Post[];
+  master: Omit<UserProfile, 'uid'>;
+  members: UserProfile[];
+  challengeInfo: Pick<ChallengePostFields, 'duration' | 'content' | 'memberCapacity' | 'skill' | 'title'>;
+}
+
+export interface QueryableWorkspaceWithChallenge {
+  workspaceList: WorkspaceWithChallenge[];
+  totalCount: number;
+  currentPage: number;
+}
+
 export interface PostForm {
   postId: string;
   author: string;
@@ -45,11 +58,17 @@ export interface PostForm {
   workspaceId: string;
   turn: PeriodFormat;
 }
+
 export interface Post {
-  postId: string;
+  content: string;
+  originId: string;
+  title: string;
   authorId: string;
   author: string;
-  content: string;
   isDeleted: boolean;
-  title: string;
+  createdAt: string;
+}
+
+export interface QueryablePost extends Post {
+  postId: string;
 }

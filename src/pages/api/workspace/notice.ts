@@ -8,8 +8,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const workspaceNoticeService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const ref = doc(database, FIREBASE_COLLECTIONS.workspace, 'JI7P1eXtAReQdlHcO9s4');
-    const worksapaceDoc = (await getDoc(ref)).data() as WorkspaceDocRef;
-    const { notice } = worksapaceDoc;
+    const workspaceDoc = (await getDoc(ref)).data() as WorkspaceDocRef;
+    const { notice } = workspaceDoc;
     if (typeof notice === 'string') {
       res.status(200).json(
         responseEntity<string>({

@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Text } from '@jdesignlab/react';
 import { memberListStyle, memeberCardStyle, profileStyle } from '../../styles/sidebarStyle';
 import { useQueryWorkspace } from '../../hooks/useQueryWorkspace';
-import { workspaceContext } from '../../workspaceContext';
+import { WorkspaceGroupContext } from '../../contexts/workspaceGroupContext';
 
 export const GroupMemebers = () => {
-  const { workspaceId } = useContext(workspaceContext);
+  const { workspaceId } = useContext(WorkspaceGroupContext);
   const { data } = useQueryWorkspace(workspaceId);
 
   return (
