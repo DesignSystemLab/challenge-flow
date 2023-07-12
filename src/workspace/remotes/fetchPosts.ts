@@ -1,11 +1,11 @@
 import instance from '@shared/axiosInstance';
 import { errorMessage } from '@shared/errorMessage';
-import { Post } from '../types';
+import { QueryablePost } from '../types';
 import type { Response } from '@shared/responseEntity';
 
-export const fetchPosts = async (period: string, workspaceId: string): Promise<Post[]> => {
+export const fetchPosts = async (period: string, workspaceId: string): Promise<QueryablePost[]> => {
   try {
-    const { data } = await instance<Response<Post[]>>({
+    const { data } = await instance<Response<QueryablePost[]>>({
       method: 'get',
       url: '/workspace/post/get',
       params: { period, workspaceId }

@@ -3,7 +3,7 @@ import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { errorMessage } from '@shared/errorMessage';
 import { doc, getDoc } from 'firebase/firestore';
-import type { WorkspaceDocRef, PeriodFormat, Post } from '@workspace/types';
+import type { WorkspaceDocRef, PeriodFormat, Post, QueryablePost } from '@workspace/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type RequestParams = {
@@ -19,13 +19,13 @@ const workspacePostsService = async (req: NextApiRequest, res: NextApiResponse) 
     const workspaceTurn = (await getDoc(workspaceDocRef)).data() as WorkspaceDocRef;
 
     const posts = workspaceTurn[period].length
-      ? ((await Promise.all(
+      ? await Promise.all(
           workspaceTurn[period].map(async (ref) => {
-            const postData = (await getDoc(ref.post)).data() as Post;
+            const postData = (await getDoc(ref.post)).data() as QueryablePost;
             postData.postId = ref.post.id; // post 항목의 ID를 추가합니다.
             return postData;
           })
-        )) as Post[])
+        )
       : [];
 
     res.status(200).json(

@@ -20,6 +20,7 @@ const workspacePostService = async (req: NextApiRequest, res: NextApiResponse) =
     const insertedPost = await addDoc(collection(database, posts), {
       ...post,
       author: email ?? displayName,
+      originId: workspaceId,
       createdAt,
       authorId: uid,
       isDeleted: false
