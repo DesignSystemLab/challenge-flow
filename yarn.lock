@@ -1819,9 +1819,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/card@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@jdesignlab/card@npm:0.9.0"
+"@jdesignlab/card@npm:0.10.0":
+  version: 0.10.0
+  resolution: "@jdesignlab/card@npm:0.10.0"
   dependencies:
     "@jdesignlab/flex": 0.9.0
     "@jdesignlab/theme": 0.7.0
@@ -1830,7 +1830,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: 6b034782b7eb0d137d121fa84febabe9a4f3c2c5bd05b02b115e339cd93695866f93034bf75aa4ced24475a02600e644ba413a5a4be6bb5b0723daa1f699b9f6
+  checksum: ae8e8dee4c7896ae05f2e03ab7fe1108faf9111b60faf159972df312e17c62c13519c747624a1a1c68dc43059c91af7aec7a89b9e1d3eb2c6cb5bbae74ff4d5d
   languageName: node
   linkType: hard
 
@@ -2014,13 +2014,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jdesignlab/react@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "@jdesignlab/react@npm:0.10.2"
+"@jdesignlab/react@npm:^0.10.3":
+  version: 0.10.3
+  resolution: "@jdesignlab/react@npm:0.10.3"
   dependencies:
     "@jdesignlab/box": 0.8.1
     "@jdesignlab/button": 0.12.0
-    "@jdesignlab/card": 0.9.0
+    "@jdesignlab/card": 0.10.0
     "@jdesignlab/checkbox": 0.8.0
     "@jdesignlab/drawer": 0.8.1
     "@jdesignlab/dropdown": 0.10.0
@@ -2043,7 +2043,7 @@ __metadata:
     "@emotion/react": ~11
     react: ~18
     react-dom: ~18
-  checksum: b834263a304deb75625adf98b5b252aa1cdbc74ab6152c67b6a25e548e6a071419f928aa7f2cc045e23400369ad0eb240236f690adc2f830cf0c327667e8e7af
+  checksum: d7d873435d81d599e881d042c3a089659f8baf5e0df6091e8404a23ad8f338287ff03b3f5d4f880d643b6a2d18a3b0ba3542053f27dd3b91b8468f5d9636df28
   languageName: node
   linkType: hard
 
@@ -4640,7 +4640,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8
-    "@jdesignlab/react": ^0.10.2
+    "@jdesignlab/react": ^0.10.3
     "@jdesignlab/react-icons": ^0.7.0
     "@next/eslint-plugin-next": ^13.4.5
     "@testing-library/dom": ^9.3.1
@@ -4688,6 +4688,7 @@ __metadata:
     react-dom: ^18.2.0
     react-error-boundary: ^4.0.9
     react-hook-form: ^7.43.9
+    react-intersection-observer: ^9.5.2
     react-query: ^3.39.3
     ts-jest: ^29.1.0
     ts-node: ^10.9.1
@@ -10585,6 +10586,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
   checksum: 65b94de625f2b7921c4e856bf0abbe142bfe06c052217bd1bcc3a842e2cc37fa3a3e03758119dc038bbcf5edb49e02c29206528b80b201f9a4d601471ef78153
+  languageName: node
+  linkType: hard
+
+"react-intersection-observer@npm:^9.5.2":
+  version: 9.5.2
+  resolution: "react-intersection-observer@npm:9.5.2"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: cdbe40544930d59fc3820bce017fb688910cbecd7baaf382387a3d60d98a36e1d1e4bc27a876775e99b2a9f86762286a29d7bca21f3345f653cff29850c2641d
   languageName: node
   linkType: hard
 
