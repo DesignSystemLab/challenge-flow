@@ -1,4 +1,4 @@
-import { EmojiDataWithEmojiKey, EmojiDataWithId } from '@reaction/types';
+import { EmojiDataWithEmojiKey, EmojiDataWithId } from '../types/data';
 
 export const calculateEmojiCount = (data: EmojiDataWithId[]) => {
   const countObj = {} as EmojiDataWithEmojiKey;

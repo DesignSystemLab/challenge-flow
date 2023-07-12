@@ -1,5 +1,6 @@
-import { EmojiDataWithId, ReactionDomain } from '@reaction/types';
+import { ReactionDomain } from '@reaction/types';
 import instance from '@shared/axiosInstance';
+import { EmojiDataWithId } from '../types/data';
 import type { Response } from '@shared/responseEntity';
 
 const fetchReadList = async (domain: ReactionDomain, originId: string) => {

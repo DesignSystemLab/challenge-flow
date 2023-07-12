@@ -1,4 +1,4 @@
-import { EmojiDataWithId } from '@reaction/types';
+import { EmojiDataWithId } from '../types/data';
 
 export const checkAlreadyClicked = (
   currentUId: string | undefined,

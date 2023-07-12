@@ -1,4 +1,4 @@
-import { EmojiDataWithId } from '@reaction/types';
+import { EmojiDataWithId } from '../types/data';
 
 export const getReactedEmojiId = (values: EmojiDataWithId[], userId: string | undefined) => {
   let reactedEmojiId = null;
