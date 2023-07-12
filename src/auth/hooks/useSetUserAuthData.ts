@@ -1,10 +1,10 @@
-import { QUREY_KEYS } from '@shared/constants';
+import { QUERY_KEYS } from '@shared/constants';
 import { useQueryClient } from 'react-query';
 import { User } from 'firebase/auth';
 
 export const useSetUserAuthData = () => {
   const queryClient = useQueryClient();
-  const { user } = QUREY_KEYS;
+  const { user } = QUERY_KEYS;
 
   const updateUserData = (newData: User | null) => {
     queryClient.setQueryData(user, newData);
