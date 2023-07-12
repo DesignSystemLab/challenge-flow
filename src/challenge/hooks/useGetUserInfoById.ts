@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { UserData } from '@challenge/types';
 import { getUserInfo } from '@shared/utils/firestore';
 
 interface UserFetchData {

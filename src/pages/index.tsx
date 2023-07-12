@@ -5,16 +5,12 @@ import { ChallengeFilter } from '@challenge/components/ChallengeFilter';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Loading } from '@shared/components/Icons';
-import { UserSession } from '@challenge/types';
+// import { UserSession } from '@challenge/types';
 import { useRouter } from 'next/router';
 import { Button } from '@jdesignlab/react';
 import { Plus } from '@jdesignlab/react-icons';
-import { useSession } from 'next-auth/react';
 
 const MainPage = () => {
-  const { data } = useSession();
-  const userSession = data as unknown as UserSession;
-
   const router = useRouter();
 
   const moveToChallengeList = () => {
@@ -45,7 +41,7 @@ const MainPage = () => {
               </Button>
             </Layout.Row>
           </div>
-          <ChallengeList currentUser={userSession?.user} />
+          <ChallengeList />
         </div>
       </CompositionBoundaryReactQuery>
     </Layout.Column>

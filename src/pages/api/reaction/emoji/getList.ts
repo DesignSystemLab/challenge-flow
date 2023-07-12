@@ -2,7 +2,7 @@ import { database } from '@shared/firebase';
 import { ApplicationError } from '@shared/constants';
 import { responseEntity } from '@shared/responseEntity';
 import { getDocRef } from '@shared/utils/firestore';
-import { EmojiDataWithId } from '@reaction/types';
+import { EmojiDataWithId } from '@reaction/emoji/types/data';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { DocumentData, QueryDocumentSnapshot, collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 

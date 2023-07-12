@@ -12,7 +12,11 @@ const challengeCreateService = async (req: NextApiRequest, res: NextApiResponse)
   try {
     const param = req.body;
     const ref = doc(COLLECTION);
-    param.userId = getDocRef('user', param.userId);
+    const userRef = getDocRef('user', param.userId);
+    param.userId = userRef;
+    param.members = [userRef];
+    param.likes = [];
+    param.isOpened = false;
 
     await createOne(ref, { ...param, createdAt: formatDateTime(getDate()) });
 

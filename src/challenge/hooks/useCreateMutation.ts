@@ -9,9 +9,6 @@ export const useCreateMuation = (userId: string, successAction?: (id: string) =>
   const onSubmitCreate = (value: ChallengeAllFormValues) => {
     const param = {
       ...value,
-      members: [userId],
-      likes: [],
-      isOpened: false,
       userId
     };
     mutate(param);

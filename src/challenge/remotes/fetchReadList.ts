@@ -5,7 +5,7 @@ import type { Response } from '@shared/responseEntity';
 const fetchReadList = async () => {
   const { data } = await axiosInstance<Response<ChallengeModifyFetchProps[]>>({
     method: 'GET',
-    url: `challenge/list`
+    url: `/challenge/list`
   });
   return data.responseData;
 };

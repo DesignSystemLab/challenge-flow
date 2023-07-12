@@ -16,10 +16,10 @@ const challengeReadListService = async (req: NextApiRequest, res: NextApiRespons
     const parsedData = docs?.map((eachDoc: QueryDocumentSnapshot<DocumentData>) => ({
       ...eachDoc.data(),
       userId: eachDoc.data().userId.id,
+      members: eachDoc.data().members.map((d: ChallengePostFields) => d.id),
       likes: eachDoc.data().likes.map((d: ChallengePostFields) => d.id),
       id: eachDoc.id
     })) as ChallengeModifyFetchProps[];
-
     res.status(200).json(
       responseEntity<ChallengeModifyFetchProps[]>({
         responseData: parsedData,

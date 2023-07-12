@@ -8,6 +8,6 @@ export const useReadListQuery = () => {
 };
 
 export const useReadDetailQuery = (id: string) => {
-  const readDetailQuery = useQuery('challengeDetail', () => fetchReadDetail(id));
+  const readDetailQuery = useQuery([`challengeDetail`, id], () => fetchReadDetail(id));
   return readDetailQuery;
 };
