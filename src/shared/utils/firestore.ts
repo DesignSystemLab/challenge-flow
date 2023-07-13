@@ -6,12 +6,16 @@ import {
   Query,
   QueryDocumentSnapshot,
   QuerySnapshot,
+  collection,
   deleteDoc,
   doc,
   getDoc,
   getDocs,
+  orderBy,
+  query,
   setDoc,
-  updateDoc
+  updateDoc,
+  where
 } from 'firebase/firestore';
 
 const addIdToData = async (dataDoc: QueryDocumentSnapshot<DocumentData>) =>
@@ -90,4 +94,16 @@ export const getUserInfo = async (userId: string) => {
     return { ...snapshot.data(), id: userId } as any;
   }
   return null;
+};
+
+export const getCommentCount = async (postId: string, domain: string) => {
+  const REF_NAME = 'comment';
+  const COLLECTION = collection(database, REF_NAME);
+  const q = query(
+    COLLECTION,
+    where('originId', '==', getDocRef(domain as string, postId as string)),
+    orderBy('createdAt', 'desc')
+  );
+  const { docs } = await getDocs(q);
+  return docs.length;
 };
