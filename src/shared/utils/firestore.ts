@@ -107,3 +107,15 @@ export const getCommentCount = async (postId: string, domain: string) => {
   const { docs } = await getDocs(q);
   return docs.length;
 };
+
+export const getWorkspaceId = async (postId: string) => {
+  const workspaceCollection = collection(database, 'workspace');
+  const q = query(workspaceCollection, where('challenge', '==', getDocRef('challenge', postId)));
+  const { docs } = await getDocs(q);
+
+  let workspaceId;
+  docs.forEach((eachDoc: QueryDocumentSnapshot<DocumentData>) => {
+    workspaceId = eachDoc.id;
+  });
+  return workspaceId;
+};

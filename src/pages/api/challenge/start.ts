@@ -5,7 +5,7 @@ import { responseEntity } from '@shared/responseEntity';
 import { createDateRange } from '@shared/utils/createDateRange';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import { createOne } from '@shared/utils/firestore';
-import { DocumentData, DocumentReference, collection, doc, getDoc } from 'firebase/firestore';
+import { DocumentData, DocumentReference, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]';
@@ -61,6 +61,15 @@ const challengeStartService = async (req: NextApiRequest, res: NextApiResponse) 
       });
 
       await createOne(workspaceRef, value);
+      await updateDoc(docRef, {
+        isOpened: true
+      });
+      res.status(200).json(
+        responseEntity<string>({
+          responseData: workspaceRef.id,
+          success: true
+        })
+      );
     }
   } catch (error) {
     res.status(400).json(
