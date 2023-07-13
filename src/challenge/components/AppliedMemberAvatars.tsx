@@ -5,10 +5,12 @@ import { Text } from '@jdesignlab/react';
 
 export const AppliedMemberAvatars = ({
   members,
-  currentUserId
+  currentUserId,
+  size = 'sm'
 }: {
   members: string[];
   currentUserId?: string | undefined;
+  size?: 'sm' | 'md';
 }) => {
   const myIndex = members.indexOf(currentUserId ?? '');
   const me = members.splice(myIndex, 1)[0];
@@ -22,9 +24,13 @@ export const AppliedMemberAvatars = ({
       ) : (
         <Avatar src={memberAvatars[0]} size="sm" />
       )}
-      {members.length > 2 && (
-        <Text variant="paragraph" size="sm" color="grey-base">
-          {`+${members.length - 2}명 참여중!`}
+      {members.length > 2 ? (
+        <Text variant="paragraph" size={size} color="grey-base">
+          {`+ ${members.length - 2}명 참여중!`}
+        </Text>
+      ) : (
+        <Text variant="paragraph" size={size} color="grey-base">
+          참여중!
         </Text>
       )}
     </Layout.Row>

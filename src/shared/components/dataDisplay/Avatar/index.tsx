@@ -17,7 +17,7 @@ export const Group = ({ src, limit }: { src?: string[]; limit?: number }) => {
   return (
     <div style={{ display: 'flex' }}>
       {slicedArray?.map((s: string, index: number) => (
-        <div key={s} style={{ transform: `${index === 0 || 'translateX(-12px)'}` }}>
+        <div key={s} style={{ transform: `${index === 0 || 'translateX(-8px)'}` }}>
           <Avatar size="sm" src={s} />
         </div>
       ))}

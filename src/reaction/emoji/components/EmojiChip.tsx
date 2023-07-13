@@ -37,13 +37,7 @@ export const EmojiChip = ({ emojiList, emoji, value }: EmojiChipProps) => {
     <Tooltip>
       <Tooltip.Content>{getTooltipString(userInfo, emoji, value)}</Tooltip.Content>
       <Tooltip.Target>
-        <Chip
-          as="button"
-          onClick={() => toggleEmoji(emoji, value)}
-          color="#4695E5"
-          size="md"
-          clickable={!!currentUser?.uid}
-        >
+        <Chip as="button" onClick={() => toggleEmoji(emoji, value)} size="md" clickable={!!currentUser?.uid}>
           <span className="emoji" css={chipEmoji}>
             {emoji}
           </span>

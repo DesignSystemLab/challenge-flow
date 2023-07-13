@@ -125,7 +125,7 @@ export const ChallengeInfo = ({ postInfo }: Props) => {
           <Text variant="paragraph" size="md">
             {`${postInfo.members.length}`}명 / {`${postInfo.memberCapacity}`}명
           </Text>
-          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser?.uid} />
+          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser?.uid} size="md" />
           <RestMemberSlotChip postInfo={postInfo} />
         </li>
       </ul>
