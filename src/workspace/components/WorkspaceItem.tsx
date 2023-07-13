@@ -11,14 +11,12 @@ interface Props {
 }
 
 const PostSummary = ({ title }: Post) => (
-  <ol css={workspacePostSummaryStyle}>
-    <li>
-      <Stack>
-        <File width={18} height={18} fill="#f8a5c2" />
-        <Text variant="label">{title}</Text>
-      </Stack>
-    </li>
-  </ol>
+  <li>
+    <Stack>
+      <File width={18} height={18} fill="#f8a5c2" />
+      <Text variant="label">{title}</Text>
+    </Stack>
+  </li>
 );
 
 const EmptyPost = () => (
@@ -53,9 +51,17 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
         <Card.Divider />
         <Card.Body css={{ width: '100%', marginTop: '8px' }}>
           <Text variant="label" truncate>
-            작성 포스트
+            최근 게시글
           </Text>
-          {posts.length ? posts.map((post) => <PostSummary {...post} />) : <EmptyPost />}
+          {posts.length ? (
+            <ol css={workspacePostSummaryStyle}>
+              {posts.map((post) => (
+                <PostSummary {...post} />
+              ))}
+            </ol>
+          ) : (
+            <EmptyPost />
+          )}
         </Card.Body>
         <Card.Divider />
         <Card.Footer css={{ width: '100%', height: '100%', padding: '0' }}>
