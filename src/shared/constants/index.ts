@@ -5,3 +5,4 @@ export * from './storageKeys';
 export * from './firebaseError';
 export * from './appplicationError';
 export * from './firebaseCollections';
+export * as victoryTheme from './victoryChartTheme';
