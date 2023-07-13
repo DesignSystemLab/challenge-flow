@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import { isAfterThanNow } from '@shared/utils/date';
-import { Avatar } from '@shared/components/dataDisplay/Avatar';
-import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { ChallengeContext } from '@challenge/context';
 import { useApplyMutation } from '@challenge/hooks/useApplyMutation';
 import { Button } from '@jdesignlab/react';
@@ -11,7 +9,6 @@ const APPLY_ACTION_CONTENT = '참여하기';
 export const ApplyButton = () => {
   const router = useRouter();
   const { currentUser, postInfo } = useContext(ChallengeContext);
-  const { userInfo } = useGetUserInfoById(currentUser?.uid);
 
   const applySuccessAction = async () => {
     router.push({ pathname: `/challenge/${postInfo.id}` });
@@ -36,13 +33,7 @@ export const ApplyButton = () => {
   }, [postInfo.members]);
 
   return (
-    <Button
-      variant="outline"
-      onClick={onClickApply}
-      size="lg"
-      disabled={buttonContent !== APPLY_ACTION_CONTENT}
-      icon={<Avatar src={userInfo?.photo} size="sm" />}
-    >
+    <Button onClick={onClickApply} size="lg" disabled={buttonContent !== APPLY_ACTION_CONTENT}>
       {buttonContent}
     </Button>
   );

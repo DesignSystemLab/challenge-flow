@@ -22,7 +22,6 @@ export const Header = () => {
   const { data } = useSession();
   const { userInfo } = useGetUserInfoById(data?.user?.uid);
   const { mutate: signout } = useSignout();
-  console.log(data, userInfo);
 
   return (
     <header css={headerWrapper}>

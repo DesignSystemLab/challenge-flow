@@ -23,8 +23,8 @@ export const AppliedMemberAvatars = ({
         <Avatar src={memberAvatars[0]} size="sm" />
       )}
       {members.length > 2 && (
-        <Text variant="paragraph" size="md" color="grey-base">
-          {`+${members.length - 2}명`}
+        <Text variant="paragraph" size="sm" color="grey-base">
+          {`+${members.length - 2}명 참여중!`}
         </Text>
       )}
     </Layout.Row>

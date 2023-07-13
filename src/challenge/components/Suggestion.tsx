@@ -10,9 +10,7 @@ import { Text } from '@jdesignlab/react';
 
 export const Suggestion = memo(() => {
   const { data } = useReadListQuery();
-  useEffect(() => {
-    console.log('suggestion');
-  });
+  useEffect(() => {});
   return (
     <aside css={suggestionAsideStyle}>
       <div css={suggestionHeaderStyle}>
