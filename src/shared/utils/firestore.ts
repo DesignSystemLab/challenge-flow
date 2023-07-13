@@ -30,14 +30,14 @@ export const parseSnapshotToList = (querySnapshot: QuerySnapshot<DocumentData>) 
   return data;
 };
 
-export const getDocRef = (collection: string, id: string) => doc(database, `${collection}/${id}`);
+export const getDocRef = (collectionName: string, id: string) => doc(database, `${collectionName}/${id}`);
 
 export const createOne = async (ref: DocumentReference<DocumentData>, data: any) => {
   await setDoc(ref, data);
 };
 
-export const getList = async (query: Query<DocumentData>) => {
-  const querySnapshot = await getDocs(query);
+export const getList = async (q: Query<DocumentData>) => {
+  const querySnapshot = await getDocs(q);
   const data = parseSnapshotToList(querySnapshot);
   return data;
 };
