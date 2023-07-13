@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { isEarlierThanNow } from '@shared/utils/date';
 import {
   cardTop,
   cardWrapper,
@@ -20,9 +19,10 @@ import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { SKILLS } from '@shared/constants';
 import { Text } from '@jdesignlab/react';
-import { Eye, Heart, Message } from '@jdesignlab/react-icons';
+import { Heart, Message } from '@jdesignlab/react-icons';
 import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 import { DdayChip } from './DdayChip';
+import { RestMemberSlotChip } from './RestMemberSlotChip';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
@@ -32,16 +32,11 @@ export const ChallengeCard = ({ postInfo }: Props) => {
   const { currentUser } = useContext(ChallengeContext);
   const { userInfo } = useGetUserInfoById(postInfo.userId);
   const commentCount = useGetCommentCount(postInfo.id);
-  const restMemberSlot = postInfo.memberCapacity - postInfo.members.length;
   return (
     <a href={`/challenge/${postInfo.id}`} css={cardWrapper}>
       <div css={cardTop}>
         <DdayChip due={postInfo.dueAt} />
-        {isEarlierThanNow(postInfo.dueAt) && restMemberSlot > 0 && (
-          <Text variant="label" size="sm">
-            {`${postInfo.memberCapacity - postInfo.members.length}`}명 남음🔥
-          </Text>
-        )}
+        <RestMemberSlotChip postInfo={postInfo} />
       </div>
       {/* <Chip size="sm"  color="#f48fb1">
           인기
@@ -57,9 +52,6 @@ export const ChallengeCard = ({ postInfo }: Props) => {
           </Text>
         </div>
         <TimeAgo createdAt={postInfo.createdAt} updatedAt={postInfo.updatedAt} size="sm" />
-        {/* <Text variant="label" size="sm">
-          {getTimeDiff(postInfo.createdAt)} 작성
-        </Text> */}
       </div>
 
       <div css={cardOptionContainer}>
@@ -108,12 +100,12 @@ export const ChallengeCard = ({ postInfo }: Props) => {
       <div css={cardBottomWrapper}>
         <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser.uid} />
         <div css={cardReactionWrapper}>
-          <div css={cardEachReaction}>
+          {/* <div css={cardEachReaction}>
             <Eye color="grey" width={20} height={20} />
             <Text variant="label" size="md" color="grey-darken1">
               0
             </Text>
-          </div>
+          </div> */}
           <div css={cardEachReaction}>
             <Heart
               color="grey"

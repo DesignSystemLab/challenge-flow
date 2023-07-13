@@ -14,12 +14,13 @@ import {
   challengeInfoUserStyle,
   challengeInfoUserWrapperStyle
 } from '@challenge/styles/challengeStyle';
+import { CanI } from '@challenge/components/CanI';
 import { ChallengeContext } from '@challenge/context';
 import { Button, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
-import { CanI } from './CanI';
 import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 import { DdayChip } from './DdayChip';
+import { RestMemberSlotChip } from './RestMemberSlotChip';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
@@ -76,7 +77,7 @@ export const ChallengeInfo = ({ postInfo }: Props) => {
             모집 마감일
           </Text>
           <Text variant="paragraph" size="md">
-            {postInfo.dueAt}
+            {postInfo.dueAt.split(' ')[0]}
           </Text>
           <DdayChip due={postInfo.dueAt} />
         </li>
@@ -124,7 +125,8 @@ export const ChallengeInfo = ({ postInfo }: Props) => {
           <Text variant="paragraph" size="md">
             {`${postInfo.members.length}`}명 / {`${postInfo.memberCapacity}`}명
           </Text>
-          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser?.uid} />
+          <AppliedMemberAvatars members={postInfo.members} currentUserId={currentUser?.uid} size="md" />
+          <RestMemberSlotChip postInfo={postInfo} />
         </li>
       </ul>
 

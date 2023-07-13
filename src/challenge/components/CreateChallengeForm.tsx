@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { challengeFormSubmitWrapperStyle } from '@challenge/styles/challengeStyle';
 import { useCreateMuation } from '@challenge/hooks/useCreateMutation';
 import { useModifyMutation } from '@challenge/hooks/useModifyMutation';
+import { getDate, setEndTimeOfDay } from '@shared/utils/date';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
 import { DevSkillCombobox } from '@shared/components/form/DevSkillCombobox';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
-import { Button, Radio, Select, TextInput, Text } from '@jdesignlab/react';
+import { Button, Radio, Select, TextInput, Text, Flex } from '@jdesignlab/react';
 import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import type { ChallengeHookFormValues, ChallengeAllFormValues, ChallengeModifyFetchProps } from '@challenge/types';
@@ -34,7 +34,7 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
       dueAt: ''
     }
   });
-  const [memberCapacity, setMemberCapacity] = useState<number>(1);
+  const [memberCapacity, setMemberCapacity] = useState<number>(fillData?.memberCapacity ?? 1);
   const [content, setContent] = useState<string>(fillData?.content ?? '');
   const [skill, setSkill] = useState<number>(fillData?.skill ?? 0);
 
@@ -54,18 +54,19 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
       setValue('isPublic', fillData.isPublic);
       setValue('duration.start', fillData.duration.start);
       setValue('duration.end', fillData.duration.end);
-      setValue('dueAt', fillData.dueAt);
+      setValue('dueAt', fillData.dueAt.split(' ')[0]);
     }
   }, [fillData]);
 
   const createChallenge = (fieldsValue: ChallengeHookFormValues) => {
-    const { isDaily, isPublic, ...rest } = fieldsValue;
+    const { dueAt, isDaily, isPublic, ...rest } = fieldsValue;
     const mergedFormValues: ChallengeAllFormValues = {
       memberCapacity,
       content,
       skill,
       isDaily: Boolean(isDaily),
       isPublic: Boolean(isPublic),
+      dueAt: setEndTimeOfDay(getDate(dueAt)),
       ...rest
     };
     if (!fillData) {
@@ -73,6 +74,10 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
     } else {
       onSubmitModify(fillData.id, mergedFormValues);
     }
+  };
+
+  const moveBack = () => {
+    router.back();
   };
 
   return (
@@ -183,16 +188,18 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
           }}
         />
       </Layout.Column>
-      <div css={challengeFormSubmitWrapperStyle}>
-        <Button
-          type="submit"
-          size="xl"
-          color="primary-500"
-          //  disabled={!!writeMutation.isLoading}
-        >
-          작성
-        </Button>
-      </div>
+      <Flex justify="flex-end" gap={8}>
+        <Flex.Item>
+          <Button as="a" onClick={moveBack} variant="outline" size="xl">
+            뒤로가기
+          </Button>
+        </Flex.Item>
+        <Flex.Item>
+          <Button type="submit" size="xl" color="primary-500" css={{ width: '130px' }}>
+            작성
+          </Button>
+        </Flex.Item>
+      </Flex>
     </form>
   );
 };

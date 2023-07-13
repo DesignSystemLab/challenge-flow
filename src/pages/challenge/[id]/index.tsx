@@ -37,9 +37,9 @@ const ChallengeDetailPage = ({ postInfo }: { postInfo: ChallengeModifyFetchProps
           <div css={challengeApplyButtonWrapperStyle}>
             <LikeButton postInfo={postInfo} />
             <ApplyButton />
-            <CanI.MakeWorkspace postInfo={postInfo}>
-              <StartButton postInfo={postInfo} />
-            </CanI.MakeWorkspace>
+            <CanI.Update allowedUserId={postInfo.userId}>
+              <StartButton />
+            </CanI.Update>
           </div>
           <Reactions originId={postInfo.id} domain="challenge" />
         </section>
