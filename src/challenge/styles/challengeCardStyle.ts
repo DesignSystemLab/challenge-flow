@@ -27,7 +27,7 @@ export const cardWrapper = css({
 
 export const cardTop = css({
   display: 'flex',
-  justifyContent: 'space-between',
+  gap: '4px',
   alignItems: 'center'
 });
 

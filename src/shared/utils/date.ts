@@ -99,3 +99,5 @@ export const isAfterThanNow = (date: string) => {
   const inputDate = getDate(date);
   return isAfter(now, inputDate);
 };
+
+export const setEndTimeOfDay = (date: Date) => format(date, 'yyyy-MM-dd 23:59:59');

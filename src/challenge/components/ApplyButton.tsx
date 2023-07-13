@@ -30,7 +30,7 @@ export const ApplyButton = () => {
     } else {
       setButtonContent(APPLY_ACTION_CONTENT);
     }
-  }, [postInfo.members]);
+  }, [currentUser, postInfo, postInfo.members]);
 
   return (
     <Button onClick={onClickApply} size="lg" disabled={buttonContent !== APPLY_ACTION_CONTENT}>
