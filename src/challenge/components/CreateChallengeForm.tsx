@@ -34,7 +34,7 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
       dueAt: ''
     }
   });
-  const [memberCapacity, setMemberCapacity] = useState<number>(1);
+  const [memberCapacity, setMemberCapacity] = useState<number>(fillData?.memberCapacity ?? 1);
   const [content, setContent] = useState<string>(fillData?.content ?? '');
   const [skill, setSkill] = useState<number>(fillData?.skill ?? 0);
 
@@ -54,7 +54,7 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
       setValue('isPublic', fillData.isPublic);
       setValue('duration.start', fillData.duration.start);
       setValue('duration.end', fillData.duration.end);
-      setValue('dueAt', fillData.dueAt);
+      setValue('dueAt', fillData.dueAt.split(' ')[0]);
     }
   }, [fillData]);
 
@@ -188,7 +188,7 @@ export const CreateChallengeForm = ({ currentUser, fillData }: Props) => {
           }}
         />
       </Layout.Column>
-      <Flex justify="space-between">
+      <Flex justify="flex-end" gap={8}>
         <Flex.Item>
           <Button as="a" onClick={moveBack} variant="outline" size="xl">
             뒤로가기
