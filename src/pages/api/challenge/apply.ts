@@ -7,7 +7,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const REF_NAME = 'challenge';
 
-const challengeCreateService = async (req: NextApiRequest, res: NextApiResponse) => {
+const challengeApplyService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const param = req.body;
     const ref = doc(database, REF_NAME, param.id);
@@ -55,4 +55,4 @@ const challengeCreateService = async (req: NextApiRequest, res: NextApiResponse)
   }
 };
 
-export default challengeCreateService;
+export default challengeApplyService;
