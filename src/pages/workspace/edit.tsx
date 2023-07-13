@@ -4,11 +4,11 @@ import { CompositionBoundary } from '@shared/boundaries/components/CompositionBo
 import { CommonErrorFallback } from '@shared/components/CommonErrorFallback';
 import { Loader } from '@shared/components/suspense/Loader';
 import { getSession } from 'next-auth/react';
-import type { Post } from '@workspace/types';
+import type { QueryablePost } from '@workspace/types';
 import type { GetServerSideProps } from 'next';
 
 interface Props {
-  post: Post;
+  post: QueryablePost;
 }
 
 const edit = (props: Props) => {
