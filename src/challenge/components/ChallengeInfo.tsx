@@ -1,10 +1,8 @@
 import { useContext } from 'react';
 import { ChallengeModifyFetchProps } from '@challenge/types';
 import { MarkdownEditor } from '@shared/components/markdownEditor';
-import { calculateDateDiff, formatDate, getDate, isEarlierThanNow } from '@shared/utils/date';
 import { useDeleteMutation } from '@challenge/hooks/useDeleteMutation';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
-import { Chip } from '@shared/components/dataDisplay/Chip';
 import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';
 import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { SKILLS } from '@shared/constants';
@@ -21,6 +19,7 @@ import { Button, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import { CanI } from './CanI';
 import { AppliedMemberAvatars } from './AppliedMemberAvatars';
+import { DdayChip } from './DdayChip';
 
 interface Props {
   postInfo: ChallengeModifyFetchProps;
@@ -79,16 +78,7 @@ export const ChallengeInfo = ({ postInfo }: Props) => {
           <Text variant="paragraph" size="md">
             {postInfo.dueAt}
           </Text>
-
-          {isEarlierThanNow(postInfo.dueAt) ? (
-            <Chip size="sm" color="#f48fb1">
-              D{calculateDateDiff(postInfo.dueAt, formatDate(getDate(), '-'))}
-            </Chip>
-          ) : (
-            <Chip size="sm" color="#808080">
-              마감
-            </Chip>
-          )}
+          <DdayChip due={postInfo.dueAt} />
         </li>
 
         <li css={challengeInfoOptionListItemStyle}>
