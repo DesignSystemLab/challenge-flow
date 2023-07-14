@@ -40,7 +40,7 @@ export const memberListStyle = css({
   overflowY: 'auto'
 });
 
-export const memeberCardStyle = css({
+export const memberCardStyle = css({
   backgroundColor: '#fff',
   boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
   display: 'flex',
@@ -60,6 +60,7 @@ export const profileStyle = css({
     alignItems: 'start',
     marginLeft: '8px',
     '& p': {
+      width: '100%',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis',

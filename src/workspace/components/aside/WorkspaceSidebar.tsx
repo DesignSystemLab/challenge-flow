@@ -2,7 +2,7 @@ import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { ProfileSkeleton } from '@shared/components/suspense/ProfileSkeleton';
 import { CommonErrorFallback } from '@shared/components/CommonErrorFallback';
 import { Loader } from '@shared/components/suspense/Loader';
-import { GroupMemebers } from './GroupMemebers';
+import { GroupMembers } from './GroupMembers';
 import { SidebarHeader } from './SidebarHeader';
 import { ScheduleList } from './ScheduleList';
 import { sidebarStyle, sidebarSectionStyle } from '../../styles/sidebarStyle';
@@ -15,7 +15,7 @@ export const WorkspaceSidebar = () => (
         suspense={<ProfileSkeleton count={4} />}
         error={(prop) => <CommonErrorFallback {...prop} />}
       >
-        <GroupMemebers />
+        <GroupMembers />
       </CompositionBoundaryReactQuery>
     </section>
     <SidebarHeader title="TIL" />
