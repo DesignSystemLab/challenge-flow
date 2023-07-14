@@ -43,12 +43,7 @@ export const ChallengeList = ({ showTotalCount }: Props) => {
           </div> */}
           <DevSkillCombobox state={devSkill} setState={setDevSkill} firstItem="전체" />
           <TextInput {...register('title')} size="sm" />
-          <Button
-            type="submit"
-            variant="outline"
-            color="grey-darken1"
-            icon={<Search color="#808080" width={20} height={20} />}
-          >
+          <Button type="submit" variant="outline" color="primary-500" icon={<Search width={20} height={20} />}>
             검색
           </Button>
           {showTotalCount && (

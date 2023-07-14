@@ -14,16 +14,11 @@ const challengeReadListService = async (req: NextApiRequest, res: NextApiRespons
 
     const constraints = [];
     if (Number(skill)) constraints.push(where('skill', '==', Number(skill)));
+    if (title)
+      constraints.push(where('title', '>=', title), where('title', '<=', `${title}\uf8ff`), orderBy('title', 'asc'));
     // if (hideClosed) constraints.push(where('isOpened', '==', true));
 
-    const q = query(
-      COLLECTION,
-      ...constraints,
-      where('title', '>=', title),
-      where('title', '<=', `${title}\uf8ff`),
-      orderBy('title', 'asc'),
-      orderBy('createdAt', 'desc')
-    );
+    const q = query(COLLECTION, ...constraints, orderBy('createdAt', 'desc'));
 
     const { docs } = await getDocs(q);
 
