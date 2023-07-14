@@ -1,4 +1,5 @@
 import { mq } from '@shared/styles/mixins/responsive';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Flex = styled.div`
@@ -24,3 +25,21 @@ export const Image = styled.div`
   border: 1px solid #ffffff;
   border-radius: 50%;
 `;
+
+export const profileWrapperStyle = css({
+  position: 'absolute',
+  width: '480px',
+  top: '50%',
+  left: '50%',
+  transform: 'translate3d(-50%, -50%, 0)'
+});
+
+export const profileStyle = css({
+  listStyle: 'none',
+  '&  dt': {
+    marginTop: '8px'
+  },
+  '&  dd': {
+    margin: 0
+  }
+});
