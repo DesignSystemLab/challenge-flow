@@ -49,7 +49,11 @@ export const Header = () => {
                 </Dropdown.MenuItem>
                 <Dropdown.Divider />
                 <Dropdown.MenuItem>
-                  <Link href={`/mypage/${userInfo.id}`}>마이페이지</Link>
+                  <Link href={`/profile?user=${userInfo?.id}`}>
+                    <Text variant="paragraph" size="md" color="primary-500">
+                      프로필 보기
+                    </Text>
+                  </Link>
                 </Dropdown.MenuItem>
                 <Dropdown.Divider />
                 <Dropdown.MenuItem onClick={() => signout()}>

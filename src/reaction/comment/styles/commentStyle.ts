@@ -21,6 +21,8 @@ export const commentTextareaWrapper = {
 
 export const eachCommentWrapper = css({
   position: 'relative',
+  display: 'flex',
+  gap: '8px',
   padding: '12px 0',
   borderRadius: '2px',
   '&:not(:last-child)': {
@@ -28,7 +30,16 @@ export const eachCommentWrapper = css({
   }
 });
 
-export const profileWrapper = css({ display: 'flex', gap: '8px' });
+export const profileWrapper = css({
+  display: 'flex',
+  gap: '8px',
+  borderRadius: '8px',
+  padding: '4px',
+  cursor: 'pointer',
+  '&:hover': {
+    background: '#e7e7e7'
+  }
+});
 
 export const profileInfo = css({
   width: '100px'

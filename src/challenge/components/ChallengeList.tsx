@@ -66,6 +66,7 @@ export const ChallengeList = ({ showTotalCount }: Props) => {
             <ChallengeCard postInfo={post} />
           </div>
         ))}
+        {data?.length === 0 && <div>데이터가 없어요</div>}
       </div>
     </Layout.Column>
   );

@@ -58,7 +58,13 @@ export const challengeInfoUserWrapperStyle = css({
 export const challengeInfoUserStyle = css({
   display: 'flex',
   alignItems: 'center',
-  gap: '8px'
+  cursor: 'pointer',
+  gap: '8px',
+  borderRadius: '8px',
+  padding: '4px 8px',
+  '&:hover': {
+    background: '#e7e7e7'
+  }
 });
 
 export const challengeInfoOptionListWrapperStyle = css({

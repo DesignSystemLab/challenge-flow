@@ -16,8 +16,9 @@ import {
 } from '@challenge/styles/challengeStyle';
 import { CanI } from '@challenge/components/CanI';
 import { ChallengeContext } from '@challenge/context';
-import { Button, Text } from '@jdesignlab/react';
+import { Button, Dropdown, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { AppliedMemberAvatars } from './AppliedMemberAvatars';
 import { DdayChip } from './DdayChip';
 import { RestMemberSlotChip } from './RestMemberSlotChip';
@@ -62,12 +63,25 @@ export const ChallengeInfo = ({ postInfo }: Props) => {
       </div>
 
       <div css={challengeInfoUserWrapperStyle}>
-        <div css={challengeInfoUserStyle}>
-          <Avatar src={userInfo?.photo} size="md" />
-          <Text variant="heading" size="md">
-            {userInfo?.name}
-          </Text>
-        </div>
+        <Dropdown>
+          <Dropdown.Trigger>
+            <div css={challengeInfoUserStyle}>
+              <Avatar src={userInfo?.photo} size="md" />
+              <Text variant="heading" size="md">
+                {userInfo?.name}
+              </Text>
+            </div>
+          </Dropdown.Trigger>
+          <Dropdown.Menu>
+            <Dropdown.MenuItem>
+              <Link href={`/profile?user=${userInfo?.id}`}>
+                <Text variant="paragraph" size="md" color="primary-500">
+                  프로필 보기
+                </Text>
+              </Link>
+            </Dropdown.MenuItem>
+          </Dropdown.Menu>
+        </Dropdown>
         <TimeAgo createdAt={postInfo.createdAt} updatedAt={postInfo?.updatedAt} />
       </div>
 

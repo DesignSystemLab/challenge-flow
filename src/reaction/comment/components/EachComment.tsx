@@ -15,8 +15,9 @@ import {
   editButtonWrapper,
   defaultButtonWrapper
 } from '@reaction/comment/styles/commentStyle';
-import { Button, Popover, Text, Textarea } from '@jdesignlab/react';
+import { Button, Dropdown, Popover, Text, Textarea } from '@jdesignlab/react';
 import { useForm } from 'react-hook-form';
+import Link from 'next/link';
 import { useModifyMutation } from '../hooks/useModifyMutation';
 import { useDeleteMutation } from '../hooks/useDeleteMutation';
 import { resetQueryCache } from '../utils/resetQueryCache';
@@ -53,85 +54,98 @@ export const EachComment = ({ data, editModeId, setEditModeId }: EachCommentProp
 
   return (
     <div css={eachCommentWrapper}>
-      <div css={profileWrapper}>
-        <Avatar src={userInfo?.photo} size="md" />
-        <div css={profileInfo}>
-          <Text variant="label" size="md" truncate>
-            {userInfo?.name}
-          </Text>
-          <TimeAgo createdAt={data.createdAt} updatedAt={data.updatedAt} size="sm" wrap />
-        </div>
-
-        <div css={contentWrapper}>
-          {editModeId === data.id ? (
-            <form onSubmit={handleSubmit((formValues) => modifyAction(formValues, data.id))} css={editForm}>
-              <Textarea {...register('comment')} defaultValue={data.content} resize="smart" />
-              <div css={editButtonWrapper}>
-                <Button size="sm" variant="ghost" onClick={cancelEditMode}>
-                  취소
-                </Button>
-                <Button type="submit" size="sm">
-                  수정
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <>
-              <Text variant="paragraph" size="md">
-                {data.content}
+      <Dropdown>
+        <Dropdown.Trigger>
+          <div css={profileWrapper}>
+            <Avatar src={userInfo?.photo} size="md" />
+            <div css={profileInfo}>
+              <Text variant="label" size="md" truncate>
+                {userInfo?.name}
               </Text>
-            </>
+              <TimeAgo createdAt={data.createdAt} updatedAt={data.updatedAt} size="sm" wrap />
+            </div>
+          </div>
+        </Dropdown.Trigger>
+        <Dropdown.Menu>
+          <Dropdown.MenuItem>
+            <Link href={`/profile?user=${userInfo?.id}`}>
+              <Text variant="paragraph" size="md" color="primary-500">
+                프로필 보기
+              </Text>
+            </Link>
+          </Dropdown.MenuItem>
+        </Dropdown.Menu>
+      </Dropdown>
+
+      <div css={contentWrapper}>
+        {editModeId === data.id ? (
+          <form onSubmit={handleSubmit((formValues) => modifyAction(formValues, data.id))} css={editForm}>
+            <Textarea {...register('comment')} defaultValue={data.content} resize="smart" />
+            <div css={editButtonWrapper}>
+              <Button size="sm" variant="ghost" onClick={cancelEditMode}>
+                취소
+              </Button>
+              <Button type="submit" size="sm">
+                수정
+              </Button>
+            </div>
+          </form>
+        ) : (
+          <>
+            <Text variant="paragraph" size="md">
+              {data.content}
+            </Text>
+          </>
+        )}
+      </div>
+
+      <CanI.Update allowedUserId={data.userId}>
+        <div css={defaultButtonWrapper}>
+          {!editModeId && (
+            <Layout.Row>
+              <Button size="sm" variant="ghost" onClick={toggleEditMode}>
+                수정
+              </Button>
+              <Popover
+                open={deletePopoverOpen}
+                onOpen={() => setDeletePopoverOpen(true)}
+                onClose={() => {
+                  setDeletePopoverOpen(false);
+                }}
+                placement="top"
+              >
+                <Popover.Trigger>
+                  <Button size="sm" variant="ghost" color="error">
+                    삭제
+                  </Button>
+                </Popover.Trigger>
+                <Popover.Content>
+                  <Layout.Column gap={8}>
+                    <Layout.Center>
+                      <Text variant="label" size="md">
+                        해당 댓글을 삭제하시겠습니까?
+                      </Text>
+                    </Layout.Center>
+                    <Layout.Center>
+                      <Button
+                        onClick={() => setDeletePopoverOpen(false)}
+                        size="md"
+                        variant="outline"
+                        color="grey-darken2"
+                      >
+                        취소
+                      </Button>
+                      <Button size="md" color="error" onClick={deleteComment}>
+                        삭제
+                      </Button>
+                    </Layout.Center>
+                  </Layout.Column>
+                </Popover.Content>
+              </Popover>
+            </Layout.Row>
           )}
         </div>
-
-        <CanI.Update allowedUserId={data.userId}>
-          <div css={defaultButtonWrapper}>
-            {!editModeId && (
-              <Layout.Row>
-                <Button size="sm" variant="ghost" onClick={toggleEditMode}>
-                  수정
-                </Button>
-                <Popover
-                  open={deletePopoverOpen}
-                  onOpen={() => setDeletePopoverOpen(true)}
-                  onClose={() => {
-                    setDeletePopoverOpen(false);
-                  }}
-                  placement="top"
-                >
-                  <Popover.Trigger>
-                    <Button size="sm" variant="ghost" color="error">
-                      삭제
-                    </Button>
-                  </Popover.Trigger>
-                  <Popover.Content>
-                    <Layout.Column gap={8}>
-                      <Layout.Center>
-                        <Text variant="label" size="md">
-                          해당 댓글을 삭제하시겠습니까?
-                        </Text>
-                      </Layout.Center>
-                      <Layout.Center>
-                        <Button
-                          onClick={() => setDeletePopoverOpen(false)}
-                          size="md"
-                          variant="outline"
-                          color="grey-darken2"
-                        >
-                          취소
-                        </Button>
-                        <Button size="md" color="error" onClick={deleteComment}>
-                          삭제
-                        </Button>
-                      </Layout.Center>
-                    </Layout.Column>
-                  </Popover.Content>
-                </Popover>
-              </Layout.Row>
-            )}
-          </div>
-        </CanI.Update>
-      </div>
+      </CanI.Update>
     </div>
   );
 };
