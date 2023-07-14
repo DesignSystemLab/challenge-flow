@@ -1,12 +1,13 @@
 import { QUERY_KEYS } from '@shared/constants/reactQueryKeys';
 import { useInfiniteQuery } from 'react-query';
 import { fetchWorkspaceList } from '../remotes/fetchWorkspaceList';
+import type { WorkspaceOpenType } from '../types';
 
-export const useQueryWorkspaceList = () => {
+export const useQueryWorkspaceList = (openType: WorkspaceOpenType) => {
   const { workspaceList } = QUERY_KEYS;
   const { data, fetchNextPage, hasNextPage } = useInfiniteQuery(
-    workspaceList,
-    ({ pageParam = 1 }) => fetchWorkspaceList(pageParam),
+    [workspaceList, openType],
+    ({ pageParam = 1 }) => fetchWorkspaceList(pageParam, openType),
     {
       getNextPageParam: (lastPage) => {
         const pageView = 10;

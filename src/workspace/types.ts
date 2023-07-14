@@ -26,6 +26,7 @@ export interface ChallengeDocRef extends ChallengeHookFormValues {
 }
 
 /** data model */
+export type WorkspaceOpenType = 'all' | 'public' | 'private';
 export interface ContextProps {
   workspaceId: string;
   userSession: Session | null;
