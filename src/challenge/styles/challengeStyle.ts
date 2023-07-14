@@ -1,6 +1,26 @@
 import { mq } from '@shared/styles/mixins/responsive';
 import { css } from '@emotion/react';
 
+export const mainWrapper = css({
+  position: 'relative'
+});
+
+export const mainChallengeButton = css({
+  position: 'absolute',
+  right: 0,
+  display: 'flex',
+  gap: '4px',
+  justifyContent: 'space-between',
+  marginBottom: '8px',
+  flexWrap: 'wrap-reverse'
+});
+
+export const challengeCreateButtonWrapper = css({
+  position: 'absolute',
+  right: 0,
+  top: '8px'
+});
+
 export const challengeInfoWrapperStyle = css({
   display: 'flex',
   gap: '12px',
