@@ -24,20 +24,20 @@ export const TabList = () => {
         <Tabs.List>
           <Tabs.Trigger value="notice">공지사항</Tabs.Trigger>
           {workspaceData?.members.map((member) => (
-            <Tabs.Trigger value={member.email ?? ''} key={member.uid}>
+            <Tabs.Trigger value={member.uid} key={member.uid}>
               {member.name}
             </Tabs.Trigger>
           ))}
         </Tabs.List>
         <Tabs.Content value="notice">{notice}</Tabs.Content>
         {workspaceData?.members.map((member) => {
-          const { email, uid } = member;
+          const { uid } = member;
           const userPost = posts?.find((post: Post) => post.authorId === uid);
           const content: string = userPost?.content ?? '';
-          const isOwnTab = userSession?.user.uid === uid;
+          const isOwnTab = userSession ? userSession.user.uid === uid : false;
 
           return (
-            <Tabs.Content value={email ?? ''} key={uid}>
+            <Tabs.Content value={member.uid} key={uid}>
               {content && userPost ? (
                 <ContentExistTabItem
                   isOwnPost={!!content}
