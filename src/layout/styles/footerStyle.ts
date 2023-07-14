@@ -9,6 +9,9 @@ export const footerWrapper = {
 
 export const footerContents = {
   margin: '0 auto',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   height: `calc(100% - ${FOOTER_WRAPPER_PADDING * 2}px)`,
   padding: `${FOOTER_WRAPPER_PADDING}px`,
 
