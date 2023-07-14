@@ -11,6 +11,6 @@ export const Banner = () => (
       color: 'grey'
     }}
   >
-    <Image src="/images/banner3.png" height={350} width={1200} />
+    <Image src="/images/banner.png" height={350} width={1200} />
   </div>
 );
