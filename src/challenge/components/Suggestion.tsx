@@ -1,16 +1,21 @@
-import { memo, useEffect } from 'react';
+import { memo, useContext } from 'react';
 import {
   suggestListWrapperStyle,
   suggestionAsideStyle,
   suggestionHeaderStyle
 } from '@challenge/styles/suggestionStyle';
+import { ChallengeContext } from '@challenge/context';
 import { ChallengeModifyFetchProps } from '@challenge/types';
 import { useReadListQuery } from '@challenge/hooks/useReadQuery';
 import { Text } from '@jdesignlab/react';
 
 export const Suggestion = memo(() => {
-  const { data } = useReadListQuery();
-  useEffect(() => {});
+  const { postInfo } = useContext(ChallengeContext);
+  const { data } = useReadListQuery({
+    title: '',
+    skill: postInfo.skill,
+    hideClosed: false
+  });
   return (
     <aside css={suggestionAsideStyle}>
       <div css={suggestionHeaderStyle}>

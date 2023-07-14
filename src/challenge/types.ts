@@ -1,3 +1,11 @@
+export interface FilterFormFields {
+  title: string;
+  hideClosed: boolean;
+}
+
+export interface FilterValues extends FilterFormFields {
+  skill: number;
+}
 export interface ChallengeHookFormValues {
   title: string;
   isDaily: boolean;

@@ -2,7 +2,7 @@ import { ChallengeModifyFetchProps, ChallengePostFields } from '@challenge/types
 import { ApplicationError } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
-import { DocumentData, QueryDocumentSnapshot, collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { DocumentData, QueryDocumentSnapshot, collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const REF_NAME = 'challenge';
@@ -10,7 +10,21 @@ const COLLECTION = collection(database, REF_NAME);
 
 const challengeReadListService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const q = query(COLLECTION, orderBy('createdAt', 'desc'));
+    const { skill, title } = req.query;
+
+    const constraints = [];
+    if (Number(skill)) constraints.push(where('skill', '==', Number(skill)));
+    // if (hideClosed) constraints.push(where('isOpened', '==', true));
+
+    const q = query(
+      COLLECTION,
+      ...constraints,
+      where('title', '>=', title),
+      where('title', '<=', `${title}\uf8ff`),
+      orderBy('title', 'asc'),
+      orderBy('createdAt', 'desc')
+    );
+
     const { docs } = await getDocs(q);
 
     const parsedData = docs?.map((eachDoc: QueryDocumentSnapshot<DocumentData>) => ({

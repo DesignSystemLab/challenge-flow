@@ -1,9 +1,12 @@
 import fetchReadDetail from '@challenge/remotes/fetchReadDetail';
 import fetchReadList from '@challenge/remotes/fetchReadList';
+import { FilterValues } from '@challenge/types';
 import { useQuery } from 'react-query';
 
-export const useReadListQuery = () => {
-  const readListQuery = useQuery(`challengeList`, () => fetchReadList());
+export const useReadListQuery = (props: FilterValues) => {
+  const readListQuery = useQuery([`challengeList`, props.skill, props.title, props.hideClosed], () =>
+    fetchReadList(props)
+  );
   return readListQuery;
 };
 
