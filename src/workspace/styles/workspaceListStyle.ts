@@ -51,3 +51,13 @@ export const workspacePostEmptyStyle = css({
   listStyle: 'none',
   padding: '8px'
 });
+
+export const workspaceFilterStyle = css({
+  width: '180px',
+  [mq.md]: {},
+  [mq.lg]: {
+    padding: '0 20px',
+    marginBottom: '8px'
+  },
+  [mq.xl]: {}
+});

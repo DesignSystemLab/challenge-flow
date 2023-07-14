@@ -13,10 +13,16 @@ import {
   startAfter,
   orderBy
 } from 'firebase/firestore';
+import type {
+  WorkspaceOpenType,
+  WorkspaceDocRef,
+  Post,
+  QueryableWorkspaceWithChallenge,
+  WorkspaceWithChallenge
+} from '@workspace/types';
 import type { UserProfile } from '@auth/types';
 import type { ChallengePostFields } from '@challenge/types';
 import type { DocumentReference } from 'firebase/firestore';
-import type { WorkspaceDocRef, Post, QueryableWorkspaceWithChallenge, WorkspaceWithChallenge } from '@workspace/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface ChallengeRef extends Omit<ChallengePostFields, 'members'> {
@@ -26,13 +32,14 @@ interface ChallengeRef extends Omit<ChallengePostFields, 'members'> {
 
 type RequestParams = {
   page: string;
+  openType: WorkspaceOpenType;
 };
 
 const PAGE_VIEW = 10;
 const workspaceListService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (req.method === 'GET') {
-      const { page } = req.query as RequestParams;
+      const { page, openType } = req.query as RequestParams;
       const currentPage = Number(page);
       const { workspace, posts } = FIREBASE_COLLECTIONS;
       const postsCollection = collection(database, posts);
@@ -48,34 +55,46 @@ const workspaceListService = async (req: NextApiRequest, res: NextApiResponse) =
       const workspaceListPromises = workspaceListRef.docs.map(async (workspaceDoc) => {
         const workspaceId = workspaceDoc.id;
         const workspaceData = workspaceDoc.data() as WorkspaceDocRef;
-        const { duration, content, memberCapacity, members, skill, userId, title } = (
+        const { duration, content, memberCapacity, members, skill, userId, title, isPublic } = (
           await getDoc(workspaceData.challenge)
         ).data() as ChallengeRef;
-
-        const parseMembers = members.length
-          ? await Promise.all(members.map(async (ref) => (await getDoc(ref)).data()))
-          : [];
-
-        const postQuery = query(
-          postsCollection,
-          where('originId', '==', workspaceId),
-          where('isDeleted', '==', false),
-          limit(5)
-        );
-        const postsByWorkspace = await getDocs(postQuery);
-        const postsPromise = postsByWorkspace.docs.map(async (post) => post.data());
-        const postsData = (await Promise.all(postsPromise)) as Post[];
-        const master = (await getDoc(userId)).data() as Omit<UserProfile, 'uid'>;
-        return {
-          challengeInfo: { duration, content, memberCapacity, members, skill, title },
-          posts: postsData,
-          master,
-          workspaceId,
-          members: parseMembers
+        const filterMap = {
+          all: true,
+          public: isPublic,
+          private: !isPublic
         };
+        const filter = filterMap[openType];
+
+        if (filter) {
+          const parseMembers = members.length
+            ? await Promise.all(members.map(async (ref) => (await getDoc(ref)).data()))
+            : [];
+
+          const postQuery = query(
+            postsCollection,
+            where('originId', '==', workspaceId),
+            where('isDeleted', '==', false),
+            limit(5)
+          );
+          const postsByWorkspace = await getDocs(postQuery);
+          const postsPromise = postsByWorkspace.docs.map(async (post) => post.data());
+          const postsData = (await Promise.all(postsPromise)) as Post[];
+          const master = (await getDoc(userId)).data() as Omit<UserProfile, 'uid'>;
+
+          return {
+            challengeInfo: { duration, content, memberCapacity, members, skill, title },
+            posts: postsData,
+            master,
+            workspaceId,
+            members: parseMembers
+          };
+        }
+        return null;
       });
 
-      const workspaceList = (await Promise.all(workspaceListPromises)) as unknown as WorkspaceWithChallenge[];
+      const workspaceList = (await Promise.all(workspaceListPromises)).filter(
+        (item) => item !== null
+      ) as unknown as WorkspaceWithChallenge[];
 
       res.status(200).json(
         responseEntity<QueryableWorkspaceWithChallenge>({

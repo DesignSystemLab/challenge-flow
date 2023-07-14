@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 
 export const useQueryWorkspaceNotice = (workspaceId: string) => {
   const { workspaceNotice } = QUERY_KEYS;
-  const { data } = useQuery(workspaceNotice, () => fetchWorkspaceInfo(workspaceId));
+  const { data } = useQuery([workspaceNotice, workspaceId], () => fetchWorkspaceInfo(workspaceId));
 
   return { data };
 };
