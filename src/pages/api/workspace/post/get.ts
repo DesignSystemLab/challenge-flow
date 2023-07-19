@@ -18,15 +18,16 @@ const workspacePostsService = async (req: NextApiRequest, res: NextApiResponse) 
     const workspaceDocRef = doc(database, workspace, workspaceId);
     const workspaceTurn = (await getDoc(workspaceDocRef)).data() as WorkspaceDocRef;
 
-    const posts = workspaceTurn[period].length
-      ? await Promise.all(
-          workspaceTurn[period].map(async (ref) => {
-            const postData = (await getDoc(ref.post)).data() as QueryablePost;
-            postData.postId = ref.post.id; // post 항목의 ID를 추가합니다.
-            return postData;
-          })
-        )
-      : [];
+    const posts =
+      workspaceTurn[period] && workspaceTurn[period].length
+        ? await Promise.all(
+            workspaceTurn[period].map(async (ref) => {
+              const postData = (await getDoc(ref.post)).data() as QueryablePost;
+              postData.postId = ref.post.id; // post 항목의 ID를 추가합니다.
+              return postData;
+            })
+          )
+        : [];
 
     res.status(200).json(
       responseEntity<Post[]>({
