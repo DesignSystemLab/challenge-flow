@@ -60,7 +60,7 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
             <EmptyPost />
           )}
         </Card.Body>
-        <Card.Footer css={{ width: '100%', height: '100%', padding: '0' }}>
+        <Card.Footer css={{ padding: 0, marginTop: '16px' }}>
           <Text variant="heading" as="span">{`${members.length}명`}</Text>
           <Text as="span">이서 </Text>
           <Text as="span" variant="heading" color="pink-lighten3">

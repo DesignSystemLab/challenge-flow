@@ -4,37 +4,30 @@ import { css } from '@emotion/react';
 export const workspaceListStyle = css({
   listStyle: 'none',
   padding: '0',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  gap: '32px',
-  [mq.md]: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-    justifyItems: 'center'
-  }
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(264px, 1fr))',
+  gap: '24px',
+  justifyItems: 'center'
 });
 
 export const workspaceCardStyle = css({
   cursor: 'pointer',
-  minHeight: '240px',
-  minWidth: '320px',
+  height: '296px',
+  width: '288px',
   '&:hover': {
     boxShadow:
       'rgba(0, 0, 0, 0.2) 0px 5px 6px -3px, rgba(0, 0, 0, 0.14) 0px 9px 12px 1px, rgba(0, 0, 0, 0.12) 0px 3px 16px 2px'
   },
-  [mq.lg]: {
-    minHeight: '320px'
-  }
+  transition: 'ease .25s'
 });
 
 export const workspacePostSummaryStyle = css({
   marginTop: '8px',
-  height: '120px',
+  height: '128px',
+  maxHeight: '200px',
   width: 'auto',
   borderRadius: '12px',
-  backgroundColor: '#f5f6fa',
+  backgroundColor: '#f7f7f7',
   listStyle: 'none',
   padding: '8px'
 });
@@ -44,10 +37,11 @@ export const workspacePostEmptyStyle = css({
   alignItems: 'center',
   justifyContent: 'center',
   marginTop: '8px',
-  height: '120px',
+  height: '128px',
+  maxHeight: '200px',
   width: 'auto',
   borderRadius: '12px',
-  backgroundColor: '#f5f6fa',
+  backgroundColor: '#f7f7f7',
   listStyle: 'none',
   padding: '8px'
 });
