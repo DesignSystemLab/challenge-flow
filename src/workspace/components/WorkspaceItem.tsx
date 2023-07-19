@@ -28,7 +28,8 @@ const EmptyPost = () => (
 export const WorkspaceItem = ({ workspaceItem }: Props) => {
   const { workspaceId, master, posts, challengeInfo, members } = workspaceItem;
   const router = useRouter();
-  const memberProfile: string[] = members.map((member) => member.photo ?? '');
+
+  const memberProfile: string[] = members.map((member) => (member && member.photo) ?? '');
   const workspaceMasterInfo = master.name ?? master.email;
 
   const moveToWorkspace = (path: string) => {
@@ -44,15 +45,11 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
         }}
       >
         <Card.Header>
-          <Text variant="heading" size="lg" color="pink-lighten1">
+          <Text variant="heading" size="lg">
             {`${workspaceMasterInfo}의 Workpsace`}
           </Text>
         </Card.Header>
-        <Card.Divider />
-        <Card.Body css={{ width: '100%', marginTop: '8px' }}>
-          <Text variant="label" truncate>
-            최근 게시글
-          </Text>
+        <Card.Body css={{ width: '100%' }}>
           {posts.length ? (
             <ol css={workspacePostSummaryStyle}>
               {posts.map((post) => (
@@ -63,7 +60,6 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
             <EmptyPost />
           )}
         </Card.Body>
-        <Card.Divider />
         <Card.Footer css={{ width: '100%', height: '100%', padding: '0' }}>
           <Text variant="heading" as="span">{`${members.length}명`}</Text>
           <Text as="span">이서 </Text>
