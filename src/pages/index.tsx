@@ -1,10 +1,10 @@
 import { Banner } from '@banner/components/Banner';
-import { ChallengeList } from '@challenge/components/ChallengeList';
-import { ChallengeListError } from '@challenge/components/Error';
+import { ChallengeList } from '@challenge/components/dataDisplay/ChallengeGridList';
+import { ChallengeListError } from '@challenge/components/status/Error';
 import { mainChallengeButton } from '@challenge/styles/challengeStyle';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
+import { ChallengeSkeleton } from '@challenge/components/status/Skeleton';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
-import { Loading } from '@shared/components/Icons';
 import { useRouter } from 'next/router';
 import { Button } from '@jdesignlab/react';
 import { Plus } from '@jdesignlab/react-icons';
@@ -25,7 +25,10 @@ const MainPage = () => {
   return (
     <Layout.Column gap={20}>
       <Banner />
-      <CompositionBoundaryReactQuery suspense={<Loading />} error={(prop) => <ChallengeListError {...prop} />}>
+      <CompositionBoundaryReactQuery
+        suspense={<ChallengeSkeleton />}
+        error={(prop) => <ChallengeListError {...prop} />}
+      >
         <div style={{ position: 'relative' }}>
           <div css={mainChallengeButton}>
             <Button as="a" onClick={moveToChallengeList} variant="outline">

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
-import { CanI } from '@challenge/components/CanI';
+import { CanI } from '@challenge/components/util/CanI';
 import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
 import { TimeAgo } from '@shared/components/dataDisplay/TimeAgo';

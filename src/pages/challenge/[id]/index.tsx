@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { ParsedUrlQuery } from 'querystring';
 import { ChallengeModifyFetchProps, ChallengePostFields, UserSession } from '@challenge/types';
 import { Reactions } from '@reaction/Reactions';
-import { ChallengeInfo } from '@challenge/components/ChallengeInfo';
-import { Suggestion } from '@challenge/components/Suggestion';
-import { ChallengeListError } from '@challenge/components/Error';
+import { ChallengeInfo } from '@challenge/components/dataDisplay/ChallengeInfo';
+import { Suggestion } from '@challenge/components/dataDisplay/Suggestion';
+import { ChallengeListError } from '@challenge/components/status/Error';
 import {
   challengeApplyButtonWrapperStyle,
   challengeInfoSectionStyle,
@@ -13,10 +13,10 @@ import {
 import { database } from '@shared/firebase';
 import { Loading } from '@shared/components/Icons';
 import { ChallengeContext } from '@challenge/context';
-import { ApplyButton } from '@challenge/components/ApplyButton';
-import { LikeButton } from '@challenge/components/LikeButton';
-import { StartButton } from '@challenge/components/StartButton';
-import { CanI } from '@challenge/components/CanI';
+import { ApplyButton } from '@challenge/components/action/ApplyButton';
+import { LikeButton } from '@challenge/components/action/LikeButton';
+import { StartButton } from '@challenge/components/action/StartButton';
+import { CanI } from '@challenge/components/util/CanI';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { queryClient } from '@shared/queryClient';
 import { GetServerSideProps } from 'next';

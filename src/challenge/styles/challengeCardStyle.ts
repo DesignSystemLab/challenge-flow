@@ -8,6 +8,18 @@ export const challengeCardContainer = {
   marginBottom: '12px'
 };
 
+export const cardSkeletonWrapper = css({
+  marginTop: '48px',
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '16px 12px',
+  gap: '8px',
+  borderRadius: '6px',
+  boxShadow:
+    'rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.04) 0px 4px 5px 0px, rgba(0, 0, 0, 0.06) 0px 1px 10px 0px',
+  transition: 'ease .25s'
+});
+
 export const cardWrapper = css({
   display: 'flex',
   flexDirection: 'column',
