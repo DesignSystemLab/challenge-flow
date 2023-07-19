@@ -5,8 +5,6 @@ import type { Response } from '@shared/responseEntity';
 
 export const fetchUserInfo = async (uid: string): Promise<UserProfile> => {
   try {
-    console.log('uid', uid);
-
     const { data } = await instance<Response<UserProfile>>({
       method: 'GET',
       url: '/auth/user/get',
