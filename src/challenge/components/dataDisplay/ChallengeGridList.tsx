@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { filterWrapper } from '@challenge/styles/filterStyle';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
-import { ChallengeCard } from '@challenge/components/ChallengeCard';
+import { ChallengeCard } from '@challenge/components/dataDisplay/ChallengeCard';
 import { challengeCardContainer } from '@challenge/styles/challengeCardStyle';
 import { ChallengeModifyFetchProps, FilterValues } from '@challenge/types';
 import { useReadListQuery } from '@challenge/hooks/useReadQuery';

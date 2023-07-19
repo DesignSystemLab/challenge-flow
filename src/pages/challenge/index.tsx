@@ -1,6 +1,6 @@
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
-import { ChallengeList } from '@challenge/components/ChallengeList';
-import { ChallengeListError } from '@challenge/components/Error';
+import { ChallengeList } from '@challenge/components/dataDisplay/ChallengeGridList';
+import { ChallengeListError } from '@challenge/components/status/Error';
 import { challengeCreateButtonWrapper } from '@challenge/styles/challengeStyle';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { Button } from '@jdesignlab/react';

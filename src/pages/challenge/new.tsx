@@ -1,4 +1,4 @@
-import { CreateChallengeForm } from '@challenge/components/CreateChallengeForm';
+import { CreateChallengeForm } from '@challenge/components/action/CreateChallengeForm';
 import { HasValidSession } from '@shared/components/HasValidSession';
 import { useSession } from 'next-auth/react';
 

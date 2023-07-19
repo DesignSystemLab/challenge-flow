@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from 'querystring';
-import { CreateChallengeForm } from '@challenge/components/CreateChallengeForm';
+import { CreateChallengeForm } from '@challenge/components/action/CreateChallengeForm';
 import { database } from '@shared/firebase';
 import { HasValidSession } from '@shared/components/HasValidSession';
 import { ChallengeModifyFetchProps, ChallengePostFields } from '@challenge/types';

@@ -14,7 +14,7 @@ import {
   challengeInfoUserStyle,
   challengeInfoUserWrapperStyle
 } from '@challenge/styles/challengeStyle';
-import { CanI } from '@challenge/components/CanI';
+import { CanI } from '@challenge/components/util/CanI';
 import { ChallengeContext } from '@challenge/context';
 import { Button, Dropdown, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
