@@ -9,6 +9,7 @@ export const challengeCardContainer = {
 };
 
 export const cardSkeletonWrapper = css({
+  marginTop: '48px',
   display: 'flex',
   flexDirection: 'column',
   padding: '16px 12px',
