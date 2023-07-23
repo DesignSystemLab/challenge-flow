@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { HeadMeta } from '@layout/components/HeadMeta';
 import { Header } from '@layout/components/Header';
 import { Footer } from '@layout/components/Footer';
 import { queryClient } from '@shared/queryClient';
@@ -25,6 +26,7 @@ const ChallengeFlow = ({ Component, pageProps }: AppProps<{ dehydratedState: unk
         <Hydrate state={restProps.dehydratedState}>
           <Global styles={reset} />
           <ThemeProvider>
+            <HeadMeta />
             <Header />
             <main css={mainWrapper}>
               <Component {...restProps} />
