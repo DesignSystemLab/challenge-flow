@@ -62,11 +62,11 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
         </Card.Body>
         <Card.Footer css={{ padding: 0, marginTop: '16px' }}>
           <Text variant="heading" as="span">{`${members.length}명`}</Text>
-          <Text as="span">이서 </Text>
+          <Text as="span">이 </Text>
           <Text as="span" variant="heading" color="pink-lighten3">
             {SKILLS[challengeInfo.skill]}
           </Text>
-          <Text as="span"> 기술을 공부하고 있어요.</Text>
+          <Text as="span">를 공부하고 있어요.</Text>
           <Avatar.Group src={[...memberProfile]} />
         </Card.Footer>
       </Card>
