@@ -9,6 +9,7 @@ import { WorkspaceGroupContext } from '../../contexts/workspaceGroupContext';
 import { useQueryPosts } from '../../hooks/useQueryPosts';
 import { ContentExistTabItem } from '../posts/ContentExistTabItem';
 import { ContentNotExistTabItem } from '../posts/ContentNotExistTabItem';
+import { workspaceTabListStyle } from '../../styles/workspaceTabStyle';
 import type { Post } from '../../types';
 
 export const TabList = () => {
@@ -19,7 +20,7 @@ export const TabList = () => {
   const { data: posts } = useQueryPosts(state.context.period, workspaceId);
 
   return (
-    <div css={{ padding: '0 16px 8px 16px', height: '100%' }}>
+    <div css={workspaceTabListStyle}>
       <Tabs size="lg" variant="enclosed" full>
         <Tabs.List>
           <Tabs.Trigger value="notice">공지사항</Tabs.Trigger>
@@ -29,7 +30,9 @@ export const TabList = () => {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        <Tabs.Content value="notice">{notice}</Tabs.Content>
+        <Tabs.Content value="notice">
+          <MarkdownEditor viewer content={notice} autoHeight />
+        </Tabs.Content>
         {workspaceData?.members.map((member) => {
           const { uid } = member;
           const userPost = posts?.find((post: Post) => post.authorId === uid);

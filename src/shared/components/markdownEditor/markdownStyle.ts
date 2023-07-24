@@ -14,6 +14,7 @@ export const previewSection = (height?: number, autoHeight?: boolean) =>
     boxSizing: 'border-box',
     padding: '12px',
     width: '100%',
+    maxWidth: '320px',
     border: '1px solid #ededed',
     borderRadius: '8px',
     marginTop: '8px',
@@ -22,7 +23,8 @@ export const previewSection = (height?: number, autoHeight?: boolean) =>
     height: autoHeight ? 'auto' : `${height ?? DEFAULT_PREVIEW_HEIGHT}px`,
     overflow: 'auto',
     [mq.md]: {
-      marginTop: '0'
+      marginTop: '0',
+      maxWidth: '800px'
     }
   });
 

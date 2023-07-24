@@ -53,7 +53,6 @@ const Markdown = (props: MarkdownProps) => {
         onChange={() => {
           onMarkdownChange(editorRef);
         }}
-        // height="auto"
         plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]}
       />
     </section>
