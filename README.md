@@ -2,6 +2,16 @@
 
 [ChallengeFlow](https://challenge-flow.herokuapp.com/)는 그룹을 구성하여 원하는 주제에 대해 서로 학습을 도모할 수 있도록 서비스를 제공하는 웹 서비스입니다.
 
+## 주요 기능
+
+| GitHub 로그인                                                                                                                | 챌린지 생성                                                                                                                             |
+| :--------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| ![02-user-login](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/6c70079c-fcf8-4f6b-af80-f1f4594f9404)     | ![new-challenge](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/e115a7a8-d45a-4e58-8266-91d0bc44373c)                |
+| **챌린지 상세**                                                                                                              | **워크스페이스 목록**                                                                                                                   |
+| ![04-view-challenge](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/1106e683-6824-4eca-a025-4c6d81dc3802) | ![06-workspace-infinite-scroll](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/360f46fc-aa19-4c95-91eb-85e04ce68509) |
+| **워크스페이스 상세**                                                                                                        | **이메일 로그인**                                                                                                                       |
+| ![07-workspace-view](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/76666ddb-cdde-4553-a495-09852939abe2) | ![08-email-login](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/dabfe62b-332d-493d-bdd7-28ba9339d7d5)               |
+
 ### 선언적인 코드
 
 코드의 가독성과 재사용성을 고려하여 선언적인 코드를 작성하려 노력했습니다. 구체적인 예로, React 18 버전에서 제공하는 Suspense와 ErrorBoundary를 활용하여 로딩 상태와 오류 경계를 구성했으며, 로딩과 오류 UI에 대한 책임을 컴포넌트 외부로 위임할 수 있었습니다.
@@ -66,16 +76,6 @@
 
 무한스크롤 기능을 도입하기 위해 `react-intersection-observer `라이브러리를 활용하였습니다. 이 라이브러리는 선언적인 hook을 제공하고, IntersectionObserver API를 간편하게 사용할 수 있어서 유용하게 활용할 수 있었습니다.
 
-### NetAuth
+### NextAuth
 
 NextAuth는 사용자 인증 처리를 제공합니다. 프로젝트 데이터베이스는 Firebase를 사용하므로, NextAuth에서 제공하는 인증 공급자(Provider)와 연동하여 회원 관리 기능을 수행하고 API 통신 시 서버 내에서 세션을 활용한 인증 로직을 구현하였습니다.
-
-## 주요 기능
-
-| GitHub 로그인                                                                                                                | 챌린지 생성                                                                                                                             |
-| :--------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| ![02-user-login](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/6c70079c-fcf8-4f6b-af80-f1f4594f9404)     | ![new-challenge](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/e115a7a8-d45a-4e58-8266-91d0bc44373c)                |
-| **챌린지 상세**                                                                                                              | **워크스페이스 목록**                                                                                                                   |
-| ![04-view-challenge](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/1106e683-6824-4eca-a025-4c6d81dc3802) | ![06-workspace-infinite-scroll](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/360f46fc-aa19-4c95-91eb-85e04ce68509) |
-| **워크스페이스 상세**                                                                                                        | **이메일 로그인**                                                                                                                       |
-| ![07-workspace-view](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/76666ddb-cdde-4553-a495-09852939abe2) | ![08-email-login](https://github.com/DesignSystemLab/challenge-flow/assets/46988995/dabfe62b-332d-493d-bdd7-28ba9339d7d5)               |
