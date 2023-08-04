@@ -1,5 +1,5 @@
 import { PeriodFormat, PostCommentRef } from '@workspace/types';
-import { ApplicationError } from '@shared/constants';
+import { ApplicationError, FIREBASE_COLLECTIONS } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { createDateRange } from '@shared/utils/createDateRange';
@@ -10,8 +10,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]';
 
-const CHALLENGE_REF = 'challenge';
-const WORKSPACE_REF = 'workspace';
+const CHALLENGE_REF = FIREBASE_COLLECTIONS.challenge;
+const WORKSPACE_REF = FIREBASE_COLLECTIONS.workspace;
 
 const challengeStartService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
