@@ -32,7 +32,7 @@ const createSkeletonUi = (skeletonProps: Props) => {
     ...(circle && { borderRadius: '50%' }),
     ...(rounded && { borderRadius: '8px' }),
     ...(height && { height }),
-    ...(width && { height }),
+    ...(width && { width }),
     ...(animation && { animation: `${keyframe} 1s linear infinite` })
   });
 };

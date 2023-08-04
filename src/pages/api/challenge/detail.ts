@@ -1,11 +1,11 @@
 import { ChallengeModifyFetchProps } from '@challenge/types';
-import { ApplicationError } from '@shared/constants';
+import { ApplicationError, FIREBASE_COLLECTIONS } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { DocumentData, doc, getDoc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const REF_NAME = 'challenge';
+const REF_NAME = FIREBASE_COLLECTIONS.challenge;
 const challengeReadDetailService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;

@@ -1,11 +1,11 @@
-import { ApplicationError } from '@shared/constants';
+import { ApplicationError, FIREBASE_COLLECTIONS } from '@shared/constants';
 import { database } from '@shared/firebase';
 import { responseEntity } from '@shared/responseEntity';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const REF_NAME = 'challenge';
+const REF_NAME = FIREBASE_COLLECTIONS.challenge;
 
 const challengeModifyService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

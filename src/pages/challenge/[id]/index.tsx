@@ -19,6 +19,7 @@ import { StartButton } from '@challenge/components/action/StartButton';
 import { CanI } from '@challenge/components/util/CanI';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
 import { queryClient } from '@shared/queryClient';
+import { FIREBASE_COLLECTIONS } from '@shared/constants';
 import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
 import { doc, getDoc } from 'firebase/firestore';
@@ -61,7 +62,7 @@ interface QueryInterface extends ParsedUrlQuery {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params as QueryInterface;
   if (id) {
-    const REF_NAME = 'challenge';
+    const REF_NAME = FIREBASE_COLLECTIONS.challenge;
     const docRef = doc(database, REF_NAME, id);
     const docSnapshot = await getDoc(docRef);
 

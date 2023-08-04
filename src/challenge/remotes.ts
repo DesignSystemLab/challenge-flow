@@ -1,11 +1,12 @@
 import { database } from '@shared/firebase';
 import { formatDateTime, getDate } from '@shared/utils/date';
 import { createOne, getList, getOne, moveDoc, addDataInArrayField, upsertDoc } from '@shared/utils/firestore';
+import { FIREBASE_COLLECTIONS } from '@shared/constants';
 import { collection, doc, orderBy, query } from 'firebase/firestore';
 import { ChallengeAllFormValues } from './types';
 
 const REF_NAME = 'challenge';
-const DELETED_REF_NAME = 'deleted-challenge';
+const DELETED_REF_NAME = FIREBASE_COLLECTIONS.deletedChallenge;
 const COLLECTION = collection(database, REF_NAME);
 
 async function create(postValue: ChallengeAllFormValues) {
