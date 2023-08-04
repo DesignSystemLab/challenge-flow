@@ -2,10 +2,11 @@ import { mq } from '@shared/styles/mixins/responsive';
 import { css } from '@emotion/react';
 
 export const suggestionAsideStyle = css({
-  position: 'sticky',
+  position: 'fixed',
   minWidth: '300px',
   height: '300px',
-  top: '12px',
+  top: '80px',
+  right: 0,
   flex: ' 0 1 300px',
   flexGrow: 1,
   padding: '8px',
