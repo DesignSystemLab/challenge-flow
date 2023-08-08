@@ -31,9 +31,9 @@ export const WorkspaceList = ({ openType }: Props) => {
         page.workspaceList.map((workspace) => <WorkspaceItem workspaceItem={workspace} />)
       )}
       {hasNextPage && (
-        <div ref={ref}>
+        <li ref={ref}>
           <Loader />
-        </div>
+        </li>
       )}
     </ol>
   );
