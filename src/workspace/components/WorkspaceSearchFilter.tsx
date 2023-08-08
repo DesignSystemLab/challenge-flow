@@ -6,7 +6,7 @@ interface Props {
   handleChangeOpenType: (value: WorkspaceOpenType) => void;
 }
 export const WorkspaceSearchFilter = ({ handleChangeOpenType }: Props) => (
-  <Flex gap={16} css={workspaceFilterStyle}>
+  <Flex css={workspaceFilterStyle}>
     <Select
       defaultValue="all"
       onValueChange={(value) => {

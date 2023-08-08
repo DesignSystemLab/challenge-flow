@@ -1,4 +1,3 @@
-import { mq } from '@shared/styles/mixins/responsive';
 import { css } from '@emotion/react';
 
 export const workspaceListStyle = css({
@@ -12,14 +11,16 @@ export const workspaceListStyle = css({
 
 export const workspaceCardStyle = css({
   cursor: 'pointer',
-  height: '296px',
-  width: '288px',
+  height: '100%',
+  width: '280px',
   '&:hover': {
     boxShadow:
       'rgba(0, 0, 0, 0.2) 0px 5px 6px -3px, rgba(0, 0, 0, 0.14) 0px 9px 12px 1px, rgba(0, 0, 0, 0.12) 0px 3px 16px 2px'
   },
   transition: 'ease .25s'
 });
+
+export const workspaceCardFooter = css({});
 
 export const workspacePostSummaryStyle = css({
   marginTop: '8px',
@@ -47,11 +48,6 @@ export const workspacePostEmptyStyle = css({
 });
 
 export const workspaceFilterStyle = css({
-  width: '180px',
-  [mq.md]: {},
-  [mq.lg]: {
-    padding: '0 20px',
-    marginBottom: '8px'
-  },
-  [mq.xl]: {}
+  padding: 0,
+  marginBottom: '8px'
 });
