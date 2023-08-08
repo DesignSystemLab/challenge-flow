@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Image from 'next/image';
+import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { Text } from '@jdesignlab/react';
 import { memberListStyle, memberCardStyle, profileStyle } from '../../styles/sidebarStyle';
 import { useQueryWorkspace } from '../../hooks/useQueryWorkspace';
@@ -13,13 +13,7 @@ export const GroupMembers = () => {
     <ul css={memberListStyle}>
       {data?.members.map((member) => (
         <li key={member.email} css={memberCardStyle}>
-          <Image
-            style={{ borderRadius: '50%' }}
-            width={64}
-            height={64}
-            src={member.photo ?? ''}
-            alt={member.name ?? 'user profile image'}
-          />
+          <Avatar src={member.photo ?? ''} size="md" />
           <div css={profileStyle}>
             <Text variant="heading" size="md">
               {member.name}
