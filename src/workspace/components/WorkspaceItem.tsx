@@ -13,8 +13,10 @@ interface Props {
 const PostSummary = ({ title }: Post) => (
   <li>
     <Stack>
-      <File width={18} height={18} fill="#f8a5c2" />
-      <Text variant="label">{title}</Text>
+      <File width={16} height={16} fill="#f8a5c2" />
+      <Text variant="label" size="sm">
+        {title}
+      </Text>
     </Stack>
   </li>
 );
@@ -45,9 +47,7 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
         }}
       >
         <Card.Header>
-          <Text variant="heading" size="lg">
-            {`${workspaceMasterInfo}의 Workpsace`}
-          </Text>
+          <Text variant="heading">{`${workspaceMasterInfo}의 Workpsace`}</Text>
         </Card.Header>
         <Card.Body css={{ width: '100%' }}>
           {posts.length ? (
@@ -61,13 +61,21 @@ export const WorkspaceItem = ({ workspaceItem }: Props) => {
           )}
         </Card.Body>
         <Card.Footer css={{ padding: 0, marginTop: '16px' }}>
-          <Text variant="heading" as="span">{`${members.length}명`}</Text>
-          <Text as="span">이 </Text>
-          <Text as="span" variant="heading" color="pink-lighten3">
-            {SKILLS[challengeInfo.skill]}
-          </Text>
-          <Text as="span">를 공부하고 있어요.</Text>
-          <Avatar.Group src={[...memberProfile]} />
+          <div>
+            <Text size="sm" bold="semi" as="span">{`${members.length}명`}</Text>
+            <Text size="sm" as="span">
+              이{' '}
+            </Text>
+            <Text size="sm" as="span" variant="heading" color="pink-lighten3">
+              {SKILLS[challengeInfo.skill]}
+            </Text>
+            <Text size="sm" as="span">
+              를 공부하고 있어요.
+            </Text>
+          </div>
+          <div css={{ marginTop: '8px' }}>
+            <Avatar.Group src={[...memberProfile]} />
+          </div>
         </Card.Footer>
       </Card>
     </li>
