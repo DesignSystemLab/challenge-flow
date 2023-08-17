@@ -20,7 +20,7 @@ const Login = () => {
 
   return (
     <CompositionBoundaryReactQuery suspense={<Loading />} error={(props) => <ErrorModal {...props} />}>
-      <section css={Style.signButtonWrapper}>
+      <section css={Style.signFormContainer}>
         <div css={Style.title}>
           <Text variant="heading" size="xl" color="primary-500" align="center">
             로그인
