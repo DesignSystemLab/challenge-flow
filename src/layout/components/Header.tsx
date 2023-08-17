@@ -1,6 +1,4 @@
 import { useSignout } from '@auth/hooks/useSignout';
-import { SigninModal } from '@auth/components/SigninModal';
-import { SignupModal } from '@auth/components/SignupModal';
 import { ErrorModal } from '@shared/components/ErrorModal';
 import { Layout } from '@shared/components/dataDisplay/FlexLayout';
 import { headerWrapper, headerContents } from '@layout/styles/headerStyle';
@@ -8,7 +6,7 @@ import { useGetUserInfoById } from '@challenge/hooks/useGetUserInfoById';
 import { Avatar } from '@shared/components/dataDisplay/Avatar';
 import { Loading } from '@shared/components/Icons/Loading';
 import { CompositionBoundaryReactQuery } from '@shared/boundaries';
-import { Dropdown, Text } from '@jdesignlab/react';
+import { Button, Dropdown, Text } from '@jdesignlab/react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
@@ -19,6 +17,15 @@ export const Header = () => {
   const moveToMain = () => {
     router.push('/');
   };
+
+  const moveToSigninPage = () => {
+    router.push('/login');
+  };
+
+  const moveToSignupPage = () => {
+    router.push('/signup');
+  };
+
   const { data } = useSession();
   const { userInfo } = useGetUserInfoById(data?.user?.uid);
   const { mutate: signout } = useSignout();
@@ -86,8 +93,10 @@ export const Header = () => {
                 </Dropdown>
               ) : (
                 <Layout.Row gap={4}>
-                  <SigninModal />
-                  <SignupModal />
+                  <Button variant="outline" onClick={moveToSigninPage}>
+                    로그인
+                  </Button>
+                  <Button onClick={moveToSignupPage}>회원가입</Button>
                 </Layout.Row>
               )}
             </CompositionBoundaryReactQuery>
