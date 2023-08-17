@@ -15,6 +15,7 @@ export type FirebaseErrorCode =
   | 'auth/invalid-display-name'
   | 'auth/invalid-dynamic-link-domain'
   | 'auth/invalid-email'
+  | 'auth/wrong-password'
   | 'auth/invalid-email-verified'
   | 'auth/invalid-hash-algorithm'
   | 'auth/invalid-hash-block-size'
@@ -119,5 +120,6 @@ export const CustomFirebaseError: Record<FirebaseErrorCode, string> = {
   'auth/uid-already-exists': '제공된 uid를 기존 사용자가 이미 사용하고 있습니다. 각 사용자마다 uid가 고유해야 합니다.',
   'auth/unauthorized-continue-uri':
     '연결 URL의 도메인이 허용 목록에 포함되어 있지 않습니다. Firebase Console에서 도메인을 허용해야 합니다.',
-  'auth/user-not-found': '제공된 식별자에 해당하는 기존 사용자 레코드가 없습니다.'
+  'auth/user-not-found': '제공된 식별자에 해당하는 기존 사용자 레코드가 없습니다.',
+  'auth/wrong-password': '비밀번호가 맞지 않습니다.'
 };

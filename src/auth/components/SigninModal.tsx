@@ -2,7 +2,7 @@ import { GitHubIcon, GoogleIcon, Loading } from '@shared/components/Icons';
 import { Modal, Stack, Button } from '@jdesignlab/react';
 import { useMachine } from '@xstate/react';
 import { Mail } from '@jdesignlab/react-icons';
-import { EmailPasswordForm } from './EmailPasswordForm';
+import { EmailPasswordForm } from './action/EmailPasswordForm';
 import { useSigninWithProvider } from '../hooks/useSigninWithProvider';
 import { signMachine } from '../machines/signMachine';
 

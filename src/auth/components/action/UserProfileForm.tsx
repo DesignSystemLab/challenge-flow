@@ -4,13 +4,13 @@ import { Loading } from '@shared/components/Icons';
 import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
 import { TextInput, Button, Modal } from '@jdesignlab/react';
-import { useProfileUpdate } from '../hooks/useProfileUpdate';
-import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
-import { parseUserInfo } from '../parseUserInfo';
-import { Flex } from '../styles/Profile';
+import { useProfileUpdate } from '../../hooks/useProfileUpdate';
+import { useSetUserAuthData } from '../../hooks/useSetUserAuthData';
+import { parseUserInfo } from '../../parseUserInfo';
+import { Flex } from '../../styles/Profile';
 import type { InterpreterFrom } from 'xstate';
-import type { SignMachineType } from '../machines/signMachine';
-import type { UserProfile } from '../types';
+import type { SignMachineType } from '../../machines/signMachine';
+import type { UserProfile } from '../../types';
 
 interface Props {
   signupMachineRef: InterpreterFrom<SignMachineType>;
