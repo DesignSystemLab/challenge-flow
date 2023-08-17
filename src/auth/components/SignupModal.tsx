@@ -1,7 +1,7 @@
 import { Modal, Button } from '@jdesignlab/react';
 import { useMachine } from '@xstate/react';
-import { UserProfileForm } from './UserProfileForm';
-import { EmailPasswordForm } from './EmailPasswordForm';
+import { UserProfileForm } from './action/UserProfileForm';
+import { EmailPasswordForm } from './action/EmailPasswordForm';
 import { signMachine } from '../machines/signMachine';
 import { useSetUserAuthData } from '../hooks/useSetUserAuthData';
 

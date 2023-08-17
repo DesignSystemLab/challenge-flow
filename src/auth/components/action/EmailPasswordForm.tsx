@@ -1,12 +1,12 @@
 import { Text, TextInput, Button, Modal } from '@jdesignlab/react';
 import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
-import { Flex } from '../styles/Profile';
-import { useAccountEmailWithPassword } from '../hooks/useAccountEmailWithPassword';
-import { useCreateUserMutation } from '../hooks/useCreateUserMutation';
+import { Flex } from '../../styles/Profile';
+import { useAccountEmailWithPassword } from '../../hooks/useAccountEmailWithPassword';
+import { useCreateUserMutation } from '../../hooks/useCreateUserMutation';
 import type { InterpreterFrom } from 'xstate';
-import type { SignMachineType } from '../machines/signMachine';
-import type { EmailPasswordField } from '../types';
+import type { SignMachineType } from '../../machines/signMachine';
+import type { EmailPasswordField } from '../../types';
 
 interface Props {
   signMachine: InterpreterFrom<SignMachineType>;
