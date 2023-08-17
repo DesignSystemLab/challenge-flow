@@ -1,4 +1,4 @@
-import { Text, TextInput, Button, Modal } from '@jdesignlab/react';
+import { Text, TextInput, Button } from '@jdesignlab/react';
 import { useForm } from 'react-hook-form';
 import { useActor } from '@xstate/react';
 import { Flex } from '../../styles/Profile';
@@ -61,24 +61,22 @@ export const EmailPasswordForm = (props: Props) => {
         <TextInput.Label>Password</TextInput.Label>
       </TextInput>
       {errors.password && <Text color="red-base">{errors.password.message as string}</Text>}
-      <Modal.Footer>
-        <Flex>
-          {!signup && (
-            <Button
-              variant="outline"
-              color="red-lighten2"
-              onClick={() => {
-                refSend({ type: 'CLEAR' });
-              }}
-            >
-              뒤로가기
-            </Button>
-          )}
-          <Button type="submit" variant="outline" color="primary-500" disabled={isLoading}>
-            {signup ? '회원가입' : '로그인'}
+      <Flex>
+        {!signup && (
+          <Button
+            variant="outline"
+            color="red-lighten2"
+            onClick={() => {
+              refSend({ type: 'CLEAR' });
+            }}
+          >
+            뒤로가기
           </Button>
-        </Flex>
-      </Modal.Footer>
+        )}
+        <Button type="submit" variant="outline" color="primary-500" disabled={isLoading}>
+          {signup ? '회원가입' : '로그인'}
+        </Button>
+      </Flex>
     </form>
   );
 };
